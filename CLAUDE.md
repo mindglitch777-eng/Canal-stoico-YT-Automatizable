@@ -109,6 +109,13 @@ Pedido del dueño: edición de nivel profesional, "dopamina constante", 3D y efe
 
 Render: WebGL por software (`REMOTION_GL`, por defecto `swangle`, sirve sin GPU). `npm run test:templates -- --at 0.15,0.5,0.9` saca 3 cuadros por escena. El workflow "Prueba de plantillas" publica `demo.mp4` y la hoja de contactos en `salidas/plantillas/run-N/`.
 
+### Videos a medida y sonido (04/11/2026)
+
+- **Composición propia por Short:** `remotion/src/shorts/<id>/index.tsx`, registrada en `remotion/src/shorts/index.ts` (con `noCaptions` para escenas sin subtítulos). Si un Short no está registrado, `Short.tsx` usa las escenas genéricas. Las escenas de `short.json` pueden ser `type: "custom"` y llevar `onScreen`.
+- **marco-aurelio-chatarra:** 11 mundos (reloj de oro 3D con reflejos de estudio que explota en piezas y se rearma para el loop, el áureo con el perfil de Marco Aurelio sobre el mapa del Imperio, el pergamino con vela, el banquete y el vino, la túnica y la oveja, el celular en capas con contrato, la cinta hedónica, la espiral de precios que estalla en vidrio, las etiquetas arrancadas y la cita grabada en mármol negro con vetas de oro). Decisión de producción: el "busto" se hizo como el perfil laureado de sus monedas, porque no había una imagen real del busto. Cuando funcione el workflow de imágenes de dominio público, se puede cambiar.
+- **Sonido:** `python tools/sfx/mix.py shorts/<id>` lee `build/timeline.json` y `shorts/<id>/sound.py` (función `design(tl, mix)`; `tl.word(escena, "palabra")` da el segundo exacto) y escribe `build/sound.wav` (música + efectos, la música baja 10 dB con la voz). `render.mjs` lo suma a la voz y el workflow normaliza a -14 LUFS. Necesita numpy y scipy (en `tools/requirements.txt`).
+- **Workflow "Render de Short":** corre `check_short.py` (frena si el guion no cumple el estándar), voz, sonido, render y volumen. Timeout de 90 min.
+
 ## Monetización: fechas clave
 
 - Hasta el 31/01/2027: 1.000 suscriptores + 4.000 horas de video largo en 12 meses, o 10 millones de vistas de Shorts en 90 días.
@@ -144,10 +151,10 @@ Revisados antes de instalar: sin llamadas de red ocultas ni código peligroso.
 
 1. ~~Probar la producción de punta a punta~~ ✅ (ver "Probado").
 2. Elegir la voz con las muestras (ya enviadas).
-2a. **Armar el soporte para videos a medida:** composición por Short en `remotion/src/shorts/<id>/` (registrada en `Root.tsx`), que el render elija si existe y si no use las escenas genéricas; primera: `seneca-300-millones`, cumpliendo cada `visual` de su `short.json`.
+2a. ✅ Soporte para videos a medida (registro en `remotion/src/shorts/index.ts`). Falta hacer a medida `seneca-300-millones`: composición por Short en `remotion/src/shorts/<id>/` (registrada en `Root.tsx`), que el render elija si existe y si no use las escenas genéricas; primera: `seneca-300-millones`, cumpliendo cada `visual` de su `short.json`.
 2b. **Escenas de imagen literal** que pide `prompts/estandar-viral.md` (ver los campos `visual` de `shorts/seneca-300-millones`): transformaciones de objetos (toga → harapos, oro → pan), balanza, busto de mármol, montaña de monedas, texto que estalla. Las imágenes de dominio público (`tools/pd_images.py`) pueden servir para el busto.
-2c. **Sonido y música generados por código** (pedido del dueño): ver `prompts/sonido.md` (paleta con recetas de síntesis, música del nicho por secciones, mezcla). Construir `tools/sfx/` y el mezclador; cada video pide sus sonidos en el `short.json`.
-2d. **Short más ambicioso hasta ahora: `shorts/marco-aurelio-chatarra/short.json`.** Rompe la creencia de que lo caro vale lo que cuesta (Marco Aurelio, *Meditaciones* 6.13). 11 escenas, ~46 s, gancho 72/STRONG. Pasa `check_short.py`. Trae dirección completa: concepto, look, `music` por secciones y, por escena, `visual`, `camera`, `transition` y `sfx`. Es el guion para el primer video **a medida** con sonido: hacerlo cumpliendo cada campo.
+2c. ✅ **Sonido y música por código:** `tools/sfx/synth.py` (paleta) y `tools/sfx/mix.py` (mezclador); cada video escribe su `shorts/<id>/sound.py`.
+2d. ✅ **Hecho (primera versión, 04/11/2026):** composición a medida en `remotion/src/shorts/marco-aurelio-chatarra/` y sonido en `shorts/marco-aurelio-chatarra/sound.py` (ver "Videos a medida y sonido"). Guion: `shorts/marco-aurelio-chatarra/short.json`. Rompe la creencia de que lo caro vale lo que cuesta (Marco Aurelio, *Meditaciones* 6.13). 11 escenas, ~46 s, gancho 72/STRONG. Pasa `check_short.py`. Trae dirección completa: concepto, look, `music` por secciones y, por escena, `visual`, `camera`, `transition` y `sfx`. Es el guion para el primer video **a medida** con sonido: hacerlo cumpliendo cada campo.
 3. **Música y efectos** con licencia comercial clara (el dueño lo deja para después; los Shorts salen solo con voz).
 4. Imágenes de dominio público: probar el workflow y sumar una escena con imagen a las plantillas.
 5. Subida automática por API (OAuth): después de crear el canal (todavía no existe).

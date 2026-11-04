@@ -1,0 +1,108 @@
+{
+  "id": "seneca-300-millones",
+  "title": "A man with 300 million practiced being broke. Why?",
+  "voice": "en-US-AndrewNeural",
+  "rate": "-4%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "sources": [
+    "Fortuna de Séneca: Tácito, Anales 13.42 (la acusación de Suilio: 300 millones de sestercios en cuatro años de favor imperial)",
+    "Pan duro y ropa áspera durante días, y la pregunta 'Is this the condition that I feared?': Séneca, Cartas a Lucilio 18 (trad. R. M. Gummere, 1917, dominio público)",
+    "Una pérdida pesa más o menos el doble que una ganancia igual: Kahneman y Tversky (1979), teoría prospectiva; el 'unas dos veces' es la estimación habitual de la aversión a la pérdida",
+    "Vender en pánico en la baja: ejemplo ilustrativo; el gráfico no representa datos reales"
+  ],
+  "scenes": [
+    {
+      "type": "hook",
+      "beat": "hook",
+      "reward": "paradox",
+      "visual": "Una montaña de monedas de oro se derrumba de golpe hasta quedar una sola moneda girando.",
+      "text": "*300 million.*\nAnd *broke*?",
+      "say": "You'd never risk going broke. A man with 300 million did. Why?"
+    },
+    {
+      "type": "counter",
+      "beat": "reward",
+      "reward": "number",
+      "visual": "El contador vuela a 300 M mientras se arma detrás un busto de mármol de Séneca.",
+      "from": 0,
+      "to": 300,
+      "suffix": "M",
+      "label": "Seneca's fortune, in sesterces",
+      "say": "Meet Seneca. His fortune: 300 million sesterces."
+    },
+    {
+      "type": "statement",
+      "beat": "reward",
+      "reward": "reveal",
+      "visual": "La toga dorada se deshace en harapos; el plato de oro se convierte en una corteza de pan.",
+      "text": "Stale *bread.*\nRough *cloth.*",
+      "say": "Yet for days, he ate stale bread. Wore rough cloth."
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "visual": "Primer plano del busto; la cita se graba en mármol letra por letra.",
+      "quote": "Is this the condition that I feared?",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 18",
+      "say": "Then he'd ask: is this the condition that I feared?"
+    },
+    {
+      "type": "counter",
+      "beat": "reward",
+      "reward": "data",
+      "visual": "Una balanza: de un lado una moneda que se gana, del otro una que se pierde y pesa el doble.",
+      "from": 0,
+      "to": 2,
+      "suffix": "×",
+      "label": "how much harder a loss hits",
+      "say": "A loss hits your brain about twice as hard as a win."
+    },
+    {
+      "type": "chart",
+      "beat": "reward",
+      "reward": "consequence",
+      "visual": "La línea sube, se quiebra en rojo y una mano suelta las monedas justo en el punto más bajo.",
+      "points": [100, 112, 121, 133, 128, 141, 118, 92, 70, 64],
+      "trend": "down",
+      "label": "Fear, in one chart",
+      "annotation": "SOLD.",
+      "say": "It's why people panic and sell at the bottom."
+    },
+    {
+      "type": "statement",
+      "beat": "twist",
+      "reward": "twist",
+      "visual": "La palabra FEAR crece hasta tapar la pantalla y se rompe como vidrio, dejando ver POVERTY chiquita detrás.",
+      "text": "Fear costs more\nthan *poverty.*",
+      "say": "The fear of being poor costs more than being poor."
+    },
+    {
+      "type": "twoColumns",
+      "beat": "reward",
+      "reward": "contrast",
+      "visual": "Pantalla partida: Séneca calmo en oro a la izquierda, a la derecha lo que el miedo roba se tacha en rojo.",
+      "left": {"title": "Seneca kept", "items": ["His calm", "His judgment", "His fortune"]},
+      "right": {"title": "Fear takes", "items": ["Your sleep", "Your judgment", "Your gains"]},
+      "say": "Seneca faced it on purpose. So fear never ran his money."
+    },
+    {
+      "type": "statement",
+      "beat": "payoff",
+      "reward": "payoff",
+      "visual": "Los harapos vuelven a ser toga dorada: la transformación del principio, al revés.",
+      "text": "Not *poverty.*\nHe killed *fear.*",
+      "say": "He wasn't rehearsing poverty. He was killing the fear."
+    },
+    {
+      "type": "outro",
+      "beat": "loop",
+      "reward": "challenge",
+      "visual": "La moneda CF cae, rebota y se convierte en la montaña de monedas del primer cuadro.",
+      "text": "Try it for *one day.*",
+      "say": "Try it for one day. Because you'd never risk going broke..."
+    }
+  ]
+}

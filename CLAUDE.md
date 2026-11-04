@@ -17,6 +17,7 @@ Canal faceless de YouTube. Este archivo es el contexto del proyecto para cada se
 - Las decisiones del canal (contenido, tono, criterio) las toma él. Las reglas del canal son las que él define.
 - Grok hace la investigación externa (competencia, tendencias, datos que Claude no ve) y el dueño trae sus respuestas. Claude construye: código, guiones, animación, automatización.
 - Prefiere avanzar ordenado, por fases, y decidir antes de ejecutar.
+- **Regla permanente (04/11/2026): vara alta.** Cada Short busca dopamina y engagement máximos: gancho que rompe lo normal, recompensas constantes, imagen literal para cada frase, final en loop. Está en `prompts/estandar-viral.md` y se verifica con `python3 tools/check_short.py shorts/<id>` **antes de cada render**. El dueño juzgó el primer Short de Séneca "pobre, plano y notablemente hecho con IA": ese es el piso que no hay que repetir.
 
 ## Estado actual (04/11/2026, actualizado)
 
@@ -28,7 +29,9 @@ Hecho y subido:
 - Voz: `tools/tts.py` (Edge TTS por escena con tiempos por palabra) y `tools/voice_samples.py`.
 - Workflows de GitHub Actions: prueba de plantillas, render de Short, muestras de voces.
 - Plantilla maestra del guion: `prompts/master-short.md` (formato + reglas de retención aportadas por el dueño vía Grok).
-- Short de ejemplo: `shorts/ejemplo-seneca/short.json`.
+- Short de ejemplo: `shorts/ejemplo-seneca/short.json` (primera prueba; **no cumple** el estándar viral, queda como referencia de lo que no).
+- **Primer Short con el estándar viral:** `shorts/seneca-300-millones/short.json` (10 escenas, ~41 s, una recompensa distinta cada ~4 s, giro al 60 %, final en loop con el gancho; gancho puntuado 72/STRONG en `hookscore.py`). Pasa `check_short.py`. **Falta renderizarlo** y revisar cuadros (`--at 0,0.5,0.95`) por texto cortado.
+  - Cada escena trae `visual`: la imagen literal que pide el guion. Varias todavía no existen en las plantillas (toga que se deshace en harapos, balanza, busto de Séneca, montaña de monedas que se derrumba, palabra que se rompe como vidrio). Son el próximo trabajo de plantillas: hoy el render usa lo que cada tipo de escena ya hace.
 - Imágenes de dominio público: `tools/pd_images.py` + workflow "Imágenes de dominio público" (Met, Art Institute of Chicago, Wikimedia Commons; solo dominio público o CC0, con créditos y hoja de contactos). **No probado todavía** (la sesión en la nube no llega a esos sitios).
 
 Probado (04/11/2026):
@@ -139,6 +142,8 @@ Revisados antes de instalar: sin llamadas de red ocultas ni código peligroso.
 
 1. ~~Probar la producción de punta a punta~~ ✅ (ver "Probado").
 2. Elegir la voz con las muestras (ya enviadas).
+2b. **Escenas de imagen literal** que pide `prompts/estandar-viral.md` (ver los campos `visual` de `shorts/seneca-300-millones`): transformaciones de objetos (toga → harapos, oro → pan), balanza, busto de mármol, montaña de monedas, texto que estalla. Las imágenes de dominio público (`tools/pd_images.py`) pueden servir para el busto.
+2c. **Efectos de sonido generados por código** (golpes, whoosh, monedas) sincronizados con los golpes del `director.tsx`; música después.
 3. **Música y efectos** con licencia comercial clara (el dueño lo deja para después; los Shorts salen solo con voz).
 4. Imágenes de dominio público: probar el workflow y sumar una escena con imagen a las plantillas.
 5. Subida automática por API (OAuth): después de crear el canal (todavía no existe).

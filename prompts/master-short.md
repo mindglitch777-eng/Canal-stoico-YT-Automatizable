@@ -1,5 +1,7 @@
 # Plantilla maestra: cómo se arma un Short de Calm Fortune
 
+> **Regla permanente del dueño: `prompts/estandar-viral.md` ("vara alta").** Manda sobre todo lo de abajo. Cada escena lleva además `beat`, `reward` y `visual`, y cada guion pasa `python3 tools/check_short.py shorts/<id>` antes del render. Ejemplo que cumple: `shorts/seneca-300-millones/short.json`.
+
 Este archivo define el formato. El contenido y el criterio los decide el dueño del canal.
 
 ## Identidad (de la investigación con Grok)

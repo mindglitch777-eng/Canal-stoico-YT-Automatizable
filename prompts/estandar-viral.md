@@ -14,6 +14,7 @@ Regla permanente del dueño del canal (04/11/2026): **cada Short busca dopamina 
 
 ## Visual
 
+0. **Video a medida, no plantilla** (decisión del dueño): cada Short tiene su propia composición en `remotion/src/shorts/<id>/`, programada para ese guion con las herramientas compartidas (cámara, texto cinético, subtítulos, 3D, efectos). El campo `visual` de cada escena es el pedido que esa composición tiene que cumplir al pie de la letra.
 1. **Cada frase con su imagen literal.** Se muestra, no se explica: si dice "rough cloth", la toga se deshace. El campo `visual` de cada escena describe esa imagen.
 2. **Cambio de cámara o de escenario cada 1,5 a 3 s**, no solo de texto (las plantillas v2 ya cortan plano cada ~1,5 s).
 3. **Un momento de impacto cada 8 a 10 s:** transformación, explosión, la cámara atravesando algo.

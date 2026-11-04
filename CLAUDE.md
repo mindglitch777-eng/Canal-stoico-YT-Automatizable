@@ -18,6 +18,7 @@ Canal faceless de YouTube. Este archivo es el contexto del proyecto para cada se
 - Grok hace la investigación externa (competencia, tendencias, datos que Claude no ve) y el dueño trae sus respuestas. Claude construye: código, guiones, animación, automatización.
 - Prefiere avanzar ordenado, por fases, y decidir antes de ejecutar.
 - **Regla permanente (04/11/2026): vara alta.** Cada Short busca dopamina y engagement máximos: gancho que rompe lo normal, recompensas constantes, imagen literal para cada frase, final en loop. Está en `prompts/estandar-viral.md` y se verifica con `python3 tools/check_short.py shorts/<id>` **antes de cada render**. El dueño juzgó el primer Short de Séneca "pobre, plano y notablemente hecho con IA": ese es el piso que no hay que repetir.
+- **Decisión del dueño (04/11/2026): cada video se hace a medida, no con plantillas.** Cada Short tiene su propia composición en código (`remotion/src/shorts/<id>/`), escrita para ese guion: si el `visual` de una escena dice "la toga se deshace en harapos", se programa exactamente eso. Lo que se reutiliza son **herramientas** (cámara y cortes, `KineticText`, subtítulos, mundo 3D, destellos, voz, efectos), no escenas fijas. Los 7 tipos de escena actuales quedan como piezas que se pueden reciclar o como prototipo rápido, nunca como molde.
 
 ## Estado actual (04/11/2026, actualizado)
 
@@ -142,6 +143,7 @@ Revisados antes de instalar: sin llamadas de red ocultas ni código peligroso.
 
 1. ~~Probar la producción de punta a punta~~ ✅ (ver "Probado").
 2. Elegir la voz con las muestras (ya enviadas).
+2a. **Armar el soporte para videos a medida:** composición por Short en `remotion/src/shorts/<id>/` (registrada en `Root.tsx`), que el render elija si existe y si no use las escenas genéricas; primera: `seneca-300-millones`, cumpliendo cada `visual` de su `short.json`.
 2b. **Escenas de imagen literal** que pide `prompts/estandar-viral.md` (ver los campos `visual` de `shorts/seneca-300-millones`): transformaciones de objetos (toga → harapos, oro → pan), balanza, busto de mármol, montaña de monedas, texto que estalla. Las imágenes de dominio público (`tools/pd_images.py`) pueden servir para el busto.
 2c. **Efectos de sonido generados por código** (golpes, whoosh, monedas) sincronizados con los golpes del `director.tsx`; música después.
 3. **Música y efectos** con licencia comercial clara (el dueño lo deja para después; los Shorts salen solo con voz).

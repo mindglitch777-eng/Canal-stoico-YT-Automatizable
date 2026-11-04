@@ -10,9 +10,12 @@ export const REPO_DIR = resolve(REMOTION_DIR, '..');
 // En GitHub Actions Remotion baja su propio navegador.
 // En sesiones sin internet abierto se usa un Chromium ya instalado:
 //   REMOTION_BROWSER_EXECUTABLE=/ruta/a/chrome
+// El mundo 3D usa WebGL: "swangle" (SwiftShader) funciona en máquinas sin GPU, como Actions.
+//   REMOTION_GL=angle  para usar la GPU si hay una.
 export const browserOptions = () => {
   const exe = process.env.REMOTION_BROWSER_EXECUTABLE;
-  return exe ? {browserExecutable: exe, chromeMode: 'chrome-for-testing'} : {};
+  const chromiumOptions = {gl: process.env.REMOTION_GL || 'swangle'};
+  return exe ? {browserExecutable: exe, chromeMode: 'chrome-for-testing', chromiumOptions} : {chromiumOptions};
 };
 
 export const arg = (name) => {

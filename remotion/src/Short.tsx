@@ -3,6 +3,7 @@ import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConf
 import {Background} from './Background';
 import {Captions} from './Captions';
 import {DirectorProvider, goldWords, norm, onScreenText} from './director';
+import {useFontsReady} from './fonts';
 import {Camera, Flashes, Lens, Progress, transitionStyle} from './fx';
 import {Chart} from './scenes/Chart';
 import {Counter} from './scenes/Counter';
@@ -51,6 +52,7 @@ const duplicated = (scene: Scene) => {
 };
 
 export const Short: React.FC<Timeline> = (timeline) => {
+  useFontsReady();
   const {scenes, captions = true} = timeline;
   const {fps} = useVideoConfig();
   const spans = scenes.map((s) => ({from: Math.round(s.start * fps), dur: Math.max(1, Math.round(s.duration * fps))}));

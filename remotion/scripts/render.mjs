@@ -33,6 +33,8 @@ if (shortDir) {
 
 const {serveUrl, composition} = await prepare(inputProps);
 inputProps = inputProps ?? composition.props;
+// --frames 0-90 renderiza solo ese tramo (para pruebas rápidas).
+const range = arg('frames')?.split('-').map(Number);
 let last = -1;
 await renderMedia({
   composition,
@@ -42,7 +44,8 @@ await renderMedia({
   outputLocation: output,
   inputProps,
   ...browserOptions(),
-  timeoutInMilliseconds: 120000,
+  timeoutInMilliseconds: 240000,
+  ...(range ? {frameRange: [range[0], range[1]]} : {}),
   // Pestañas en paralelo. En máquinas chicas conviene bajarlo: REMOTION_CONCURRENCY=2
   concurrency: process.env.REMOTION_CONCURRENCY ? Number(process.env.REMOTION_CONCURRENCY) : null,
   onProgress: ({progress}) => {

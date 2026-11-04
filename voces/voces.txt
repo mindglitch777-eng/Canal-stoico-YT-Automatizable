@@ -1,0 +1,11 @@
+en-GB-RyanNeural	Friendly, Positive
+en-GB-ThomasNeural	Friendly, Positive
+en-US-AndrewMultilingualNeural	Warm, Confident, Authentic, Honest
+en-US-AndrewNeural	Warm, Confident, Authentic, Honest
+en-US-BrianMultilingualNeural	Approachable, Casual, Sincere
+en-US-BrianNeural	Approachable, Casual, Sincere
+en-US-ChristopherNeural	Reliable, Authority
+en-US-EricNeural	Rational
+en-US-GuyNeural	Passion
+en-US-RogerNeural	Lively
+en-US-SteffanNeural	Rational

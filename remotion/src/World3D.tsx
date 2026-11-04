@@ -93,6 +93,8 @@ const moodFor = (s: Scene | undefined, local: number): Mood => {
       return {...base, speed: 0.6, colonnade: 0.8};
     case 'outro':
       return {...base, speed: 0.5, hero: 2, colonnade: 0.6};
+    default:
+      return base;
   }
 };
 

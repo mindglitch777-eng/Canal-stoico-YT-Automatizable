@@ -49,7 +49,7 @@ export const Flashes: React.FC = () => {
   const flareY = last ? 420 + hash(last.frame) * 600 : 700;
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
-      <AbsoluteFill style={{background: '#FFF6DF', opacity: Math.min(0.55, scene * 0.5), mixBlendMode: 'screen'}} />
+      <AbsoluteFill style={{background: '#FFF6DF', opacity: Math.min(0.4, scene * 0.36), mixBlendMode: 'screen'}} />
       {gold > 0.05 && (
         <div
           style={{

@@ -1,10 +1,10 @@
-import type {Scene, Timeline, Word} from './types';
+import type {CustomScene, Scene, Timeline, Word} from './types';
 
 // Línea de tiempo de muestra (sin voz) con los 7 tipos de escena.
 // Sirve para la prueba de plantillas y como vista previa en Remotion Studio.
 
 type DistOmit<T, K extends PropertyKey> = T extends unknown ? Omit<T, K> : never;
-type Draft = DistOmit<Scene, 'start' | 'duration' | 'words'> & {duration?: number};
+type Draft = DistOmit<Exclude<Scene, CustomScene>, 'start' | 'duration' | 'words'> & {duration?: number};
 
 const fakeWords = (say: string, duration: number): Word[] => {
   const tokens = say.split(/\s+/).filter(Boolean);

@@ -13,6 +13,7 @@ import {Outro, Statement} from './scenes/Statement';
 import {TwoColumns} from './scenes/TwoColumns';
 import type {Scene, Timeline} from './types';
 import {World3D} from './World3D';
+import {customShorts} from './shorts';
 
 export type SceneProps<S extends Scene = Scene> = {scene: S; durationInFrames: number; startFrame: number; index: number};
 
@@ -33,6 +34,9 @@ const SceneBody: React.FC<SceneProps> = (p) => {
       return <Statement {...p} scene={scene} />;
     case 'outro':
       return <Outro {...p} scene={scene} />;
+    case 'custom':
+      // Sin composición propia: muestra su texto como una frase (prototipo rápido).
+      return <Statement {...p} scene={{...scene, type: 'statement', text: scene.onScreen ?? ''}} />;
   }
 };
 
@@ -51,11 +55,51 @@ const duplicated = (scene: Scene) => {
   return on !== '' && norm(on) === norm(scene.say);
 };
 
+// Capas comunes a todos los videos: voz, música y efectos, subtítulos.
+const Voice: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}>; soundtrack?: string | null}> = ({scenes, spans, soundtrack}) => (
+  <>
+    {scenes.map((scene, i) =>
+      scene.audio ? (
+        <Sequence key={`a${i}`} from={spans[i].from} durationInFrames={spans[i].dur} layout="none">
+          <Audio src={staticFile(scene.audio)} />
+        </Sequence>
+      ) : null,
+    )}
+    {soundtrack ? <Audio src={staticFile(soundtrack)} /> : null}
+  </>
+);
+
+const CaptionsLayer: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}>; skip?: number[]}> = ({scenes, spans, skip = []}) => (
+  <>
+    {scenes.map((scene, i) =>
+      duplicated(scene) || skip.includes(i + 1) ? null : (
+        <Sequence key={`c${i}`} from={spans[i].from} durationInFrames={spans[i].dur} layout="none">
+          <Captions words={scene.words} gold={goldWords(onScreenText(scene))} />
+        </Sequence>
+      ),
+    )}
+  </>
+);
+
 export const Short: React.FC<Timeline> = (timeline) => {
   useFontsReady();
   const {scenes, captions = true} = timeline;
   const {fps} = useVideoConfig();
   const spans = scenes.map((s) => ({from: Math.round(s.start * fps), dur: Math.max(1, Math.round(s.duration * fps))}));
+  // Video a medida: si el Short tiene su propia composición (src/shorts/<id>/), se usa esa.
+  const custom = customShorts[timeline.id];
+  if (custom) {
+    const Custom = custom.component;
+    return (
+      <DirectorProvider timeline={timeline}>
+        <AbsoluteFill style={{overflow: 'hidden', backgroundColor: '#050505'}}>
+          <Custom timeline={timeline} spans={spans} />
+          {captions ? <CaptionsLayer scenes={scenes} spans={spans} skip={custom.noCaptions} /> : null}
+          <Voice scenes={scenes} spans={spans} soundtrack={timeline.soundtrack} />
+        </AbsoluteFill>
+      </DirectorProvider>
+    );
+  }
   return (
     <DirectorProvider timeline={timeline}>
       <AbsoluteFill style={{overflow: 'hidden'}}>
@@ -69,23 +113,10 @@ export const Short: React.FC<Timeline> = (timeline) => {
           ))}
         </Camera>
         <Flashes />
-        {captions &&
-          scenes.map((scene, i) =>
-            duplicated(scene) ? null : (
-              <Sequence key={`c${i}`} from={spans[i].from} durationInFrames={spans[i].dur} layout="none">
-                <Captions words={scene.words} gold={goldWords(onScreenText(scene))} />
-              </Sequence>
-            ),
-          )}
+        {captions ? <CaptionsLayer scenes={scenes} spans={spans} /> : null}
         <Lens />
         <Progress />
-        {scenes.map((scene, i) =>
-          scene.audio ? (
-            <Sequence key={`a${i}`} from={spans[i].from} durationInFrames={spans[i].dur} layout="none">
-              <Audio src={staticFile(scene.audio)} />
-            </Sequence>
-          ) : null,
-        )}
+        <Voice scenes={scenes} spans={spans} soundtrack={timeline.soundtrack} />
       </AbsoluteFill>
     </DirectorProvider>
   );

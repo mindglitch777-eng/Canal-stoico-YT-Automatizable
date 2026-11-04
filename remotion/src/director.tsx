@@ -42,6 +42,8 @@ export const onScreenText = (scene: Scene) => {
       return scene.quote;
     case 'counter':
       return scene.label;
+    case 'custom':
+      return typeof scene.onScreen === 'string' ? scene.onScreen : '';
     default:
       return '';
   }

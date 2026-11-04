@@ -1,0 +1,7 @@
+node_modules/
+remotion/out/
+remotion/public/_render/
+shorts/*/build/
+__pycache__/
+*.pyc
+.env

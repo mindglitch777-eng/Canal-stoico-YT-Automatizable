@@ -36,7 +36,8 @@ Probado (04/11/2026):
 - **Producción de punta a punta con voz real: funciona.** El workflow "Render de Short" generó `ejemplo-seneca.mp4` (33,8 s, 1080x1920, voz Andrew) desde el `short.json`.
 - Los 3 workflows (plantillas, render, voces) corrieron bien en Actions.
 - Muestras de voces generadas (11 voces masculinas en EE. UU. y Reino Unido, "normal" y "calmo") y enviadas al dueño. **Falta que elija.**
-- En la sesión en la nube, el video completo local falla o va muy lento: la carga de fuentes se cuelga en pestañas nuevas del Chromium local (pasa los 118 s). Las imágenes sueltas andan. En Actions no pasa, así que los videos se renderizan allá.
+- Plantillas v2 con voz real: el Short de Séneca renderizó bien en Actions (33,8 s, unos 30 min de render por el 3D por software).
+- El corte de los renders largos ("delayRender ... not cleared") venía de esperar las fuentes a nivel de módulo; se arregló con `useFontsReady()` dentro de `Short`. Ahora el render completo también anda en la sesión en la nube (lento: ~1,5 s por cuadro con una pestaña; usar `--frames A-B` para probar un tramo).
 
 Rama `salidas`: los workflows de voces, render e imágenes suben ahí sus resultados (`voces/`, `shorts/run-N/`, `imagenes/<búsqueda>/`), así el dueño los abre desde el celular en github.com y Claude los trae con `git fetch origin salidas` (los artifacts de Actions no se pueden bajar desde la sesión en la nube). La rama no comparte historia con main.
 

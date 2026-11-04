@@ -67,6 +67,13 @@ Campos comunes de cada escena: `type` y `say` (lo que dice la voz). En los texto
 | `statement` | `text` | Frase central con palabras en oro | 2-4 líneas |
 | `outro` | `text` | Cierre con círculo que se completa y la marca | 2 líneas; idealmente conecta con el gancho |
 
+**Cómo el guion maneja la edición (plantillas v2):**
+- Las palabras entre `*asteriscos*` no solo salen en oro: cuando la voz las dice disparan un golpe (destello, zoom, onda expansiva, brillo del 3D). Conviene 1 o 2 por escena, en las palabras que pesan.
+- El texto en pantalla entra palabra por palabra al ritmo de la voz si coincide con lo que se dice; si no coincide, entra en cascada.
+- `quote`: si la voz pone contexto antes de la cita, primero aparece el autor en grande y después la cita cuando la voz la dice.
+- `counter`: el número frena cuando la voz dice la cifra (un número o una palabra como "twice", "half", "ten").
+- `chart` con `trend: "down"`: la caída arranca después del punto más alto, con choque rojo.
+
 **Subtítulos:** salen solos, palabra por palabra, a partir de la voz. Si el texto en pantalla de una escena es igual a su `say`, esa escena no repite subtítulos.
 
 Ejemplo completo: `shorts/ejemplo-seneca/short.json`.

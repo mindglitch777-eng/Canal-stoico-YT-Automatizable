@@ -24,7 +24,7 @@ Canal faceless de YouTube. Este archivo es el contexto del proyecto para cada se
 
 Hecho y subido:
 - Skills de YouTube en `.claude/skills/` (ver abajo).
-- Plantillas de animación en `remotion/` (7 tipos de escena), scripts de prueba y render.
+- Plantillas de animación en `remotion/` (7 tipos de escena), scripts de prueba y render. **Versión 2** con mundo 3D, cámara con cortes y golpes sincronizados (ver "Código de las plantillas").
 - Voz: `tools/tts.py` (Edge TTS por escena con tiempos por palabra) y `tools/voice_samples.py`.
 - Workflows de GitHub Actions: prueba de plantillas, render de Short, muestras de voces.
 - Plantilla maestra del guion: `prompts/master-short.md` (formato + reglas de retención aportadas por el dueño vía Grok).
@@ -42,9 +42,7 @@ Rama `salidas`: los workflows de voces, render e imágenes suben ahí sus result
 
 Para disparar un workflow desde la sesión: herramienta de GitHub `actions_run_trigger` con `ref` = la rama de trabajo (corre la versión de esa rama, pero el archivo del workflow tiene que existir también en main).
 
-Observaciones del primer Short para decidir con el dueño:
-- Las escenas de gancho, cita, columnas y gráfico ocupan el tercio de arriba; la mitad de abajo queda vacía salvo los subtítulos.
-- Subtítulos: la palabra activa se pegaba a las vecinas (corregido en `Captions.tsx`).
+Observaciones del primer Short (versión 1): el contenido ocupaba solo el tercio de arriba y los subtítulos se pegaban. Las dos cosas se resolvieron en la versión 2.
 
 ## Cuando el dueño diga "ok" para probar la producción
 
@@ -89,15 +87,21 @@ shorts/<id>/short.json  ──tools/tts.py──▶  shorts/<id>/build/voice/sNN
 
 Variables: `REMOTION_BROWSER_EXECUTABLE` (navegador local), `REMOTION_CONCURRENCY` (pestañas en paralelo).
 
-### Código de las plantillas (`remotion/src/`)
+### Código de las plantillas (`remotion/src/`) — versión 2 (04/11/2026)
 
-- `types.ts`: contrato de datos (`Timeline`, `Scene`, `Word`).
-- `theme.ts`: colores, tipografías, zona segura de Shorts (la interfaz tapa abajo y a la derecha).
-- `Short.tsx`: compone escenas, audio y subtítulos. `Root.tsx`: composición "Short".
-- `scenes/`: `Hook`, `Quote`, `TwoColumns`, `Chart`, `Counter`, `Statement` (incluye `Outro`).
-- `Captions.tsx`: subtítulos palabra por palabra en oro. `Background.tsx`: fondo con luz, columnas y grano.
-- `demo.ts`: línea de tiempo de muestra con los 7 tipos (sin voz).
-- `fonts.ts`: Cormorant Garamond e Inter desde `public/fonts` (licencia OFL, archivos incluidos).
+Pedido del dueño: edición de nivel profesional, "dopamina constante", 3D y efectos inesperados. Capas, de atrás hacia adelante:
+
+- `Background.tsx`: negro cálido con luz que respira.
+- `World3D.tsx` (three.js vía `@remotion/three`): la cámara vuela por una columnata de la Stoa entre polvo de oro. Cambia de ánimo por escena: la moneda pasa volando en el gancho, llueven monedas en `counter`, la luz se vuelve roja en un `chart` que cae y hay una moneda protagonista en `outro`. Todo depende del cuadro, sin reloj.
+- `fx.tsx` → `Camera`: deriva 3D, un corte de plano cada ~1,5 s (zoom/ángulo distinto), golpe de zoom, temblor y aberración cromática en cada golpe. También tiene `transitionStyle`, que rota 5 transiciones entre escenas: zoom, latigazo, giro 3D, glitch y caída.
+- `scenes/`: escenas centradas en la zona segura (`stage.tsx`).
+- `fx.tsx` → `Flashes` (destello en cada escena y barrido anamórfico en cada palabra dorada), `Lens` (filtraciones de luz, grano, viñeta), `Progress` (barra de progreso arriba).
+- `Captions.tsx`: subtítulos tipo karaoke (bloques de 3 palabras con rebote, placa dorada en la palabra que suena, palabras clave en oro).
+- `director.tsx`: calcula golpes (inicio de escena, palabras `*doradas*` cuando la voz las dice, números), planos y sincronía texto-voz. Todas las capas leen de acá.
+- `kinetic.tsx`: `KineticText` (palabras que entran cuando la voz las dice: slam, rise, flip, mask), `goldStyle` (oro con extrusión 3D y brillo que pasa), `Decode` (texto que se descifra), `Shockwave`.
+- `types.ts`, `theme.ts`, `demo.ts`, `fonts.ts`: igual que antes. El formato de `short.json` no cambió.
+
+Render: WebGL por software (`REMOTION_GL`, por defecto `swangle`, sirve sin GPU). `npm run test:templates -- --at 0.15,0.5,0.9` saca 3 cuadros por escena. El workflow "Prueba de plantillas" publica `demo.mp4` y la hoja de contactos en `salidas/plantillas/run-N/`.
 
 ## Monetización: fechas clave
 

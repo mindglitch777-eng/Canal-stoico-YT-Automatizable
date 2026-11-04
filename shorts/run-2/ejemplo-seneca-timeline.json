@@ -1,0 +1,580 @@
+{
+  "id": "ejemplo-seneca",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "Seneca · c. 4 BC – AD 65",
+      "text": "One of Rome's *richest* men\npracticed being *poor.*",
+      "say": "One of Rome's richest men practiced being poor. On purpose.",
+      "audio": "shorts/ejemplo-seneca/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 4.57,
+      "words": [
+        {
+          "text": "One",
+          "start": 0.106,
+          "end": 0.226
+        },
+        {
+          "text": "of",
+          "start": 0.239,
+          "end": 0.346
+        },
+        {
+          "text": "Rome's",
+          "start": 0.359,
+          "end": 0.705
+        },
+        {
+          "text": "richest",
+          "start": 0.718,
+          "end": 1.183
+        },
+        {
+          "text": "men",
+          "start": 1.197,
+          "end": 1.556
+        },
+        {
+          "text": "practiced",
+          "start": 1.569,
+          "end": 2.114
+        },
+        {
+          "text": "being",
+          "start": 2.128,
+          "end": 2.367
+        },
+        {
+          "text": "poor.",
+          "start": 2.38,
+          "end": 2.806
+        },
+        {
+          "text": "On",
+          "start": 3.245,
+          "end": 3.364
+        },
+        {
+          "text": "purpose.",
+          "start": 3.378,
+          "end": 3.923
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Is this the condition that I feared?",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 18",
+      "say": "He told a friend: spend a few days on the cheapest food and the roughest clothes. Then ask yourself, is this the condition that I feared?",
+      "audio": "shorts/ejemplo-seneca/build/voice/s02.mp3",
+      "start": 4.57,
+      "duration": 8.89,
+      "words": [
+        {
+          "text": "He",
+          "start": 0.12,
+          "end": 0.173
+        },
+        {
+          "text": "told",
+          "start": 0.186,
+          "end": 0.399
+        },
+        {
+          "text": "a",
+          "start": 0.412,
+          "end": 0.439
+        },
+        {
+          "text": "friend:",
+          "start": 0.452,
+          "end": 0.851
+        },
+        {
+          "text": "spend",
+          "start": 1.25,
+          "end": 1.503
+        },
+        {
+          "text": "a",
+          "start": 1.516,
+          "end": 1.569
+        },
+        {
+          "text": "few",
+          "start": 1.582,
+          "end": 1.822
+        },
+        {
+          "text": "days",
+          "start": 1.835,
+          "end": 2.181
+        },
+        {
+          "text": "on",
+          "start": 2.194,
+          "end": 2.274
+        },
+        {
+          "text": "the",
+          "start": 2.287,
+          "end": 2.367
+        },
+        {
+          "text": "cheapest",
+          "start": 2.38,
+          "end": 2.899
+        },
+        {
+          "text": "food",
+          "start": 2.912,
+          "end": 3.338
+        },
+        {
+          "text": "and",
+          "start": 3.471,
+          "end": 3.59
+        },
+        {
+          "text": "the",
+          "start": 3.604,
+          "end": 3.683
+        },
+        {
+          "text": "roughest",
+          "start": 3.697,
+          "end": 4.109
+        },
+        {
+          "text": "clothes.",
+          "start": 4.122,
+          "end": 4.734
+        },
+        {
+          "text": "Then",
+          "start": 5.186,
+          "end": 5.346
+        },
+        {
+          "text": "ask",
+          "start": 5.359,
+          "end": 5.652
+        },
+        {
+          "text": "yourself,",
+          "start": 5.665,
+          "end": 6.184
+        },
+        {
+          "text": "is",
+          "start": 6.582,
+          "end": 6.676
+        },
+        {
+          "text": "this",
+          "start": 6.689,
+          "end": 6.875
+        },
+        {
+          "text": "the",
+          "start": 6.888,
+          "end": 6.995
+        },
+        {
+          "text": "condition",
+          "start": 7.008,
+          "end": 7.487
+        },
+        {
+          "text": "that",
+          "start": 7.5,
+          "end": 7.606
+        },
+        {
+          "text": "I",
+          "start": 7.62,
+          "end": 7.713
+        },
+        {
+          "text": "feared?",
+          "start": 7.726,
+          "end": 8.231
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "from": 0,
+      "to": 2,
+      "suffix": "×",
+      "label": "how much harder a loss hits than an equal gain",
+      "say": "Modern research says a loss hits about twice as hard as an equal gain.",
+      "audio": "shorts/ejemplo-seneca/build/voice/s03.mp3",
+      "start": 13.46,
+      "duration": 5.026,
+      "words": [
+        {
+          "text": "Modern",
+          "start": 0.106,
+          "end": 0.426
+        },
+        {
+          "text": "research",
+          "start": 0.439,
+          "end": 0.944
+        },
+        {
+          "text": "says",
+          "start": 0.957,
+          "end": 1.144
+        },
+        {
+          "text": "a",
+          "start": 1.157,
+          "end": 1.21
+        },
+        {
+          "text": "loss",
+          "start": 1.223,
+          "end": 1.622
+        },
+        {
+          "text": "hits",
+          "start": 1.636,
+          "end": 1.848
+        },
+        {
+          "text": "about",
+          "start": 1.862,
+          "end": 2.154
+        },
+        {
+          "text": "twice",
+          "start": 2.168,
+          "end": 2.62
+        },
+        {
+          "text": "as",
+          "start": 2.633,
+          "end": 2.739
+        },
+        {
+          "text": "hard",
+          "start": 2.753,
+          "end": 3.205
+        },
+        {
+          "text": "as",
+          "start": 3.404,
+          "end": 3.537
+        },
+        {
+          "text": "an",
+          "start": 3.551,
+          "end": 3.644
+        },
+        {
+          "text": "equal",
+          "start": 3.763,
+          "end": 4.056
+        },
+        {
+          "text": "gain.",
+          "start": 4.069,
+          "end": 4.388
+        }
+      ]
+    },
+    {
+      "type": "twoColumns",
+      "left": {
+        "title": "In your control",
+        "items": [
+          "What you spend",
+          "What you need",
+          "How you react"
+        ]
+      },
+      "right": {
+        "title": "Not in your control",
+        "items": [
+          "The market",
+          "Your boss",
+          "Bad luck"
+        ]
+      },
+      "say": "So the fear is bigger than the loss. Once you know you can live on less, a crash or a bad month loses its grip.",
+      "audio": "shorts/ejemplo-seneca/build/voice/s04.mp3",
+      "start": 18.486,
+      "duration": 7.498,
+      "words": [
+        {
+          "text": "So",
+          "start": 0.106,
+          "end": 0.213
+        },
+        {
+          "text": "the",
+          "start": 0.226,
+          "end": 0.319
+        },
+        {
+          "text": "fear",
+          "start": 0.332,
+          "end": 0.678
+        },
+        {
+          "text": "is",
+          "start": 0.692,
+          "end": 0.838
+        },
+        {
+          "text": "bigger",
+          "start": 0.851,
+          "end": 1.157
+        },
+        {
+          "text": "than",
+          "start": 1.17,
+          "end": 1.303
+        },
+        {
+          "text": "the",
+          "start": 1.317,
+          "end": 1.396
+        },
+        {
+          "text": "loss.",
+          "start": 1.41,
+          "end": 1.981
+        },
+        {
+          "text": "Once",
+          "start": 2.42,
+          "end": 2.593
+        },
+        {
+          "text": "you",
+          "start": 2.606,
+          "end": 2.713
+        },
+        {
+          "text": "know",
+          "start": 2.726,
+          "end": 2.899
+        },
+        {
+          "text": "you",
+          "start": 2.912,
+          "end": 3.059
+        },
+        {
+          "text": "can",
+          "start": 3.072,
+          "end": 3.231
+        },
+        {
+          "text": "live",
+          "start": 3.245,
+          "end": 3.418
+        },
+        {
+          "text": "on",
+          "start": 3.431,
+          "end": 3.617
+        },
+        {
+          "text": "less,",
+          "start": 3.63,
+          "end": 4.096
+        },
+        {
+          "text": "a",
+          "start": 4.295,
+          "end": 4.335
+        },
+        {
+          "text": "crash",
+          "start": 4.348,
+          "end": 4.934
+        },
+        {
+          "text": "or",
+          "start": 5.08,
+          "end": 5.199
+        },
+        {
+          "text": "a",
+          "start": 5.213,
+          "end": 5.266
+        },
+        {
+          "text": "bad",
+          "start": 5.279,
+          "end": 5.625
+        },
+        {
+          "text": "month",
+          "start": 5.638,
+          "end": 5.997
+        },
+        {
+          "text": "loses",
+          "start": 6.011,
+          "end": 6.33
+        },
+        {
+          "text": "its",
+          "start": 6.343,
+          "end": 6.476
+        },
+        {
+          "text": "grip.",
+          "start": 6.489,
+          "end": 6.862
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "He wasn't preparing to be *poor.*\nHe was preparing to be *free.*",
+      "say": "He wasn't preparing to be poor. He was preparing to be free.",
+      "audio": "shorts/ejemplo-seneca/build/voice/s05.mp3",
+      "start": 25.984,
+      "duration": 4.09,
+      "words": [
+        {
+          "text": "He",
+          "start": 0.12,
+          "end": 0.186
+        },
+        {
+          "text": "wasn't",
+          "start": 0.199,
+          "end": 0.492
+        },
+        {
+          "text": "preparing",
+          "start": 0.505,
+          "end": 0.984
+        },
+        {
+          "text": "to",
+          "start": 0.997,
+          "end": 1.077
+        },
+        {
+          "text": "be",
+          "start": 1.09,
+          "end": 1.223
+        },
+        {
+          "text": "poor.",
+          "start": 1.237,
+          "end": 1.662
+        },
+        {
+          "text": "He",
+          "start": 2.114,
+          "end": 2.168
+        },
+        {
+          "text": "was",
+          "start": 2.181,
+          "end": 2.314
+        },
+        {
+          "text": "preparing",
+          "start": 2.327,
+          "end": 2.806
+        },
+        {
+          "text": "to",
+          "start": 2.819,
+          "end": 2.899
+        },
+        {
+          "text": "be",
+          "start": 2.912,
+          "end": 3.032
+        },
+        {
+          "text": "free.",
+          "start": 3.045,
+          "end": 3.431
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "text": "Try it for *one day.*\nWhat are you really *afraid* of?",
+      "say": "Try it for one day. What are you really afraid of?",
+      "audio": "shorts/ejemplo-seneca/build/voice/s06.mp3",
+      "start": 30.074,
+      "duration": 3.226,
+      "words": [
+        {
+          "text": "Try",
+          "start": 0.106,
+          "end": 0.266
+        },
+        {
+          "text": "it",
+          "start": 0.279,
+          "end": 0.346
+        },
+        {
+          "text": "for",
+          "start": 0.359,
+          "end": 0.492
+        },
+        {
+          "text": "one",
+          "start": 0.505,
+          "end": 0.691
+        },
+        {
+          "text": "day.",
+          "start": 0.705,
+          "end": 0.984
+        },
+        {
+          "text": "What",
+          "start": 1.423,
+          "end": 1.516
+        },
+        {
+          "text": "are",
+          "start": 1.529,
+          "end": 1.596
+        },
+        {
+          "text": "you",
+          "start": 1.609,
+          "end": 1.755
+        },
+        {
+          "text": "really",
+          "start": 1.769,
+          "end": 2.021
+        },
+        {
+          "text": "afraid",
+          "start": 2.035,
+          "end": 2.407
+        },
+        {
+          "text": "of?",
+          "start": 2.42,
+          "end": 2.593
+        }
+      ]
+    }
+  ],
+  "total": 33.3
+}

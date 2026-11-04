@@ -1,6 +1,6 @@
 # Render de Shorts con voz: Edge TTS -> línea de tiempo -> Remotion -> MP4.
 # Se dispara solo al subir o cambiar un shorts/<id>/short.json, o a mano indicando la carpeta.
-# El MP4 queda como artifact del run (pestaña Actions -> el run -> Artifacts).
+# El MP4 queda en la rama `salidas` (carpeta shorts/) y como artifact del run.
 name: Render de Short
 
 on:
@@ -20,6 +20,9 @@ on:
 concurrency:
   group: render-short-${{ github.ref }}
   cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   render:
@@ -81,3 +84,5 @@ jobs:
           name: shorts-renderizados
           path: salida/
           retention-days: 14
+      - name: Publicar en la rama salidas
+        run: bash tools/publish_outputs.sh salida "shorts/run-${{ github.run_number }}" "Shorts renderizados (run ${{ github.run_id }})"

@@ -110,7 +110,7 @@ export const buildDirector = (tl: Timeline): DirectorData => {
     const start = Math.round(s.start * fps);
     const dur = Math.round(s.duration * fps);
     sceneStarts.push(start);
-    hits.push({frame: start, strength: 1, kind: 'scene'});
+    hits.push({frame: start, strength: si === 0 ? 0.35 : 1, kind: 'scene'}); // el primer cuadro no debe quedar blanco
     const gold = new Set(goldWords(onScreenText(s)));
     for (const w of s.words) {
       const n = norm(w.text);

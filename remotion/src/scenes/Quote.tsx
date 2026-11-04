@@ -43,9 +43,10 @@ export const Quote: React.FC<SceneProps<QuoteScene>> = ({scene, startFrame}) => 
             style={{
               fontFamily: font.serif,
               fontWeight: 700,
-              fontSize: 230,
+              // Achica los nombres largos para que entren en el ancho
+              fontSize: Math.min(200, Math.round(1500 / Math.max(4, scene.author.length))),
               lineHeight: 0.9,
-              letterSpacing: interpolate(frame, [0, 60], [0.3, 0.04], clamp) + 'em',
+              letterSpacing: interpolate(frame, [0, 60], [0.16, 0.02], clamp) + 'em',
               transform: `scale(${interpolate(frame, [0, 120], [1.12, 1], clamp) + energy * 0.04})`,
               ...goldStyle(frame, 3, 10, 1.2),
             }}

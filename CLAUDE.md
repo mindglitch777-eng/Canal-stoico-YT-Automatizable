@@ -18,7 +18,7 @@ Canal faceless de YouTube. Este archivo es el contexto del proyecto para cada se
 - Grok hace la investigación externa (competencia, tendencias, datos que Claude no ve) y el dueño trae sus respuestas. Claude construye: código, guiones, animación, automatización.
 - Prefiere avanzar ordenado, por fases, y decidir antes de ejecutar.
 
-## Estado actual (04/11/2026)
+## Estado actual (04/11/2026, actualizado)
 
 **Fase actual: 3 — producción.** La investigación de competencia (fase 2) se hace después, por decisión del dueño.
 
@@ -29,14 +29,22 @@ Hecho y subido:
 - Workflows de GitHub Actions: prueba de plantillas, render de Short, muestras de voces.
 - Plantilla maestra del guion: `prompts/master-short.md` (formato + reglas de retención aportadas por el dueño vía Grok).
 - Short de ejemplo: `shorts/ejemplo-seneca/short.json`.
+- Imágenes de dominio público: `tools/pd_images.py` + workflow "Imágenes de dominio público" (Met, Art Institute of Chicago, Wikimedia Commons; solo dominio público o CC0, con créditos y hoja de contactos). **No probado todavía** (la sesión en la nube no llega a esos sitios).
 
-Probado:
-- En una sesión en la nube, las 7 plantillas renderizaron cuadros sin errores (`npm run test:templates` con Chromium local) y se revisaron visualmente.
+Probado (04/11/2026):
+- Las 7 plantillas renderizan sin errores (local y en Actions).
+- **Producción de punta a punta con voz real: funciona.** El workflow "Render de Short" generó `ejemplo-seneca.mp4` (33,8 s, 1080x1920, voz Andrew) desde el `short.json`.
+- Los 3 workflows (plantillas, render, voces) corrieron bien en Actions.
+- Muestras de voces generadas (11 voces masculinas en EE. UU. y Reino Unido, "normal" y "calmo") y enviadas al dueño. **Falta que elija.**
+- En la sesión en la nube, el video completo local falla o va muy lento: la carga de fuentes se cuelga en pestañas nuevas del Chromium local (pasa los 118 s). Las imágenes sueltas andan. En Actions no pasa, así que los videos se renderizan allá.
 
-**No probado todavía:**
-- El video completo de muestra. El primer intento en la sesión en la nube falló porque la carga de una fuente pasó los 28 s con varias pestañas en paralelo. Ya se agregó `timeoutInMilliseconds: 120000` y la variable `REMOTION_CONCURRENCY`, pero no se volvió a probar.
-- `tools/tts.py` con voz real (la sesión en la nube no llega a Edge TTS). Solo se escribió; corre en Actions.
-- Ningún workflow de Actions se corrió todavía.
+Rama `salidas`: los workflows de voces, render e imágenes suben ahí sus resultados (`voces/`, `shorts/run-N/`, `imagenes/<búsqueda>/`), así el dueño los abre desde el celular en github.com y Claude los trae con `git fetch origin salidas` (los artifacts de Actions no se pueden bajar desde la sesión en la nube). La rama no comparte historia con main.
+
+Para disparar un workflow desde la sesión: herramienta de GitHub `actions_run_trigger` con `ref` = la rama de trabajo (corre la versión de esa rama, pero el archivo del workflow tiene que existir también en main).
+
+Observaciones del primer Short para decidir con el dueño:
+- Las escenas de gancho, cita, columnas y gráfico ocupan el tercio de arriba; la mitad de abajo queda vacía salvo los subtítulos.
+- Subtítulos: la palabra activa se pegaba a las vecinas (corregido en `Captions.tsx`).
 
 ## Cuando el dueño diga "ok" para probar la producción
 
@@ -124,11 +132,11 @@ Revisados antes de instalar: sin llamadas de red ocultas ni código peligroso.
 
 ## Pendiente
 
-1. Probar la producción de punta a punta (ver "Cuando el dueño diga ok").
-2. Elegir la voz con las muestras.
-3. **Música y efectos** con licencia comercial clara (todavía no hay; los Shorts salen solo con voz).
-4. Imágenes o recursos visuales de dominio público, si el dueño quiere sumar estatuas o arte clásico.
-5. Subida automática por API (OAuth).
+1. ~~Probar la producción de punta a punta~~ ✅ (ver "Probado").
+2. Elegir la voz con las muestras (ya enviadas).
+3. **Música y efectos** con licencia comercial clara (el dueño lo deja para después; los Shorts salen solo con voz).
+4. Imágenes de dominio público: probar el workflow y sumar una escena con imagen a las plantillas.
+5. Subida automática por API (OAuth): después de crear el canal (todavía no existe).
 6. Cómo exportar la retención de YouTube Studio desde el celular.
 7. Distribución a TikTok y Reels (opcional).
 

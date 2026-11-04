@@ -49,7 +49,8 @@ export const Captions: React.FC<{words: Word[]}> = ({words}) => {
             key={i}
             style={{
               display: 'inline-block',
-              marginRight: '0.28em',
+              // Margen a los dos lados: la palabra activa crece desde el centro sin pegarse a las vecinas.
+              margin: '0 0.2em',
               color: active ? color.gold : color.ink,
               transform: `scale(${active ? 1.08 : 1})`,
             }}

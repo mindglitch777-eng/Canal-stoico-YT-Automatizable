@@ -29,7 +29,15 @@ Regla permanente del dueño del canal (04/11/2026): **cada Short busca dopamina 
 
 ## Audio
 
-- Efecto en cada corte y en cada revelación, más música de fondo. Pendiente: se propone generar los efectos por código (propios, sin problema de licencia).
+- Efecto en cada corte y en cada revelación, y música del nicho que sigue la estructura del guion. **Todo generado por código** (decisión del dueño): ver `prompts/sonido.md`.
+
+## Dirección completa (lo que cada guion le pide a la producción)
+
+Además de `beat`, `reward` y `visual`, un guion completo trae:
+- Arriba: `belief_broken` (la creencia que rompe), `direction` (concepto, look, ritmo, cómo hace el loop) y `music` (estilo, tempo, secciones por escena, mezcla).
+- En cada escena: `onScreen` (lo que se lee), `camera`, `transition` (cómo pasa a la siguiente) y `sfx` (qué suena y en qué palabra).
+
+Ejemplo completo: `shorts/marco-aurelio-chatarra/short.json`.
 
 ## Campos obligatorios por escena en `short.json`
 

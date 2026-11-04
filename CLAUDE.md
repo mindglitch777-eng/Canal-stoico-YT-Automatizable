@@ -146,7 +146,8 @@ Revisados antes de instalar: sin llamadas de red ocultas ni código peligroso.
 2. Elegir la voz con las muestras (ya enviadas).
 2a. **Armar el soporte para videos a medida:** composición por Short en `remotion/src/shorts/<id>/` (registrada en `Root.tsx`), que el render elija si existe y si no use las escenas genéricas; primera: `seneca-300-millones`, cumpliendo cada `visual` de su `short.json`.
 2b. **Escenas de imagen literal** que pide `prompts/estandar-viral.md` (ver los campos `visual` de `shorts/seneca-300-millones`): transformaciones de objetos (toga → harapos, oro → pan), balanza, busto de mármol, montaña de monedas, texto que estalla. Las imágenes de dominio público (`tools/pd_images.py`) pueden servir para el busto.
-2c. **Efectos de sonido generados por código** (golpes, whoosh, monedas) sincronizados con los golpes del `director.tsx`; música después.
+2c. **Sonido y música generados por código** (pedido del dueño): ver `prompts/sonido.md` (paleta con recetas de síntesis, música del nicho por secciones, mezcla). Construir `tools/sfx/` y el mezclador; cada video pide sus sonidos en el `short.json`.
+2d. **Short más ambicioso hasta ahora: `shorts/marco-aurelio-chatarra/short.json`.** Rompe la creencia de que lo caro vale lo que cuesta (Marco Aurelio, *Meditaciones* 6.13). 11 escenas, ~46 s, gancho 72/STRONG. Pasa `check_short.py`. Trae dirección completa: concepto, look, `music` por secciones y, por escena, `visual`, `camera`, `transition` y `sfx`. Es el guion para el primer video **a medida** con sonido: hacerlo cumpliendo cada campo.
 3. **Música y efectos** con licencia comercial clara (el dueño lo deja para después; los Shorts salen solo con voz).
 4. Imágenes de dominio público: probar el workflow y sumar una escena con imagen a las plantillas.
 5. Subida automática por API (OAuth): después de crear el canal (todavía no existe).

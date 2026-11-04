@@ -3,6 +3,7 @@
 check_short.py — Control del estándar de viralidad (prompts/estandar-viral.md) sobre un short.json.
 
 Uso:  python3 tools/check_short.py shorts/<id>
+Controla principios, no formas: el tipo de escena es libre (videos a medida).
 Sale con código 1 si hay errores. Las duraciones se estiman (2,6 palabras/s + 0,25 s)
 salvo que exista build/timeline.json con la voz real.
 """
@@ -26,7 +27,9 @@ def words(s: str) -> list[str]:
 
 
 def on_screen(scene: dict) -> tuple[str, int]:
-    t = scene["type"]
+    t = scene.get("type", "custom")
+    if "onScreen" in scene:  # videos a medida: texto en pantalla declarado a mano
+        return " ".join(scene["onScreen"]) if isinstance(scene["onScreen"], list) else scene["onScreen"], MAX_ON_SCREEN
     if t in ("hook", "statement", "outro"):
         return scene.get("text", ""), MAX_ON_SCREEN
     if t == "quote":
@@ -54,14 +57,14 @@ def main() -> int:
     total = sum(durs)
     starts = [sum(durs[:i]) for i in range(len(durs))]
 
-    if scenes[0]["type"] != "hook":
-        errors.append("La primera escena tiene que ser 'hook'.")
+    if scenes[0].get("beat") != "hook":
+        errors.append("La primera escena tiene que tener beat 'hook' (la forma es libre).")
     if len(words(scenes[0]["say"])) > MAX_HOOK_SAID:
         errors.append(f"Gancho hablado de {len(words(scenes[0]['say']))} palabras (máx. {MAX_HOOK_SAID}).")
 
     prev = None
     for i, s in enumerate(scenes, start=1):
-        tag = f"Escena {i} ({s['type']})"
+        tag = f"Escena {i} ({s.get('type', 'custom')})"
         for f in ("beat", "reward", "visual"):
             if not s.get(f):
                 errors.append(f"{tag}: falta '{f}'.")
@@ -76,7 +79,7 @@ def main() -> int:
         n = len(words(txt))
         if n > limit:
             errors.append(f"{tag}: {n} palabras en pantalla (máx. {limit}): \"{txt}\"")
-        if s["type"] == "twoColumns":
+        if s.get("type") == "twoColumns":
             for side in ("left", "right"):
                 items = s[side]["items"]
                 if len(items) > 4 or any(len(words(it)) > 3 for it in items):
@@ -86,15 +89,14 @@ def main() -> int:
 
     twists = [i for i, s in enumerate(scenes) if s.get("beat") == "twist"]
     if not twists:
-        errors.append("No hay escena con beat 'twist'.")
+        warns.append("No hay escena con beat 'twist'.")
     for i in twists:
         pos = starts[i] / total
         if not 0.55 <= pos <= 0.75:
-            errors.append(f"El giro (escena {i + 1}) cae al {pos:.0%} del video (tiene que estar entre 55 % y 75 %).")
+            warns.append(f"El giro (escena {i + 1}) cae al {pos:.0%} del video (tiene que estar entre 55 % y 75 %).")
 
-    last = scenes[-1]
-    if last["type"] != "outro" or last.get("beat") != "loop":
-        errors.append("La última escena tiene que ser 'outro' con beat 'loop'.")
+    if scenes[-1].get("beat") != "loop":
+        warns.append("La última escena no tiene beat 'loop' (el final no empalma con el inicio).")
     if not spec.get("sources"):
         warns.append("Sin 'sources': cada cita o dato tendría que tener fuente.")
 

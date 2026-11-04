@@ -2,6 +2,10 @@
 
 Regla permanente del dueño del canal (04/11/2026): **cada Short busca dopamina y engagement máximos.** Visual y psicológicamente atrapante, con frases que rompan lo normal. Aplica a todo guion y a toda escena. `tools/check_short.py` verifica lo que se puede medir antes de renderizar.
 
+**Son principios, no un molde.** Cada video puede arrancar, verse y cerrar de forma completamente distinta. Nada visual es obligatorio en todos los videos (ni el 3D, ni la moneda, ni un tipo de entrada): se elige o se inventa lo que el guion necesite. Mientras más distinto y más loco sea lo que pide el guion, mejor.
+
+**Herramientas compartidas = solo lo que seguro se repite:** voz y tiempos por palabra (`tools/tts.py`), formato 1080x1920 con zona segura, carga de fuentes, sincronía texto-voz, render en Actions. Todo lo demás (subtítulos, 3D, cámara, transiciones, escenas viejas) es una biblioteca opcional: se usa si suma, se rompe o se reemplaza si no. Si algo nuevo se repite en varios videos, recién ahí se convierte en herramienta.
+
 ## Guion
 
 1. **Gancho en 1,5 s.** Una frase que contradiga lo esperado y una imagen que la muestre literalmente. Hablado: 12 palabras o menos. En pantalla: 6 palabras o menos.
@@ -21,7 +25,7 @@ Regla permanente del dueño del canal (04/11/2026): **cada Short busca dopamina 
 4. **6 palabras o menos en pantalla**, nunca cortadas por los bordes. Las citas pueden llegar a 10.
 5. **El primer cuadro tiene acción.** Nada de arrancar en negro o con fundido.
 6. **Contrastes alternados:** plano lejos y cerca, quieto y explosivo, oscuro y oro.
-7. **Un símbolo que se repite** en todo el canal (la moneda CF) para que se reconozca.
+7. **Identidad opcional:** se puede usar un símbolo del canal (la moneda CF), pero no es obligatorio.
 
 ## Audio
 
@@ -41,13 +45,13 @@ Regla permanente del dueño del canal (04/11/2026): **cada Short busca dopamina 
 python3 tools/check_short.py shorts/<id>
 ```
 
-Frena (error) si:
-- la primera escena no es `hook`, el gancho hablado pasa de 12 palabras o el texto en pantalla pasa de 6 (10 en citas),
-- falta `beat`, `reward` o `visual`,
-- dos escenas seguidas tienen la misma `reward`,
-- no hay `twist`, o cae fuera del 55-75 % del video,
-- la última escena no es `outro` con `beat: loop`.
+El tipo de escena (`type`) es libre: en un video a medida puede ser cualquier cosa (o `custom`). Si la escena no usa los campos de texto de las escenas viejas, se declara lo que se lee en pantalla en `onScreen`.
 
-Avisa (warning) si una escena dura más de 4,5 s estimados.
+Frena (error) si:
+- la primera escena no tiene `beat: hook`, el gancho hablado pasa de 12 palabras o el texto en pantalla pasa de 6 (10 en citas),
+- falta `beat`, `reward` o `visual`,
+- dos escenas seguidas tienen la misma `reward`.
+
+Avisa (warning) si una escena dura más de 4,5 s estimados, si no hay `twist` o cae fuera del 55-75 %, o si el final no tiene `beat: loop`.
 
 Lo que no se mide solo: texto cortado por los bordes y primer cuadro oscuro. Se revisan con `npm run test:templates -- --short shorts/<id> --at 0,0.5,0.95` antes del render final.

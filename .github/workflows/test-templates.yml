@@ -1,0 +1,44 @@
+# Prueba de plantillas: typecheck, un cuadro por escena, hoja de contactos y video de muestra sin voz.
+# Se dispara solo al cambiar algo en remotion/ o a mano desde la pestaña Actions.
+name: Prueba de plantillas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "remotion/**"
+      - ".github/workflows/test-templates.yml"
+
+concurrency:
+  group: test-templates
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: remotion
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: remotion/package-lock.json
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Cuadros de cada plantilla
+        run: npm run test:templates
+      - name: Video de muestra (sin voz)
+        run: npm run render -- --demo
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prueba-plantillas
+          path: |
+            remotion/out/stills/
+            remotion/out/demo.mp4
+          retention-days: 14

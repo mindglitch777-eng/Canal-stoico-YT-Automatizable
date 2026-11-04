@@ -1,0 +1,52 @@
+{
+  "id": "ejemplo-seneca",
+  "title": "Seneca practiced being poor (on purpose)",
+  "voice": "en-US-AndrewNeural",
+  "rate": "-6%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "sources": [
+    "Seneca, Letters to Lucilius 18 (tr. R. M. Gummere, 1917): days of the cheapest fare and coarse dress, 'Is this the condition that I feared?'",
+    "Kahneman & Tversky (1979), Prospect Theory: losses loom larger than gains (often summarized as roughly twice)",
+    "Epictetus, Enchiridion 1: what is and is not up to us"
+  ],
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "Seneca · c. 4 BC – AD 65",
+      "text": "One of Rome's *richest* men\npracticed being *poor.*",
+      "say": "One of Rome's richest men practiced being poor. On purpose."
+    },
+    {
+      "type": "quote",
+      "quote": "Is this the condition that I feared?",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 18",
+      "say": "He told a friend: spend a few days on the cheapest food and the roughest clothes. Then ask yourself, is this the condition that I feared?"
+    },
+    {
+      "type": "counter",
+      "from": 0,
+      "to": 2,
+      "suffix": "×",
+      "label": "how much harder a loss hits than an equal gain",
+      "say": "Modern research says a loss hits about twice as hard as an equal gain."
+    },
+    {
+      "type": "twoColumns",
+      "left": {"title": "In your control", "items": ["What you spend", "What you need", "How you react"]},
+      "right": {"title": "Not in your control", "items": ["The market", "Your boss", "Bad luck"]},
+      "say": "So the fear is bigger than the loss. Once you know you can live on less, a crash or a bad month loses its grip."
+    },
+    {
+      "type": "statement",
+      "text": "He wasn't preparing to be *poor.*\nHe was preparing to be *free.*",
+      "say": "He wasn't preparing to be poor. He was preparing to be free."
+    },
+    {
+      "type": "outro",
+      "text": "Try it for *one day.*\nWhat are you really *afraid* of?",
+      "say": "Try it for one day. What are you really afraid of?"
+    }
+  ]
+}

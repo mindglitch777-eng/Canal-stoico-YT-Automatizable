@@ -26,7 +26,15 @@ const files = [];
 for (const [i, scene] of inputProps.scenes.entries()) {
   const frame = Math.round((scene.start + scene.duration * 0.8) * composition.fps);
   const file = join(outDir, `${String(i + 1).padStart(2, '0')}-${scene.type}.png`);
-  await renderStill({composition, serveUrl, output: file, frame, inputProps, ...browserOptions()});
+  await renderStill({
+    composition,
+    serveUrl,
+    output: file,
+    frame,
+    inputProps,
+    timeoutInMilliseconds: 120000,
+    ...browserOptions(),
+  });
   files.push(file);
   console.log(`OK ${scene.type} -> ${file}`);
 }

@@ -1,0 +1,83 @@
+# Render de Shorts con voz: Edge TTS -> línea de tiempo -> Remotion -> MP4.
+# Se dispara solo al subir o cambiar un shorts/<id>/short.json, o a mano indicando la carpeta.
+# El MP4 queda como artifact del run (pestaña Actions -> el run -> Artifacts).
+name: Render de Short
+
+on:
+  workflow_dispatch:
+    inputs:
+      short:
+        description: "Carpeta del Short (ej.: shorts/ejemplo-seneca)"
+        required: true
+      voice:
+        description: "Voz de Edge TTS (vacío = la del short.json)"
+        required: false
+  push:
+    branches: [main]
+    paths:
+      - "shorts/*/short.json"
+
+concurrency:
+  group: render-short-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Qué Shorts renderizar
+        id: list
+        env:
+          INPUT_SHORT: ${{ github.event.inputs.short }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -n "$INPUT_SHORT" ]; then
+            dirs="$INPUT_SHORT"
+          else
+            base="$BEFORE"
+            if [ -z "$base" ] || ! git cat-file -e "$base" 2>/dev/null; then base="HEAD~1"; fi
+            dirs=$(git diff --name-only "$base" HEAD -- 'shorts/*/short.json' | xargs -r -n1 dirname | sort -u | tr '\n' ' ')
+          fi
+          echo "dirs=$dirs" >> "$GITHUB_OUTPUT"
+          echo "Shorts: $dirs"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: remotion/package-lock.json
+      - run: npm ci
+        working-directory: remotion
+
+      - name: Voz y render
+        env:
+          DIRS: ${{ steps.list.outputs.dirs }}
+          VOICE: ${{ github.event.inputs.voice }}
+        run: |
+          set -e
+          mkdir -p salida
+          for d in $DIRS; do
+            echo "::group::$d"
+            if [ -n "$VOICE" ]; then python tools/tts.py "$d" --voice "$VOICE"; else python tools/tts.py "$d"; fi
+            (cd remotion && npm run render -- --short "$d")
+            cp "$d"/build/*.mp4 salida/
+            cp "$d"/build/timeline.json "salida/$(basename "$d")-timeline.json"
+            echo "::endgroup::"
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shorts-renderizados
+          path: salida/
+          retention-days: 14

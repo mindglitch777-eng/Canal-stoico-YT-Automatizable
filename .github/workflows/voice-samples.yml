@@ -1,0 +1,27 @@
+# Muestras de voces de Edge TTS para elegir la voz del canal.
+# Se corre a mano desde la pestaña Actions; los MP3 salen como artifact.
+name: Muestras de voces
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "tools/voice_samples.py"
+
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - run: python tools/voice_samples.py voice-samples
+      - uses: actions/upload-artifact@v4
+        with:
+          name: muestras-de-voces
+          path: voice-samples/
+          retention-days: 14

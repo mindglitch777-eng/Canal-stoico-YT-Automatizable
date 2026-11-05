@@ -18,7 +18,7 @@ on:
       - "shorts/*/short.json"
 
 concurrency:
-  group: render-short-${{ github.ref }}
+  group: render-short-${{ github.ref }}-${{ github.event.inputs.short }}
   cancel-in-progress: false
 
 permissions:

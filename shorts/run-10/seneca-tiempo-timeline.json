@@ -1,0 +1,739 @@
+{
+  "id": "seneca-tiempo",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never hand a stranger $100. Why hand your phone 3 hours?",
+      "onScreen": "$100? *No.*\n3 hours? *Sure.*",
+      "visual": "Cuadro 0: una mano le arranca de vuelta un billete de $100 a un extraño (rápido, casi violento). En la otra mano, el celular brilla y le chupa al dueño un chorro de arena dorada del pecho, como una aspiradora.",
+      "camera": "Pantalla partida: billete a la izquierda, celular a la derecha; en '3 hours' la derecha se come la izquierda.",
+      "transition": "La arena entra en la pantalla y se vuelve un contador.",
+      "sfx": [
+        {
+          "at": "billete",
+          "sound": "Billetera que se cierra de golpe"
+        },
+        {
+          "at": "'3 hours'",
+          "sound": "Succión digital + glitch"
+        }
+      ],
+      "pause_after": 0.4,
+      "audio": "shorts/seneca-tiempo/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 5.571,
+      "words": [
+        {
+          "text": "You'd",
+          "start": 0.03,
+          "end": 0.202
+        },
+        {
+          "text": "never",
+          "start": 0.217,
+          "end": 0.561
+        },
+        {
+          "text": "hand",
+          "start": 0.577,
+          "end": 0.858
+        },
+        {
+          "text": "a",
+          "start": 0.874,
+          "end": 0.921
+        },
+        {
+          "text": "stranger",
+          "start": 0.936,
+          "end": 1.561
+        },
+        {
+          "text": "$100.",
+          "start": 1.577,
+          "end": 2.749
+        },
+        {
+          "text": "Why",
+          "start": 3.264,
+          "end": 3.467
+        },
+        {
+          "text": "hand",
+          "start": 3.483,
+          "end": 3.733
+        },
+        {
+          "text": "your",
+          "start": 3.749,
+          "end": 3.874
+        },
+        {
+          "text": "phone",
+          "start": 3.889,
+          "end": 4.233
+        },
+        {
+          "text": "3 hours",
+          "start": 4.249,
+          "end": 5.171
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Americans spend over 3 hours a day on their phones.",
+      "onScreen": "3+ hours.\nEvery *day.*",
+      "visual": "Adentro de la pantalla: un reloj de arena gigante de píxeles se vacía; al lado un contador de horas que sube. Siluetas de gente en la calle, todas con la cara iluminada por la pantalla.",
+      "camera": "Desde adentro del celular hacia la cara del usuario.",
+      "transition": "Cada grano de arena se vuelve una notificación.",
+      "sfx": [
+        {
+          "at": "contador",
+          "sound": "Tics que aceleran"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s02.mp3",
+      "start": 5.571,
+      "duration": 3.943,
+      "words": [
+        {
+          "text": "Americans",
+          "start": 0.03,
+          "end": 0.686
+        },
+        {
+          "text": "spend",
+          "start": 0.702,
+          "end": 1.077
+        },
+        {
+          "text": "over",
+          "start": 1.093,
+          "end": 1.421
+        },
+        {
+          "text": "3 hours",
+          "start": 1.436,
+          "end": 2.343
+        },
+        {
+          "text": "a",
+          "start": 2.358,
+          "end": 2.421
+        },
+        {
+          "text": "day",
+          "start": 2.436,
+          "end": 2.811
+        },
+        {
+          "text": "on",
+          "start": 2.827,
+          "end": 2.936
+        },
+        {
+          "text": "their",
+          "start": 2.952,
+          "end": 3.124
+        },
+        {
+          "text": "phones.",
+          "start": 3.139,
+          "end": 3.843
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "And check them about 186 times a day.",
+      "onScreen": "*186* checks.",
+      "visual": "Una lluvia de 186 notificaciones que caen como balas y se clavan en la persona; un contador rojo llega a 186.",
+      "camera": "Temblor con cada notificación; zoom de golpe en el 186.",
+      "transition": "Las notificaciones se ordenan en un calendario.",
+      "sfx": [
+        {
+          "at": "cada notificación",
+          "sound": "Ding corto, cada vez más rápido hasta volverse un zumbido"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s03.mp3",
+      "start": 9.514,
+      "duration": 3.067,
+      "words": [
+        {
+          "text": "And",
+          "start": 0.03,
+          "end": 0.124
+        },
+        {
+          "text": "check",
+          "start": 0.139,
+          "end": 0.405
+        },
+        {
+          "text": "them",
+          "start": 0.421,
+          "end": 0.577
+        },
+        {
+          "text": "about",
+          "start": 0.593,
+          "end": 0.936
+        },
+        {
+          "text": "186",
+          "start": 0.952,
+          "end": 2.202
+        },
+        {
+          "text": "times",
+          "start": 2.217,
+          "end": 2.546
+        },
+        {
+          "text": "a",
+          "start": 2.561,
+          "end": 2.608
+        },
+        {
+          "text": "day.",
+          "start": 2.624,
+          "end": 2.967
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "That's 45 full days a year. Gone.",
+      "onScreen": "*45 days.*\nGone.",
+      "visual": "Un calendario anual: 45 días se ponen negros uno por uno y se los traga la pantalla del celular. En 'Gone' el calendario se prende fuego.",
+      "camera": "Plano frontal del calendario; latigazo en 'Gone'.",
+      "transition": "Las cenizas del calendario forman una línea de vida.",
+      "sfx": [
+        {
+          "at": "cada día",
+          "sound": "Sello seco"
+        },
+        {
+          "at": "'Gone'",
+          "sound": "Fuego que se enciende + golpe de sub-bajo"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s04.mp3",
+      "start": 12.581,
+      "duration": 3.177,
+      "words": [
+        {
+          "text": "That's",
+          "start": 0.03,
+          "end": 0.264
+        },
+        {
+          "text": "45",
+          "start": 0.28,
+          "end": 1.17
+        },
+        {
+          "text": "full",
+          "start": 1.186,
+          "end": 1.42
+        },
+        {
+          "text": "days",
+          "start": 1.436,
+          "end": 1.717
+        },
+        {
+          "text": "a",
+          "start": 1.733,
+          "end": 1.764
+        },
+        {
+          "text": "year.",
+          "start": 1.78,
+          "end": 2.217
+        },
+        {
+          "text": "Gone.",
+          "start": 2.733,
+          "end": 3.077
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Over 50 years, that's 6 years of your life. Scrolled.",
+      "onScreen": "*6 years.*\nScrolled.",
+      "visual": "Una línea de vida de 50 años (infancia → vejez). Un dedo gigante hace scroll y 6 años se deslizan fuera de la línea como si fueran un feed. El personaje envejece mientras mira la pantalla.",
+      "camera": "Travelling a lo largo de la línea de vida; scroll vertical de toda la imagen en 'Scrolled'.",
+      "transition": "La imagen hace scroll hasta un pergamino antiguo.",
+      "sfx": [
+        {
+          "at": "'Scrolled'",
+          "sound": "Swoosh de scroll exagerado + tic que se corta"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s05.mp3",
+      "start": 15.758,
+      "duration": 4.396,
+      "words": [
+        {
+          "text": "Over",
+          "start": 0.03,
+          "end": 0.264
+        },
+        {
+          "text": "50 years",
+          "start": 0.28,
+          "end": 1.28
+        },
+        {
+          "text": "that's",
+          "start": 1.546,
+          "end": 1.827
+        },
+        {
+          "text": "6 years",
+          "start": 1.843,
+          "end": 2.53
+        },
+        {
+          "text": "of",
+          "start": 2.546,
+          "end": 2.608
+        },
+        {
+          "text": "your",
+          "start": 2.624,
+          "end": 2.764
+        },
+        {
+          "text": "life.",
+          "start": 2.78,
+          "end": 3.249
+        },
+        {
+          "text": "Scrolled.",
+          "start": 3.764,
+          "end": 4.296
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca wrote: you'll find no one willing to share out his money.",
+      "quote": "No one willing to share out his money.",
+      "author": "Seneca",
+      "source": "On the Shortness of Life, 3",
+      "visual": "Corte de estilo: pergamino antiguo con tinta dorada y luz de vela, lo único cálido hasta ahora. La cita se escribe sola. Un romano aprieta una bolsa de monedas contra el pecho.",
+      "camera": "Primer plano del pergamino; la bolsa de monedas en primer término.",
+      "transition": "La tinta se derrama hacia la pantalla de un celular.",
+      "sfx": [
+        {
+          "at": "pergamino",
+          "sound": "Pluma que raspa + monedas apretadas"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s06.mp3",
+      "start": 20.154,
+      "duration": 4.036,
+      "words": [
+        {
+          "text": "Seneca",
+          "start": 0.03,
+          "end": 0.42
+        },
+        {
+          "text": "wrote:",
+          "start": 0.436,
+          "end": 0.827
+        },
+        {
+          "text": "you'll",
+          "start": 1.311,
+          "end": 1.451
+        },
+        {
+          "text": "find",
+          "start": 1.467,
+          "end": 1.873
+        },
+        {
+          "text": "no",
+          "start": 1.889,
+          "end": 2.17
+        },
+        {
+          "text": "one",
+          "start": 2.186,
+          "end": 2.373
+        },
+        {
+          "text": "willing",
+          "start": 2.389,
+          "end": 2.748
+        },
+        {
+          "text": "to",
+          "start": 2.764,
+          "end": 2.827
+        },
+        {
+          "text": "share",
+          "start": 2.842,
+          "end": 3.201
+        },
+        {
+          "text": "out",
+          "start": 3.217,
+          "end": 3.358
+        },
+        {
+          "text": "his",
+          "start": 3.373,
+          "end": 3.545
+        },
+        {
+          "text": "money.",
+          "start": 3.561,
+          "end": 3.936
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "But your time? You give it to any app. For free.",
+      "onScreen": "Your time?\n*Free.*",
+      "visual": "La persona abraza la bolsa de plata con una mano y con la otra regala su reloj de arena a una fila infinita de apps con forma de manos. En 'For free' TODOS los relojes del video se congelan, silencio, y la arena queda suspendida en el aire.",
+      "camera": "Plano general; en 'free' cámara quieta (corte de patrón).",
+      "transition": "La arena congelada se derrumba sobre un billonario.",
+      "sfx": [
+        {
+          "at": "'For free'",
+          "sound": "Se detienen todos los tics → silencio total 0,4 s → latido grave"
+        }
+      ],
+      "pause_after": 0.4,
+      "audio": "shorts/seneca-tiempo/build/voice/s07.mp3",
+      "start": 24.19,
+      "duration": 3.977,
+      "words": [
+        {
+          "text": "But",
+          "start": 0.03,
+          "end": 0.139
+        },
+        {
+          "text": "your",
+          "start": 0.155,
+          "end": 0.28
+        },
+        {
+          "text": "time?",
+          "start": 0.295,
+          "end": 0.701
+        },
+        {
+          "text": "You",
+          "start": 1.217,
+          "end": 1.295
+        },
+        {
+          "text": "give",
+          "start": 1.311,
+          "end": 1.483
+        },
+        {
+          "text": "it",
+          "start": 1.498,
+          "end": 1.577
+        },
+        {
+          "text": "to",
+          "start": 1.592,
+          "end": 1.701
+        },
+        {
+          "text": "any",
+          "start": 1.717,
+          "end": 2.045
+        },
+        {
+          "text": "app.",
+          "start": 2.061,
+          "end": 2.405
+        },
+        {
+          "text": "For",
+          "start": 2.967,
+          "end": 3.123
+        },
+        {
+          "text": "free.",
+          "start": 3.139,
+          "end": 3.577
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "A billionaire can't buy back one minute. You gave away three hours.",
+      "onScreen": "Can't buy\n*one minute.*",
+      "visual": "Un billonario tira montañas de oro contra un reloj de arena vacío que no se vuelve a llenar. Al lado, el espectador (silueta) tira su arena por la canaleta de un celular.",
+      "camera": "Pantalla partida que se cierra al centro.",
+      "transition": "El reloj de arena gira y queda al derecho.",
+      "sfx": [
+        {
+          "at": "oro",
+          "sound": "Monedas que rebotan contra vidrio"
+        },
+        {
+          "at": "'three hours'",
+          "sound": "Arena que cae"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s08.mp3",
+      "start": 28.167,
+      "duration": 4.833,
+      "words": [
+        {
+          "text": "A",
+          "start": 0.03,
+          "end": 0.108
+        },
+        {
+          "text": "billionaire",
+          "start": 0.124,
+          "end": 0.78
+        },
+        {
+          "text": "can't",
+          "start": 0.796,
+          "end": 1.217
+        },
+        {
+          "text": "buy",
+          "start": 1.233,
+          "end": 1.405
+        },
+        {
+          "text": "back",
+          "start": 1.421,
+          "end": 1.889
+        },
+        {
+          "text": "one",
+          "start": 1.905,
+          "end": 2.124
+        },
+        {
+          "text": "minute.",
+          "start": 2.139,
+          "end": 2.577
+        },
+        {
+          "text": "You",
+          "start": 3.093,
+          "end": 3.186
+        },
+        {
+          "text": "gave",
+          "start": 3.202,
+          "end": 3.405
+        },
+        {
+          "text": "away",
+          "start": 3.421,
+          "end": 3.749
+        },
+        {
+          "text": "three",
+          "start": 3.764,
+          "end": 4.124
+        },
+        {
+          "text": "hours.",
+          "start": 4.139,
+          "end": 4.733
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "So be stingy where Seneca said to be. With your time.",
+      "onScreen": "Be *stingy.*\nWith time.",
+      "visual": "La persona apaga el celular: la luz fría se va y entra una luz dorada cálida; la arena vuelve a su pecho y el reloj de arena se llena.",
+      "camera": "Zoom lento hacia la cara iluminada en oro.",
+      "transition": "El celular apagado refleja una mano con un billete de $100.",
+      "sfx": [
+        {
+          "at": "celular que se apaga",
+          "sound": "Clic + silencio corto"
+        },
+        {
+          "at": "arena que vuelve",
+          "sound": "Arena al revés + coro cálido"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s09.mp3",
+      "start": 33.0,
+      "duration": 3.973,
+      "words": [
+        {
+          "text": "So",
+          "start": 0.03,
+          "end": 0.186
+        },
+        {
+          "text": "be",
+          "start": 0.201,
+          "end": 0.358
+        },
+        {
+          "text": "stingy",
+          "start": 0.373,
+          "end": 0.967
+        },
+        {
+          "text": "where",
+          "start": 0.983,
+          "end": 1.17
+        },
+        {
+          "text": "Seneca",
+          "start": 1.186,
+          "end": 1.717
+        },
+        {
+          "text": "said",
+          "start": 1.733,
+          "end": 2.139
+        },
+        {
+          "text": "to",
+          "start": 2.155,
+          "end": 2.248
+        },
+        {
+          "text": "be.",
+          "start": 2.264,
+          "end": 2.592
+        },
+        {
+          "text": "With",
+          "start": 3.123,
+          "end": 3.248
+        },
+        {
+          "text": "your",
+          "start": 3.264,
+          "end": 3.405
+        },
+        {
+          "text": "time.",
+          "start": 3.42,
+          "end": 3.873
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Before you unlock it, ask: would I hand a stranger $100?",
+      "onScreen": "Would you hand\na stranger *$100?*",
+      "visual": "La mano agarra el celular, se frena, y en el reflejo de la pantalla aparece la mano con el billete de $100: el último cuadro empalma con el cuadro 0.",
+      "camera": "Termina en el encuadre exacto del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Un tic suave que coincide con el primer tic del cuadro 0"
+        }
+      ],
+      "audio": "shorts/seneca-tiempo/build/voice/s10.mp3",
+      "start": 36.973,
+      "duration": 5.099,
+      "words": [
+        {
+          "text": "Before",
+          "start": 0.03,
+          "end": 0.374
+        },
+        {
+          "text": "you",
+          "start": 0.389,
+          "end": 0.561
+        },
+        {
+          "text": "unlock",
+          "start": 0.577,
+          "end": 1.124
+        },
+        {
+          "text": "it,",
+          "start": 1.139,
+          "end": 1.296
+        },
+        {
+          "text": "ask:",
+          "start": 1.827,
+          "end": 2.311
+        },
+        {
+          "text": "would",
+          "start": 2.671,
+          "end": 2.811
+        },
+        {
+          "text": "I",
+          "start": 2.827,
+          "end": 2.921
+        },
+        {
+          "text": "hand",
+          "start": 2.936,
+          "end": 3.217
+        },
+        {
+          "text": "a",
+          "start": 3.233,
+          "end": 3.28
+        },
+        {
+          "text": "stranger",
+          "start": 3.296,
+          "end": 3.811
+        },
+        {
+          "text": "$100?",
+          "start": 3.827,
+          "end": 4.999
+        }
+      ]
+    }
+  ],
+  "total": 42.072
+}

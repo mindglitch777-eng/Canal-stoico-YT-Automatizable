@@ -1,0 +1,859 @@
+{
+  "id": "marco-aurelio-chatarra",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never pay $5,000 for scrap metal. But you just did. How?",
+      "pause_after": 0.45,
+      "onScreen": "$5,000\nscrap *metal?*",
+      "visual": "Cuadro 0 ya en acción: reloj de oro en macro extremo, segundero corriendo, brillo que cruza el cristal. En 'scrap metal' el reloj EXPLOTA en sus piezas (engranajes, tornillos, resortes, esquirlas de acero) que vuelan hacia la cámara en cámara lenta; la etiqueta '$5,000' gira y se quema hasta '$0'. En 'How?' todo se congela en el aire.",
+      "camera": "Arranca pegada al cristal; latigazo hacia atrás en 'scrap'; en 'How?' rotación lenta alrededor de las piezas congeladas (bullet time).",
+      "transition": "Las piezas congeladas se arremolinan y forman el busto de la escena 2.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Tic-tac de reloj nítido + golpe de sub-bajo"
+        },
+        {
+          "at": "'scrap'",
+          "sound": "Estallido metálico (cristal + metal) con reverb invertida que lo anticipa"
+        },
+        {
+          "at": "'How?'",
+          "sound": "Parada de tiempo: 'whoomp' grave + cinta que frena"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 4.932,
+      "words": [
+        {
+          "text": "You'd",
+          "start": 0.03,
+          "end": 0.17
+        },
+        {
+          "text": "never",
+          "start": 0.183,
+          "end": 0.464
+        },
+        {
+          "text": "pay",
+          "start": 0.476,
+          "end": 0.706
+        },
+        {
+          "text": "$5,000",
+          "start": 0.719,
+          "end": 1.854
+        },
+        {
+          "text": "for",
+          "start": 1.867,
+          "end": 2.007
+        },
+        {
+          "text": "scrap",
+          "start": 2.02,
+          "end": 2.364
+        },
+        {
+          "text": "metal.",
+          "start": 2.377,
+          "end": 2.696
+        },
+        {
+          "text": "But",
+          "start": 3.13,
+          "end": 3.206
+        },
+        {
+          "text": "you",
+          "start": 3.219,
+          "end": 3.295
+        },
+        {
+          "text": "just",
+          "start": 3.308,
+          "end": 3.538
+        },
+        {
+          "text": "did.",
+          "start": 3.55,
+          "end": 3.818
+        },
+        {
+          "text": "How?",
+          "start": 4.252,
+          "end": 4.482
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Marcus Aurelius ruled over 50 million people.",
+      "onScreen": "50,000,000\nMARCUS AURELIUS",
+      "visual": "Las piezas del reloj forman un busto de mármol de Marco Aurelio. Detrás, el mapa del Imperio se llena de millones de puntitos de luz (personas) mientras el contador corre a 50,000,000.",
+      "camera": "Contrapicado al busto; el mapa se abre detrás con zoom out rápido.",
+      "transition": "Corte seco al pergamino de la escena 3.",
+      "sfx": [
+        {
+          "at": "inicio",
+          "sound": "Piedra que encaja (mármol) + ráfaga de viento"
+        },
+        {
+          "at": "contador",
+          "sound": "Tics que se aceleran"
+        },
+        {
+          "at": "'50 million'",
+          "sound": "Sello de piedra al frenar el contador"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s02.mp3",
+      "start": 4.932,
+      "duration": 3.064,
+      "words": [
+        {
+          "text": "Marcus",
+          "start": 0.03,
+          "end": 0.413
+        },
+        {
+          "text": "Aurelius",
+          "start": 0.425,
+          "end": 1.012
+        },
+        {
+          "text": "ruled",
+          "start": 1.025,
+          "end": 1.459
+        },
+        {
+          "text": "over",
+          "start": 1.586,
+          "end": 1.803
+        },
+        {
+          "text": "50",
+          "start": 1.816,
+          "end": 2.186
+        },
+        {
+          "text": "million",
+          "start": 2.198,
+          "end": 2.543
+        },
+        {
+          "text": "people.",
+          "start": 2.556,
+          "end": 2.964
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "He could buy anything. Instead, he wrote himself a secret trick.",
+      "onScreen": "A *secret* trick.",
+      "visual": "Montañas de oro, banquetes y túnicas aparecen alrededor del busto (todo lo que podía comprar) y se apagan de golpe en 'Instead'. Queda un pergamino que se escribe solo, a la luz de una vela.",
+      "camera": "Paneo por la riqueza; en 'Instead' corte a primer plano del pergamino.",
+      "transition": "La tinta del pergamino se derrama y forma el plato de la escena 4.",
+      "sfx": [
+        {
+          "at": "riqueza",
+          "sound": "Monedas que caen en cascada"
+        },
+        {
+          "at": "'Instead'",
+          "sound": "Corte a silencio con una vela que se enciende"
+        },
+        {
+          "at": "pergamino",
+          "sound": "Pluma que raspa"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s03.mp3",
+      "start": 7.996,
+      "duration": 3.854,
+      "words": [
+        {
+          "text": "He",
+          "start": 0.03,
+          "end": 0.094
+        },
+        {
+          "text": "could",
+          "start": 0.106,
+          "end": 0.221
+        },
+        {
+          "text": "buy",
+          "start": 0.234,
+          "end": 0.412
+        },
+        {
+          "text": "anything.",
+          "start": 0.425,
+          "end": 0.859
+        },
+        {
+          "text": "Instead,",
+          "start": 1.28,
+          "end": 1.777
+        },
+        {
+          "text": "he",
+          "start": 2.185,
+          "end": 2.249
+        },
+        {
+          "text": "wrote",
+          "start": 2.262,
+          "end": 2.466
+        },
+        {
+          "text": "himself",
+          "start": 2.479,
+          "end": 2.9
+        },
+        {
+          "text": "a",
+          "start": 2.912,
+          "end": 2.963
+        },
+        {
+          "text": "secret",
+          "start": 2.976,
+          "end": 3.372
+        },
+        {
+          "text": "trick.",
+          "start": 3.384,
+          "end": 3.754
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "His feast? Dead fish. His fine wine? A little grape juice.",
+      "onScreen": "Dead *fish.*\nGrape *juice.*",
+      "visual": "Un banquete imperial dorado y brillante. En 'Dead fish' el plato se 'desarma' en un pescado crudo, gris, con mosca. En 'grape juice' la copa de vino de lujo se escurre hasta ser un poco de jugo en un vaso de barro. Las etiquetas 'FEAST' y 'FINE WINE' se tachan.",
+      "camera": "Plano cenital sobre la mesa; corte a macro del vino.",
+      "transition": "El vino gira como un remolino y se vuelve tela púrpura.",
+      "sfx": [
+        {
+          "at": "'Dead fish'",
+          "sound": "Golpe húmedo + 'record scratch' corto"
+        },
+        {
+          "at": "'grape juice'",
+          "sound": "Líquido que gotea con tono que baja"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s04.mp3",
+      "start": 11.85,
+      "duration": 4.467,
+      "words": [
+        {
+          "text": "His",
+          "start": 0.03,
+          "end": 0.17
+        },
+        {
+          "text": "feast?",
+          "start": 0.183,
+          "end": 0.68
+        },
+        {
+          "text": "Dead",
+          "start": 1.101,
+          "end": 1.254
+        },
+        {
+          "text": "fish.",
+          "start": 1.267,
+          "end": 1.713
+        },
+        {
+          "text": "His",
+          "start": 2.147,
+          "end": 2.262
+        },
+        {
+          "text": "fine",
+          "start": 2.275,
+          "end": 2.555
+        },
+        {
+          "text": "wine?",
+          "start": 2.568,
+          "end": 2.9
+        },
+        {
+          "text": "A",
+          "start": 3.321,
+          "end": 3.372
+        },
+        {
+          "text": "little",
+          "start": 3.384,
+          "end": 3.576
+        },
+        {
+          "text": "grape",
+          "start": 3.588,
+          "end": 3.856
+        },
+        {
+          "text": "juice.",
+          "start": 3.869,
+          "end": 4.367
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "His royal purple robe? Sheep's wool, dyed with shellfish blood.",
+      "onScreen": "Sheep's wool.\nShellfish *blood.*",
+      "visual": "Una túnica púrpura imperial ondea en cámara lenta. Se deshilacha en lana de oveja (aparece una oveja masticando, cómica) y una gota de 'sangre' de un caracol de mar la tiñe.",
+      "camera": "Tela que ocupa toda la pantalla; zoom macro a la gota.",
+      "transition": "La gota cae y se vuelve la pantalla de un celular que se enciende.",
+      "sfx": [
+        {
+          "at": "túnica",
+          "sound": "Whoosh de tela"
+        },
+        {
+          "at": "oveja",
+          "sound": "Balido corto (cómico)"
+        },
+        {
+          "at": "'blood'",
+          "sound": "Gota que cae con eco"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s05.mp3",
+      "start": 16.317,
+      "duration": 3.791,
+      "words": [
+        {
+          "text": "His",
+          "start": 0.03,
+          "end": 0.157
+        },
+        {
+          "text": "royal",
+          "start": 0.17,
+          "end": 0.451
+        },
+        {
+          "text": "purple",
+          "start": 0.463,
+          "end": 0.821
+        },
+        {
+          "text": "robe?",
+          "start": 0.833,
+          "end": 1.152
+        },
+        {
+          "text": "Sheep's",
+          "start": 1.573,
+          "end": 1.854
+        },
+        {
+          "text": "wool,",
+          "start": 1.867,
+          "end": 2.16
+        },
+        {
+          "text": "dyed",
+          "start": 2.479,
+          "end": 2.747
+        },
+        {
+          "text": "with",
+          "start": 2.759,
+          "end": 2.874
+        },
+        {
+          "text": "shellfish",
+          "start": 2.887,
+          "end": 3.333
+        },
+        {
+          "text": "blood.",
+          "start": 3.346,
+          "end": 3.691
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Your $1,200 phone? Glass, metal, and a payment plan.",
+      "onScreen": "Glass. Metal.\n*24 payments.*",
+      "visual": "Un celular de lujo flotando con brillo de publicidad. Se desarma en capas (vidrio, chapa, chips) y detrás aparece un contrato larguísimo que se despliega hasta el piso con '24 payments' en rojo.",
+      "camera": "Giro 360° del celular (render tipo publicidad) y caída siguiendo el contrato.",
+      "transition": "El contrato se enrolla y se vuelve una cinta de correr.",
+      "sfx": [
+        {
+          "at": "celular",
+          "sound": "Notificación brillante"
+        },
+        {
+          "at": "desarme",
+          "sound": "Clics y piezas que se separan"
+        },
+        {
+          "at": "'payment plan'",
+          "sound": "Papel que se despliega + sello de 'aprobado'"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s06.mp3",
+      "start": 20.108,
+      "duration": 4.339,
+      "words": [
+        {
+          "text": "Your",
+          "start": 0.03,
+          "end": 0.132
+        },
+        {
+          "text": "$1,200 phone",
+          "start": 0.145,
+          "end": 1.726
+        },
+        {
+          "text": "Glass,",
+          "start": 2.147,
+          "end": 2.619
+        },
+        {
+          "text": "metal,",
+          "start": 2.823,
+          "end": 3.219
+        },
+        {
+          "text": "and",
+          "start": 3.461,
+          "end": 3.512
+        },
+        {
+          "text": "a",
+          "start": 3.525,
+          "end": 3.563
+        },
+        {
+          "text": "payment",
+          "start": 3.576,
+          "end": 3.92
+        },
+        {
+          "text": "plan.",
+          "start": 3.933,
+          "end": 4.239
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "Psychologists call it the hedonic treadmill. Every upgrade fades to normal.",
+      "onScreen": "The hedonic\n*treadmill.*",
+      "visual": "Una persona en una cinta de correr dorada: cada compra nueva (reloj, auto, celular) aparece brillante delante de ella y se pone gris al alcanzarla. La cinta acelera cada vez más.",
+      "camera": "Lateral, siguiendo la cinta; el plano tiembla cada vez más con la velocidad.",
+      "transition": "La cinta gira tan rápido que se vuelve una espiral hipnótica.",
+      "sfx": [
+        {
+          "at": "cinta",
+          "sound": "Motor que zumba y sube de tono"
+        },
+        {
+          "at": "cada compra que se apaga",
+          "sound": "'Wah' que cae"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s07.mp3",
+      "start": 24.447,
+      "duration": 4.505,
+      "words": [
+        {
+          "text": "Psychologists",
+          "start": 0.03,
+          "end": 0.719
+        },
+        {
+          "text": "call",
+          "start": 0.731,
+          "end": 1.012
+        },
+        {
+          "text": "it",
+          "start": 1.025,
+          "end": 1.114
+        },
+        {
+          "text": "the",
+          "start": 1.127,
+          "end": 1.203
+        },
+        {
+          "text": "hedonic",
+          "start": 1.216,
+          "end": 1.752
+        },
+        {
+          "text": "treadmill.",
+          "start": 1.764,
+          "end": 2.287
+        },
+        {
+          "text": "Every",
+          "start": 2.708,
+          "end": 3.002
+        },
+        {
+          "text": "upgrade",
+          "start": 3.014,
+          "end": 3.474
+        },
+        {
+          "text": "fades",
+          "start": 3.486,
+          "end": 3.856
+        },
+        {
+          "text": "to",
+          "start": 3.869,
+          "end": 3.971
+        },
+        {
+          "text": "normal.",
+          "start": 3.984,
+          "end": 4.405
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "You're not broke. You're hypnotized.",
+      "pause_after": 0.45,
+      "onScreen": "Not broke.\n*Hypnotized.*",
+      "visual": "Espiral hipnótica hecha de etiquetas de precio girando. En 'hypnotized' un chasquido de dedos: la pantalla se congela, silencio total, y la espiral se rompe como vidrio de golpe.",
+      "camera": "Zoom lento hacia el centro de la espiral; en el chasquido, quieta (corte de patrón).",
+      "transition": "Los vidrios rotos caen y dejan ver las etiquetas de la escena 9.",
+      "sfx": [
+        {
+          "at": "espiral",
+          "sound": "Tono que oscila (trémolo) y marea"
+        },
+        {
+          "at": "'hypnotized'",
+          "sound": "Chasquido de dedos → 0,4 s de silencio total → vidrio que estalla"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s08.mp3",
+      "start": 28.952,
+      "duration": 2.317,
+      "words": [
+        {
+          "text": "You're",
+          "start": 0.03,
+          "end": 0.094
+        },
+        {
+          "text": "not",
+          "start": 0.107,
+          "end": 0.311
+        },
+        {
+          "text": "broke.",
+          "start": 0.323,
+          "end": 0.668
+        },
+        {
+          "text": "You're",
+          "start": 1.089,
+          "end": 1.178
+        },
+        {
+          "text": "hypnotized.",
+          "start": 1.191,
+          "end": 1.867
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Strip the label. Watch? Metal and gears. Car? Steel and a loan.",
+      "onScreen": "Strip the *label.*",
+      "visual": "Etiquetas de lujo pegadas sobre objetos (WATCH, CAR) que se arrancan de un tirón, una por golpe de música, y debajo aparece lo crudo: 'METAL + GEARS', 'STEEL + A LOAN'. Cada arranque, más violento que el anterior.",
+      "camera": "Corte por golpe: cada etiqueta en su plano, alternando cerca y lejos.",
+      "transition": "La última etiqueta arrancada deja ver el mármol de la escena 10.",
+      "sfx": [
+        {
+          "at": "cada etiqueta",
+          "sound": "Cinta que se arranca + golpe de sub-bajo (sincronizado con la música en doble tiempo)"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s09.mp3",
+      "start": 31.269,
+      "duration": 5.181,
+      "words": [
+        {
+          "text": "Strip",
+          "start": 0.03,
+          "end": 0.323
+        },
+        {
+          "text": "the",
+          "start": 0.336,
+          "end": 0.425
+        },
+        {
+          "text": "label.",
+          "start": 0.438,
+          "end": 0.821
+        },
+        {
+          "text": "Watch?",
+          "start": 1.242,
+          "end": 1.637
+        },
+        {
+          "text": "Metal",
+          "start": 2.058,
+          "end": 2.313
+        },
+        {
+          "text": "and",
+          "start": 2.326,
+          "end": 2.402
+        },
+        {
+          "text": "gears.",
+          "start": 2.415,
+          "end": 2.938
+        },
+        {
+          "text": "Car?",
+          "start": 3.359,
+          "end": 3.678
+        },
+        {
+          "text": "Steel",
+          "start": 4.111,
+          "end": 4.507
+        },
+        {
+          "text": "and",
+          "start": 4.609,
+          "end": 4.673
+        },
+        {
+          "text": "a",
+          "start": 4.685,
+          "end": 4.724
+        },
+        {
+          "text": "loan.",
+          "start": 4.736,
+          "end": 5.081
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Marcus wrote it down: outward show is a wonderful perverter of the reason.",
+      "quote": "Outward show is a wonderful perverter of the reason.",
+      "author": "Marcus Aurelius",
+      "source": "Meditations, 6.13",
+      "visual": "La cita se graba en mármol con chispas de oro, letra por letra, al ritmo de la voz. El busto de la escena 2 aparece de perfil, en paz.",
+      "camera": "Travelling lento sobre la piedra; termina en el busto.",
+      "transition": "Del busto cae una pieza de reloj que rebota hacia la escena 11.",
+      "sfx": [
+        {
+          "at": "grabado",
+          "sound": "Cincel sobre piedra con chispas"
+        },
+        {
+          "at": "final de la cita",
+          "sound": "Gong grave"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s10.mp3",
+      "start": 36.45,
+      "duration": 4.403,
+      "words": [
+        {
+          "text": "Marcus",
+          "start": 0.03,
+          "end": 0.362
+        },
+        {
+          "text": "wrote",
+          "start": 0.374,
+          "end": 0.515
+        },
+        {
+          "text": "it",
+          "start": 0.528,
+          "end": 0.617
+        },
+        {
+          "text": "down:",
+          "start": 0.63,
+          "end": 0.987
+        },
+        {
+          "text": "outward",
+          "start": 1.446,
+          "end": 1.816
+        },
+        {
+          "text": "show",
+          "start": 1.829,
+          "end": 2.326
+        },
+        {
+          "text": "is",
+          "start": 2.39,
+          "end": 2.505
+        },
+        {
+          "text": "a",
+          "start": 2.517,
+          "end": 2.594
+        },
+        {
+          "text": "wonderful",
+          "start": 2.607,
+          "end": 3.181
+        },
+        {
+          "text": "perverter",
+          "start": 3.193,
+          "end": 3.652
+        },
+        {
+          "text": "of",
+          "start": 3.665,
+          "end": 3.818
+        },
+        {
+          "text": "the",
+          "start": 3.831,
+          "end": 3.895
+        },
+        {
+          "text": "reason.",
+          "start": 3.908,
+          "end": 4.303
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Next time you want something, strip it bare. Even that $5,000...",
+      "onScreen": "Strip it *bare.*",
+      "visual": "Las piezas del reloj de la escena 1 vuelan en reversa y se rearman solas. El último cuadro es idéntico al cuadro 0 (reloj entero, macro, brillo pasando), para que el loop no se note.",
+      "camera": "Termina pegada al cristal, igual que el cuadro 0.",
+      "transition": "Ninguna: corta en seco y el video vuelve a empezar.",
+      "sfx": [
+        {
+          "at": "rearmado",
+          "sound": "Piezas que encajan en reversa (clics al revés)"
+        },
+        {
+          "at": "final",
+          "sound": "Riser que corta justo antes de resolver: lo resuelve el golpe del cuadro 0"
+        }
+      ],
+      "audio": "shorts/marco-aurelio-chatarra/build/voice/s11.mp3",
+      "start": 40.853,
+      "duration": 4.237,
+      "words": [
+        {
+          "text": "Next",
+          "start": 0.03,
+          "end": 0.221
+        },
+        {
+          "text": "time",
+          "start": 0.234,
+          "end": 0.4
+        },
+        {
+          "text": "you",
+          "start": 0.413,
+          "end": 0.502
+        },
+        {
+          "text": "want",
+          "start": 0.515,
+          "end": 0.693
+        },
+        {
+          "text": "something,",
+          "start": 0.706,
+          "end": 1.101
+        },
+        {
+          "text": "strip",
+          "start": 1.369,
+          "end": 1.612
+        },
+        {
+          "text": "it",
+          "start": 1.624,
+          "end": 1.714
+        },
+        {
+          "text": "bare.",
+          "start": 1.726,
+          "end": 2.033
+        },
+        {
+          "text": "Even",
+          "start": 2.454,
+          "end": 2.632
+        },
+        {
+          "text": "that",
+          "start": 2.645,
+          "end": 2.811
+        },
+        {
+          "text": "$5,000...",
+          "start": 2.823,
+          "end": 4.137
+        }
+      ]
+    }
+  ],
+  "total": 45.09
+}

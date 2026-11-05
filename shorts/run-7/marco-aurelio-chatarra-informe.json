@@ -1,0 +1,20 @@
+{
+  "duration_s": 45.2,
+  "sample_rate": 48000,
+  "lufs": -14.4,
+  "true_peak_dbtp": -1.8,
+  "silences": [
+    [
+      3.9,
+      4.25
+    ],
+    [
+      30.92,
+      31.26
+    ]
+  ],
+  "loop_ssim": 0.935718,
+  "sheet": "salida/marco-aurelio-chatarra-hoja.jpg",
+  "ok": true,
+  "fails": []
+}

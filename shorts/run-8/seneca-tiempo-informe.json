@@ -1,0 +1,16 @@
+{
+  "duration_s": 34.1,
+  "sample_rate": 48000,
+  "lufs": -14.4,
+  "true_peak_dbtp": -2.0,
+  "silences": [
+    [
+      22.53,
+      22.88
+    ]
+  ],
+  "loop_ssim": 0.959722,
+  "sheet": "salida/seneca-tiempo-hoja.jpg",
+  "ok": true,
+  "fails": []
+}

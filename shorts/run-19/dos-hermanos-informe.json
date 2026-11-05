@@ -1,0 +1,16 @@
+{
+  "duration_s": 34.1,
+  "sample_rate": 48000,
+  "lufs": -14.0,
+  "true_peak_dbtp": -2.0,
+  "silences": [
+    [
+      19.25,
+      19.68
+    ]
+  ],
+  "loop_ssim": 0.985442,
+  "sheet": "salida/dos-hermanos-hoja.jpg",
+  "ok": true,
+  "fails": []
+}

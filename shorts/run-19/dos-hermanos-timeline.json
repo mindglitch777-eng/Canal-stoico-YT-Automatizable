@@ -1,0 +1,764 @@
+{
+  "id": "dos-hermanos",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never guess which brother went broke. Both got $1 million. Why?",
+      "pause_after": 0.4,
+      "onScreen": "Both got\n*$1,000,000.*",
+      "visual": "Cuadro 0 en acción: calle de juguete en miniatura, dos figuras de gemelos idénticas. Dos maletines dorados GIGANTES caen del cielo, se clavan en el piso y se abren: los billetes explotan como confeti. En 'Why?' todo se congela y un signo de pregunta hecho de billetes gira entre los dos.",
+      "camera": "Plano tilt-shift desde arriba; latigazo hacia abajo siguiendo los maletines; en 'Why?', órbita alrededor de los gemelos congelados.",
+      "transition": "La cámara se va hacia el lado de Jake.",
+      "sfx": [
+        {
+          "at": "maletines",
+          "sound": "Silbido de caída + golpe grave + lluvia de billetes"
+        },
+        {
+          "at": "'Why?'",
+          "sound": "Congelado: 'whoomp' y la caja de música que se detiene un instante"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 4.718,
+      "words": [
+        {
+          "text": "You'd",
+          "start": 0.03,
+          "end": 0.155
+        },
+        {
+          "text": "never",
+          "start": 0.167,
+          "end": 0.43
+        },
+        {
+          "text": "guess",
+          "start": 0.442,
+          "end": 0.742
+        },
+        {
+          "text": "which",
+          "start": 0.755,
+          "end": 0.917
+        },
+        {
+          "text": "brother",
+          "start": 0.93,
+          "end": 1.205
+        },
+        {
+          "text": "went",
+          "start": 1.218,
+          "end": 1.405
+        },
+        {
+          "text": "broke.",
+          "start": 1.418,
+          "end": 1.78
+        },
+        {
+          "text": "Both",
+          "start": 2.205,
+          "end": 2.38
+        },
+        {
+          "text": "got",
+          "start": 2.392,
+          "end": 2.58
+        },
+        {
+          "text": "$1 million",
+          "start": 2.593,
+          "end": 3.63
+        },
+        {
+          "text": "Why?",
+          "start": 4.042,
+          "end": 4.318
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Jake bought what you could see. A supercar. A mansion.",
+      "onScreen": "Jake: *what you see.*",
+      "visual": "Las cosas caen del cielo alrededor de Jake y encajan como juguetes con un 'clic': un superauto genérico (sin marca), una mansión que se arma piso por piso, una piscina. Jake sonríe con anteojos de sol.",
+      "camera": "Cortes rápidos: cada objeto en su plano cerrado; termina en plano general de su lote lleno.",
+      "transition": "Barrido lateral al lote de Sam.",
+      "sfx": [
+        {
+          "at": "cada objeto",
+          "sound": "Golpe de juguete + 'clic' + campanita"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s02.mp3",
+      "start": 4.718,
+      "duration": 3.168,
+      "words": [
+        {
+          "text": "Jake",
+          "start": 0.03,
+          "end": 0.242
+        },
+        {
+          "text": "bought",
+          "start": 0.255,
+          "end": 0.442
+        },
+        {
+          "text": "what",
+          "start": 0.455,
+          "end": 0.58
+        },
+        {
+          "text": "you",
+          "start": 0.592,
+          "end": 0.667
+        },
+        {
+          "text": "could",
+          "start": 0.68,
+          "end": 0.817
+        },
+        {
+          "text": "see.",
+          "start": 0.83,
+          "end": 1.13
+        },
+        {
+          "text": "A",
+          "start": 1.543,
+          "end": 1.593
+        },
+        {
+          "text": "supercar.",
+          "start": 1.605,
+          "end": 2.167
+        },
+        {
+          "text": "A",
+          "start": 2.568,
+          "end": 2.605
+        },
+        {
+          "text": "mansion.",
+          "start": 2.618,
+          "end": 3.068
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Sam bought what you couldn't see. And the family laughed at him.",
+      "onScreen": "Sam: *what you don't.*",
+      "visual": "Lote de Sam casi vacío: un departamento chiquito, una pila de libros, una macetita. En una mesa de cena familiar de juguete, todas las figuras lo señalan y les salen globos de risa ('HA HA').",
+      "camera": "Zoom lento a la macetita; corte a la mesa familiar.",
+      "transition": "Los globos de risa suben y se vuelven íconos de seguidores sobre Jake.",
+      "sfx": [
+        {
+          "at": "macetita",
+          "sound": "'Puf' chiquito y triste"
+        },
+        {
+          "at": "risas",
+          "sound": "Risas de juguete (aceleradas, agudas)"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s03.mp3",
+      "start": 7.886,
+      "duration": 3.005,
+      "words": [
+        {
+          "text": "Sam",
+          "start": 0.03,
+          "end": 0.268
+        },
+        {
+          "text": "bought",
+          "start": 0.28,
+          "end": 0.467
+        },
+        {
+          "text": "what",
+          "start": 0.48,
+          "end": 0.605
+        },
+        {
+          "text": "you",
+          "start": 0.618,
+          "end": 0.717
+        },
+        {
+          "text": "couldn't",
+          "start": 0.73,
+          "end": 0.992
+        },
+        {
+          "text": "see.",
+          "start": 1.005,
+          "end": 1.33
+        },
+        {
+          "text": "And",
+          "start": 1.742,
+          "end": 1.805
+        },
+        {
+          "text": "the",
+          "start": 1.817,
+          "end": 1.892
+        },
+        {
+          "text": "family",
+          "start": 1.905,
+          "end": 2.242
+        },
+        {
+          "text": "laughed",
+          "start": 2.255,
+          "end": 2.63
+        },
+        {
+          "text": "at",
+          "start": 2.642,
+          "end": 2.742
+        },
+        {
+          "text": "him.",
+          "start": 2.755,
+          "end": 2.905
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Six months later, Jake had 2 million followers.",
+      "onScreen": "Jake: *2M followers.*",
+      "visual": "Sobre la mansión de Jake, una nube de flashes de celulares y corazones; un contador enorme llega a 2,000,000. El lote de Jake crece y tapa casi toda la pantalla; el de Sam queda arrinconado.",
+      "camera": "Contrapicado a la mansión; el plano se inclina hacia el lado de Jake.",
+      "transition": "Corte al lote gris de Sam.",
+      "sfx": [
+        {
+          "at": "contador",
+          "sound": "Notificaciones que aceleran hasta volverse un aplauso"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s04.mp3",
+      "start": 10.891,
+      "duration": 3.067,
+      "words": [
+        {
+          "text": "Six",
+          "start": 0.03,
+          "end": 0.242
+        },
+        {
+          "text": "months",
+          "start": 0.255,
+          "end": 0.479
+        },
+        {
+          "text": "later,",
+          "start": 0.492,
+          "end": 0.804
+        },
+        {
+          "text": "Jake",
+          "start": 1.167,
+          "end": 1.405
+        },
+        {
+          "text": "had",
+          "start": 1.417,
+          "end": 1.667
+        },
+        {
+          "text": "2",
+          "start": 1.679,
+          "end": 1.93
+        },
+        {
+          "text": "million",
+          "start": 1.942,
+          "end": 2.292
+        },
+        {
+          "text": "followers.",
+          "start": 2.305,
+          "end": 2.967
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Sam? Still the boring brother. Same old car.",
+      "onScreen": "Sam: *boring.*",
+      "visual": "El lado de Sam en gris y sin gracia, el mismo auto viejo de juguete. PISTA: por una grieta del piso se escapa, un segundo, un brillo dorado que nadie mira.",
+      "camera": "Plano fijo y aburrido; en la grieta, un zoom rapidísimo que vuelve enseguida (el ojo lo ve, la mente no).",
+      "transition": "Hoja de calendario que se arranca.",
+      "sfx": [
+        {
+          "at": "auto viejo",
+          "sound": "Bocina triste"
+        },
+        {
+          "at": "brillo",
+          "sound": "Destello casi inaudible"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s05.mp3",
+      "start": 13.958,
+      "duration": 3.055,
+      "words": [
+        {
+          "text": "Sam?",
+          "start": 0.03,
+          "end": 0.355
+        },
+        {
+          "text": "Still",
+          "start": 0.768,
+          "end": 0.992
+        },
+        {
+          "text": "the",
+          "start": 1.005,
+          "end": 1.105
+        },
+        {
+          "text": "boring",
+          "start": 1.118,
+          "end": 1.43
+        },
+        {
+          "text": "brother.",
+          "start": 1.442,
+          "end": 1.855
+        },
+        {
+          "text": "Same",
+          "start": 2.267,
+          "end": 2.468
+        },
+        {
+          "text": "old",
+          "start": 2.48,
+          "end": 2.63
+        },
+        {
+          "text": "car.",
+          "start": 2.642,
+          "end": 2.955
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Then came month twelve. And the bills.",
+      "pause_after": 0.4,
+      "onScreen": "Month *12.*",
+      "visual": "El calendario cae en 12. Una MANO GIGANTE (el banco, con puño de camisa y corbata) baja del cielo y levanta las piezas de Jake una por una: el auto, la piscina, los pisos de la mansión. Cada etiqueta se da vuelta: 'LOAN'. Jake queda parado en un lote vacío.",
+      "camera": "Plano general fijo para que se vea la mano entera; temblor en cada pieza que se lleva.",
+      "transition": "El piso del lote vacío se rompe y la cámara cae.",
+      "sfx": [
+        {
+          "at": "'month twelve'",
+          "sound": "Caja de música que se queda sin cuerda"
+        },
+        {
+          "at": "cada pieza",
+          "sound": "Juguete que se despega + sello de 'LOAN'"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s06.mp3",
+      "start": 17.013,
+      "duration": 2.542,
+      "words": [
+        {
+          "text": "Then",
+          "start": 0.03,
+          "end": 0.204
+        },
+        {
+          "text": "came",
+          "start": 0.217,
+          "end": 0.442
+        },
+        {
+          "text": "month",
+          "start": 0.454,
+          "end": 0.642
+        },
+        {
+          "text": "twelve.",
+          "start": 0.655,
+          "end": 1.08
+        },
+        {
+          "text": "And",
+          "start": 1.492,
+          "end": 1.554
+        },
+        {
+          "text": "the",
+          "start": 1.567,
+          "end": 1.654
+        },
+        {
+          "text": "bills.",
+          "start": 1.667,
+          "end": 2.142
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Everything Jake owned was borrowed. Everything Sam owned was invisible.",
+      "onScreen": "Borrowed vs\n*invisible.*",
+      "visual": "La cámara atraviesa el suelo del diorama: debajo del lote de Jake, vacío negro con cadenas. Debajo del de Sam, una red de RAÍCES DE ORO GIGANTE que brilla y late, que estuvo creciendo todo el video. Es lo que nadie veía.",
+      "camera": "Caída vertical a través de la tierra; se abre en un plano enorme de las raíces.",
+      "transition": "Las raíces suben y hacen florecer el lote de Sam.",
+      "sfx": [
+        {
+          "at": "atravesar el suelo",
+          "sound": "'Braam' grave + tierra que se rompe"
+        },
+        {
+          "at": "raíces",
+          "sound": "Coro cálido + latido"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s07.mp3",
+      "start": 19.555,
+      "duration": 4.28,
+      "words": [
+        {
+          "text": "Everything",
+          "start": 0.03,
+          "end": 0.48
+        },
+        {
+          "text": "Jake",
+          "start": 0.492,
+          "end": 0.793
+        },
+        {
+          "text": "owned",
+          "start": 0.93,
+          "end": 1.168
+        },
+        {
+          "text": "was",
+          "start": 1.18,
+          "end": 1.317
+        },
+        {
+          "text": "borrowed.",
+          "start": 1.33,
+          "end": 1.817
+        },
+        {
+          "text": "Everything",
+          "start": 2.23,
+          "end": 2.655
+        },
+        {
+          "text": "Sam",
+          "start": 2.667,
+          "end": 3.005
+        },
+        {
+          "text": "owned",
+          "start": 3.118,
+          "end": 3.417
+        },
+        {
+          "text": "was",
+          "start": 3.43,
+          "end": 3.593
+        },
+        {
+          "text": "invisible.",
+          "start": 3.605,
+          "end": 4.18
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca knew: the man who craves more is poor.",
+      "quote": "The man who craves more, that is poor.",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 2",
+      "visual": "Las palabras de la cita crecen como raíces de oro desde abajo de la pantalla y se escriben solas.",
+      "camera": "Frontal; la cámara sube con las raíces.",
+      "transition": "Pantalla partida entre los dos hermanos.",
+      "sfx": [
+        {
+          "at": "cita",
+          "sound": "Raíces que crujen + campana suave"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s08.mp3",
+      "start": 23.835,
+      "duration": 2.817,
+      "words": [
+        {
+          "text": "Seneca",
+          "start": 0.03,
+          "end": 0.355
+        },
+        {
+          "text": "knew:",
+          "start": 0.367,
+          "end": 0.642
+        },
+        {
+          "text": "the",
+          "start": 1.017,
+          "end": 1.092
+        },
+        {
+          "text": "man",
+          "start": 1.105,
+          "end": 1.367
+        },
+        {
+          "text": "who",
+          "start": 1.379,
+          "end": 1.504
+        },
+        {
+          "text": "craves",
+          "start": 1.517,
+          "end": 1.905
+        },
+        {
+          "text": "more",
+          "start": 1.917,
+          "end": 2.142
+        },
+        {
+          "text": "is",
+          "start": 2.154,
+          "end": 2.267
+        },
+        {
+          "text": "poor.",
+          "start": 2.279,
+          "end": 2.717
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Jake looked rich. Sam was rich.",
+      "onScreen": "Looked rich.\n*Was* rich.",
+      "visual": "Pantalla partida: Jake sentado solo en su lote vacío; Sam pescando en un lago de juguete que florece sobre sus raíces, al atardecer.",
+      "camera": "La línea del medio se corre hasta que gana Sam.",
+      "transition": "Los dos hermanos se dan vuelta despacio hacia la cámara.",
+      "sfx": [
+        {
+          "at": "'was rich'",
+          "sound": "Golpe cálido + pájaros"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s09.mp3",
+      "start": 26.652,
+      "duration": 2.117,
+      "words": [
+        {
+          "text": "Jake",
+          "start": 0.03,
+          "end": 0.23
+        },
+        {
+          "text": "looked",
+          "start": 0.242,
+          "end": 0.43
+        },
+        {
+          "text": "rich.",
+          "start": 0.442,
+          "end": 0.83
+        },
+        {
+          "text": "Sam",
+          "start": 1.255,
+          "end": 1.455
+        },
+        {
+          "text": "was",
+          "start": 1.468,
+          "end": 1.618
+        },
+        {
+          "text": "rich.",
+          "start": 1.63,
+          "end": 2.017
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "reveal",
+      "say": "But here's the thing. There were never two brothers.",
+      "onScreen": "There were *never*\ntwo brothers.",
+      "visual": "Los dos gemelos miran DIRECTO a cámara. Se acercan entre sí y se funden en una sola silueta oscura con la forma de una persona mirando el celular: el espectador.",
+      "camera": "Zoom lento hacia sus caras; en 'never', corte a quietud total.",
+      "transition": "La silueta se divide otra vez en dos.",
+      "sfx": [
+        {
+          "at": "antes de 'never'",
+          "sound": "Silencio de un instante"
+        },
+        {
+          "at": "'never'",
+          "sound": "Golpe grave + reverb larga"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s10.mp3",
+      "start": 28.769,
+      "duration": 2.479,
+      "words": [
+        {
+          "text": "But",
+          "start": 0.03,
+          "end": 0.105
+        },
+        {
+          "text": "here's",
+          "start": 0.117,
+          "end": 0.342
+        },
+        {
+          "text": "the",
+          "start": 0.355,
+          "end": 0.442
+        },
+        {
+          "text": "thing.",
+          "start": 0.454,
+          "end": 0.754
+        },
+        {
+          "text": "There",
+          "start": 1.179,
+          "end": 1.267
+        },
+        {
+          "text": "were",
+          "start": 1.28,
+          "end": 1.38
+        },
+        {
+          "text": "never",
+          "start": 1.392,
+          "end": 1.642
+        },
+        {
+          "text": "two",
+          "start": 1.655,
+          "end": 1.83
+        },
+        {
+          "text": "brothers.",
+          "start": 1.842,
+          "end": 2.379
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "It's you, every payday. So which brother are you?",
+      "onScreen": "Which one\nare *you?*",
+      "visual": "La silueta se separa en los dos gemelos de juguete de nuevo, en la calle del principio, y dos maletines dorados empiezan a caer del cielo: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el plano tilt-shift del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Silbido de los maletines que cae justo en el golpe del cuadro 0"
+        }
+      ],
+      "audio": "shorts/dos-hermanos/build/voice/s11.mp3",
+      "start": 31.248,
+      "duration": 2.73,
+      "words": [
+        {
+          "text": "It's",
+          "start": 0.03,
+          "end": 0.168
+        },
+        {
+          "text": "you,",
+          "start": 0.18,
+          "end": 0.405
+        },
+        {
+          "text": "every",
+          "start": 0.58,
+          "end": 0.805
+        },
+        {
+          "text": "payday.",
+          "start": 0.817,
+          "end": 1.267
+        },
+        {
+          "text": "So",
+          "start": 1.68,
+          "end": 1.83
+        },
+        {
+          "text": "which",
+          "start": 1.843,
+          "end": 2.017
+        },
+        {
+          "text": "brother",
+          "start": 2.03,
+          "end": 2.318
+        },
+        {
+          "text": "are",
+          "start": 2.33,
+          "end": 2.442
+        },
+        {
+          "text": "you?",
+          "start": 2.455,
+          "end": 2.63
+        }
+      ]
+    }
+  ],
+  "total": 33.978
+}

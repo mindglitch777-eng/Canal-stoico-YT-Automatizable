@@ -188,6 +188,17 @@ export const S4: React.FC<P> = ({scene, dur}) => {
         {FRIEZE}
       </VaseSurface>
       <AbsoluteFill style={{background: V.sunHot, opacity: interpolate(f - sunF, [0, 2, 10], [0, 0.85, 0], clamp)}} />
+      {/* lo que dice la voz antes de la cita (cero tiempo muerto) */}
+      <div style={{position: 'absolute', top: 250, left: 120, width: W - 290, padding: '22px 30px', background: `linear-gradient(180deg, ${V.clayLight}, ${V.clay})`, border: `6px solid ${V.black}`, textAlign: 'center', fontFamily: font.serif, fontWeight: 700, fontSize: 70, lineHeight: 1.05, letterSpacing: '0.04em', textTransform: 'uppercase', color: V.black, opacity: 1 - Math.max(0, Math.min(1, (f - (times[0] ?? 0)) / 6))}}>
+        {['The', 'king', 'offered', 'him', 'anything.'].map((w, i) => {
+          const at = syncTokens(['The', 'king', 'offered', 'him', 'anything'], scene.words, 1.5)[i] * fps;
+          return (
+            <span key={i} style={{display: 'inline-block', marginRight: '0.25em', padding: '0 6px', background: i === 4 ? V.black : undefined, color: i === 4 ? V.sun : V.black, opacity: Math.max(0, Math.min(1, (f - at + 3) / 4))}}>
+              {w}
+            </span>
+          );
+        })}
+      </div>
       {/* la cita, palabra por palabra (la placa aparece con la primera palabra citada) */}
       <div style={{position: 'absolute', top: 230, left: 70, width: W - 190, display: 'flex', justifyContent: 'center', opacity: Math.max(0, Math.min(1, (f - (times[0] ?? 0) + 4) / 5))}}>
         <div style={{padding: '22px 34px', background: `linear-gradient(180deg, ${V.clayLight}, ${V.clay})`, border: `6px solid ${V.black}`, textAlign: 'center', fontFamily: font.serif, fontWeight: 700, fontSize: 80, lineHeight: 1.05, textTransform: 'uppercase', letterSpacing: '0.02em'}}>

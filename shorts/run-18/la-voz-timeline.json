@@ -1,0 +1,806 @@
+{
+  "id": "la-voz",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Someone whispers 3 words before you waste money. You never notice. Why?",
+      "pause_after": 0.35,
+      "onScreen": "*3 words.*\nEvery time.",
+      "visual": "Cuadro 0: noche, lluvia, blanco y negro. Un hombre frente a una vidriera iluminada. Detrás de su oreja aparece una boca de humo ROJO que susurra; tres letras rojas borrosas se forman en el aire. En 'Why?' un relámpago congela todo.",
+      "camera": "Primer plano de la oreja; en 'Why?', flash blanco y cuadro quieto.",
+      "transition": "El humo rojo entra por la ventana de su casa.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Lluvia + contrabajo + susurro ininteligible"
+        },
+        {
+          "at": "'Why?'",
+          "sound": "Trueno"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 4.93,
+      "words": [
+        {
+          "text": "Someone",
+          "start": 0.03,
+          "end": 0.33
+        },
+        {
+          "text": "whispers",
+          "start": 0.342,
+          "end": 0.868
+        },
+        {
+          "text": "3",
+          "start": 0.88,
+          "end": 1.205
+        },
+        {
+          "text": "words",
+          "start": 1.218,
+          "end": 1.568
+        },
+        {
+          "text": "before",
+          "start": 1.58,
+          "end": 1.98
+        },
+        {
+          "text": "you",
+          "start": 1.992,
+          "end": 2.118
+        },
+        {
+          "text": "waste",
+          "start": 2.13,
+          "end": 2.405
+        },
+        {
+          "text": "money.",
+          "start": 2.417,
+          "end": 2.705
+        },
+        {
+          "text": "You",
+          "start": 3.118,
+          "end": 3.193
+        },
+        {
+          "text": "never",
+          "start": 3.205,
+          "end": 3.417
+        },
+        {
+          "text": "notice.",
+          "start": 3.43,
+          "end": 3.892
+        },
+        {
+          "text": "Why?",
+          "start": 4.305,
+          "end": 4.58
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Long day. You're tired. Then you hear it: you deserve it.",
+      "onScreen": "*You deserve it.*",
+      "visual": "El hombre llega a casa agotado y se tira en el sillón con el celular. El humo rojo sale de la pantalla, le rodea la cabeza y escribe en rojo 'YOU DESERVE IT' en el aire.",
+      "camera": "Sombras de persiana sobre su cara; zoom lento al celular.",
+      "transition": "Su dedo se acerca al botón COMPRAR.",
+      "sfx": [
+        {
+          "at": "'you deserve it'",
+          "sound": "Susurro doblado con reverb, procesado en rojo (filtrado)"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s02.mp3",
+      "start": 4.93,
+      "duration": 3.667,
+      "words": [
+        {
+          "text": "Long",
+          "start": 0.03,
+          "end": 0.23
+        },
+        {
+          "text": "day.",
+          "start": 0.242,
+          "end": 0.505
+        },
+        {
+          "text": "You're",
+          "start": 0.918,
+          "end": 0.992
+        },
+        {
+          "text": "tired.",
+          "start": 1.005,
+          "end": 1.417
+        },
+        {
+          "text": "Then",
+          "start": 1.83,
+          "end": 1.93
+        },
+        {
+          "text": "you",
+          "start": 1.943,
+          "end": 2.068
+        },
+        {
+          "text": "hear",
+          "start": 2.08,
+          "end": 2.33
+        },
+        {
+          "text": "it:",
+          "start": 2.343,
+          "end": 2.468
+        },
+        {
+          "text": "you",
+          "start": 2.955,
+          "end": 3.03
+        },
+        {
+          "text": "deserve",
+          "start": 3.042,
+          "end": 3.38
+        },
+        {
+          "text": "it.",
+          "start": 3.392,
+          "end": 3.567
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Click. 84 dollars, gone.",
+      "onScreen": "Click. *−$84.*",
+      "visual": "El dedo aprieta COMPRAR. De su billetera sale un fantasma de billetes que se lo lleva el humo rojo por la ventana. Contador rojo: −$84.",
+      "camera": "Macro del dedo; corte seco a la billetera.",
+      "transition": "Montaje rápido de tres escenas.",
+      "sfx": [
+        {
+          "at": "'Click'",
+          "sound": "Clic de mouse exageradamente fuerte"
+        },
+        {
+          "at": "'gone'",
+          "sound": "Caja registradora + viento"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s03.mp3",
+      "start": 8.597,
+      "duration": 2.142,
+      "words": [
+        {
+          "text": "Click.",
+          "start": 0.03,
+          "end": 0.305
+        },
+        {
+          "text": "84 dollars",
+          "start": 0.705,
+          "end": 1.58
+        },
+        {
+          "text": "gone.",
+          "start": 1.68,
+          "end": 2.042
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Friday? You deserve it. Payday? You deserve it. Breakup? You really deserve it.",
+      "onScreen": "Friday. Payday.\n*Breakup.*",
+      "visual": "Montaje noir cada vez más rápido: viernes en un bar, día de cobro frente a un cajero, ruptura llorando en la lluvia. En cada uno, el humo rojo susurra y caen bolsas de compras del cielo, cada vez más, hasta taparlo.",
+      "camera": "Cortes que se aceleran con la música.",
+      "transition": "Las bolsas se apilan y forman un número.",
+      "sfx": [
+        {
+          "at": "cada 'you deserve it'",
+          "sound": "Susurro rojo + platillo con escobilla"
+        },
+        {
+          "at": "bolsas",
+          "sound": "Bolsas de papel que caen"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s04.mp3",
+      "start": 10.739,
+      "duration": 5.242,
+      "words": [
+        {
+          "text": "Friday?",
+          "start": 0.03,
+          "end": 0.355
+        },
+        {
+          "text": "You",
+          "start": 0.767,
+          "end": 0.842
+        },
+        {
+          "text": "deserve",
+          "start": 0.855,
+          "end": 1.179
+        },
+        {
+          "text": "it.",
+          "start": 1.192,
+          "end": 1.342
+        },
+        {
+          "text": "Payday?",
+          "start": 1.767,
+          "end": 2.092
+        },
+        {
+          "text": "You",
+          "start": 2.505,
+          "end": 2.58
+        },
+        {
+          "text": "deserve",
+          "start": 2.592,
+          "end": 2.917
+        },
+        {
+          "text": "it.",
+          "start": 2.929,
+          "end": 3.079
+        },
+        {
+          "text": "Breakup?",
+          "start": 3.505,
+          "end": 3.867
+        },
+        {
+          "text": "You",
+          "start": 4.279,
+          "end": 4.392
+        },
+        {
+          "text": "really",
+          "start": 4.404,
+          "end": 4.604
+        },
+        {
+          "text": "deserve",
+          "start": 4.617,
+          "end": 4.967
+        },
+        {
+          "text": "it.",
+          "start": 4.979,
+          "end": 5.142
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Twice a week, that's over 8,000 dollars a year.",
+      "onScreen": "*$8,736*\na year.",
+      "visual": "Las bolsas forman un número gigante, $8,736, que se ilumina en rojo sobre la ciudad como un cartel de neón en la lluvia.",
+      "camera": "Contrapicado del cartel de neón con lluvia cayendo hacia la cámara.",
+      "transition": "Un hilo de humo rojo se escapa del cartel y él lo sigue.",
+      "sfx": [
+        {
+          "at": "número",
+          "sound": "Neón que se enciende con zumbido + golpe grave"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s05.mp3",
+      "start": 15.981,
+      "duration": 3.105,
+      "words": [
+        {
+          "text": "Twice",
+          "start": 0.03,
+          "end": 0.317
+        },
+        {
+          "text": "a",
+          "start": 0.33,
+          "end": 0.393
+        },
+        {
+          "text": "week,",
+          "start": 0.405,
+          "end": 0.78
+        },
+        {
+          "text": "that's",
+          "start": 1.055,
+          "end": 1.255
+        },
+        {
+          "text": "over",
+          "start": 1.267,
+          "end": 1.53
+        },
+        {
+          "text": "8,000 dollars",
+          "start": 1.642,
+          "end": 2.592
+        },
+        {
+          "text": "a",
+          "start": 2.605,
+          "end": 2.63
+        },
+        {
+          "text": "year.",
+          "start": 2.642,
+          "end": 3.005
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "So he followed the voice. It led to ads, apps, and midnight sales.",
+      "pause_after": 0.4,
+      "onScreen": "Ads. Apps.\n*Midnight sales.*",
+      "visual": "Persecución noir: él corre detrás del rastro de humo rojo por callejones mojados. El humo sale de una publicidad gigante, de un enjambre de íconos de apps y de una vidriera con 'MIDNIGHT SALE'. Todas las bocas susurran lo mismo.",
+      "camera": "Cámara en mano siguiéndolo; cortes con cada fuente de humo.",
+      "transition": "Él frena en seco frente a un charco.",
+      "sfx": [
+        {
+          "at": "persecución",
+          "sound": "Pasos sobre agua + contrabajo al doble"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s06.mp3",
+      "start": 19.086,
+      "duration": 4.88,
+      "words": [
+        {
+          "text": "So",
+          "start": 0.03,
+          "end": 0.143
+        },
+        {
+          "text": "he",
+          "start": 0.155,
+          "end": 0.255
+        },
+        {
+          "text": "followed",
+          "start": 0.268,
+          "end": 0.593
+        },
+        {
+          "text": "the",
+          "start": 0.605,
+          "end": 0.655
+        },
+        {
+          "text": "voice.",
+          "start": 0.668,
+          "end": 1.205
+        },
+        {
+          "text": "It",
+          "start": 1.618,
+          "end": 1.73
+        },
+        {
+          "text": "led",
+          "start": 1.742,
+          "end": 1.892
+        },
+        {
+          "text": "to",
+          "start": 1.905,
+          "end": 2.005
+        },
+        {
+          "text": "ads,",
+          "start": 2.017,
+          "end": 2.53
+        },
+        {
+          "text": "apps,",
+          "start": 2.88,
+          "end": 3.293
+        },
+        {
+          "text": "and",
+          "start": 3.455,
+          "end": 3.58
+        },
+        {
+          "text": "midnight",
+          "start": 3.593,
+          "end": 3.955
+        },
+        {
+          "text": "sales.",
+          "start": 3.967,
+          "end": 4.48
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "But the voice stopped needing them. Now it sounds like you.",
+      "onScreen": "It sounds\nlike *you.*",
+      "visual": "Silencio. Todas las publicidades se apagan de golpe. Él mira el charco: su reflejo tiene la boca roja y es EL REFLEJO el que susurra 'you deserve it'. El humo rojo ahora le sale de su propia boca.",
+      "camera": "Picado al charco; la imagen del reflejo se da vuelta y queda al derecho (él y su reflejo cambian de lugar).",
+      "transition": "Una gota cae en el charco y rompe el reflejo.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio 0,4 s (pause_after de la escena anterior)"
+        },
+        {
+          "at": "'sounds like you'",
+          "sound": "El susurro con la voz del narrador doblada + gota que cae"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s07.mp3",
+      "start": 23.966,
+      "duration": 2.742,
+      "words": [
+        {
+          "text": "But",
+          "start": 0.03,
+          "end": 0.105
+        },
+        {
+          "text": "the",
+          "start": 0.117,
+          "end": 0.192
+        },
+        {
+          "text": "voice",
+          "start": 0.204,
+          "end": 0.579
+        },
+        {
+          "text": "stopped",
+          "start": 0.592,
+          "end": 0.93
+        },
+        {
+          "text": "needing",
+          "start": 0.942,
+          "end": 1.204
+        },
+        {
+          "text": "them.",
+          "start": 1.217,
+          "end": 1.405
+        },
+        {
+          "text": "Now",
+          "start": 1.817,
+          "end": 1.929
+        },
+        {
+          "text": "it",
+          "start": 1.942,
+          "end": 2.004
+        },
+        {
+          "text": "sounds",
+          "start": 2.017,
+          "end": 2.254
+        },
+        {
+          "text": "like",
+          "start": 2.267,
+          "end": 2.442
+        },
+        {
+          "text": "you.",
+          "start": 2.455,
+          "end": 2.642
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca warned: if you live according to opinion, you will never be rich.",
+      "quote": "Live according to opinion, you will never be rich.",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 16",
+      "visual": "La cita aparece escrita en la lluvia: cada gota que cae ilumina una letra. Es lo primero del video que no es rojo ni gris: es blanco cálido.",
+      "camera": "Frontal, con la lluvia en cámara lenta.",
+      "transition": "Las gotas se juntan en una luz dorada en el pecho del hombre.",
+      "sfx": [
+        {
+          "at": "cada letra",
+          "sound": "Gota que suena como nota de piano"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s08.mp3",
+      "start": 26.708,
+      "duration": 4.467,
+      "words": [
+        {
+          "text": "Seneca",
+          "start": 0.03,
+          "end": 0.379
+        },
+        {
+          "text": "warned:",
+          "start": 0.392,
+          "end": 0.754
+        },
+        {
+          "text": "if",
+          "start": 1.254,
+          "end": 1.342
+        },
+        {
+          "text": "you",
+          "start": 1.355,
+          "end": 1.479
+        },
+        {
+          "text": "live",
+          "start": 1.492,
+          "end": 1.667
+        },
+        {
+          "text": "according",
+          "start": 1.679,
+          "end": 2.092
+        },
+        {
+          "text": "to",
+          "start": 2.105,
+          "end": 2.254
+        },
+        {
+          "text": "opinion,",
+          "start": 2.267,
+          "end": 2.779
+        },
+        {
+          "text": "you",
+          "start": 3.205,
+          "end": 3.267
+        },
+        {
+          "text": "will",
+          "start": 3.279,
+          "end": 3.392
+        },
+        {
+          "text": "never",
+          "start": 3.404,
+          "end": 3.704
+        },
+        {
+          "text": "be",
+          "start": 3.717,
+          "end": 3.867
+        },
+        {
+          "text": "rich.",
+          "start": 3.879,
+          "end": 4.367
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Their voice says you deserve it. Yours can say: not today.",
+      "onScreen": "*Not today.*",
+      "visual": "Él se da vuelta y enfrenta a su reflejo rojo. De su boca sale una voz DORADA (letras doradas, primera vez que aparece el oro) que dice 'NOT TODAY', choca contra el humo rojo y lo hace estallar en mil pedazos.",
+      "camera": "Pantalla partida rojo contra oro; el oro empuja la línea hasta ganar.",
+      "transition": "Los pedazos rojos caen como lluvia y se apagan.",
+      "sfx": [
+        {
+          "at": "'not today'",
+          "sound": "Golpe grave + vidrio que estalla + cuerdas cálidas"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s09.mp3",
+      "start": 31.175,
+      "duration": 3.492,
+      "words": [
+        {
+          "text": "Their",
+          "start": 0.03,
+          "end": 0.18
+        },
+        {
+          "text": "voice",
+          "start": 0.193,
+          "end": 0.555
+        },
+        {
+          "text": "says",
+          "start": 0.643,
+          "end": 0.817
+        },
+        {
+          "text": "you",
+          "start": 0.83,
+          "end": 0.905
+        },
+        {
+          "text": "deserve",
+          "start": 0.918,
+          "end": 1.28
+        },
+        {
+          "text": "it.",
+          "start": 1.293,
+          "end": 1.468
+        },
+        {
+          "text": "Yours",
+          "start": 1.88,
+          "end": 2.042
+        },
+        {
+          "text": "can",
+          "start": 2.055,
+          "end": 2.18
+        },
+        {
+          "text": "say:",
+          "start": 2.193,
+          "end": 2.505
+        },
+        {
+          "text": "not",
+          "start": 2.892,
+          "end": 3.042
+        },
+        {
+          "text": "today.",
+          "start": 3.055,
+          "end": 3.392
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Two words. Worth 8,000 dollars a year.",
+      "onScreen": "*2 words.*\n$8,000 a year.",
+      "visual": "El cartel de neón de $8,736 cambia de rojo a dorado y los billetes vuelven volando a la billetera del hombre.",
+      "camera": "Contrapicado del cartel dorado bajo la lluvia.",
+      "transition": "La lluvia se intensifica y vuelve a la vidriera del principio.",
+      "sfx": [
+        {
+          "at": "billetes que vuelven",
+          "sound": "Viento al revés + caja registradora invertida"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s10.mp3",
+      "start": 34.667,
+      "duration": 2.718,
+      "words": [
+        {
+          "text": "Two",
+          "start": 0.03,
+          "end": 0.168
+        },
+        {
+          "text": "words.",
+          "start": 0.18,
+          "end": 0.63
+        },
+        {
+          "text": "Worth",
+          "start": 1.043,
+          "end": 1.268
+        },
+        {
+          "text": "8,000 dollars",
+          "start": 1.38,
+          "end": 2.218
+        },
+        {
+          "text": "a",
+          "start": 2.23,
+          "end": 2.255
+        },
+        {
+          "text": "year.",
+          "start": 2.267,
+          "end": 2.618
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Listen tonight. You'll hear it. Because someone whispers...",
+      "onScreen": "Listen *tonight.*",
+      "visual": "El hombre vuelve a estar frente a la vidriera iluminada bajo la lluvia, y la boca de humo rojo vuelve a aparecer detrás de su oreja: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el primer plano de la oreja del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Susurro que empalma con el del cuadro 0 + lluvia continua"
+        }
+      ],
+      "audio": "shorts/la-voz/build/voice/s11.mp3",
+      "start": 37.385,
+      "duration": 3.168,
+      "words": [
+        {
+          "text": "Listen",
+          "start": 0.03,
+          "end": 0.268
+        },
+        {
+          "text": "tonight.",
+          "start": 0.28,
+          "end": 0.692
+        },
+        {
+          "text": "You'll",
+          "start": 1.105,
+          "end": 1.205
+        },
+        {
+          "text": "hear",
+          "start": 1.218,
+          "end": 1.43
+        },
+        {
+          "text": "it.",
+          "start": 1.442,
+          "end": 1.58
+        },
+        {
+          "text": "Because",
+          "start": 1.992,
+          "end": 2.23
+        },
+        {
+          "text": "someone",
+          "start": 2.242,
+          "end": 2.492
+        },
+        {
+          "text": "whispers...",
+          "start": 2.505,
+          "end": 3.068
+        }
+      ]
+    }
+  ],
+  "total": 40.553
+}

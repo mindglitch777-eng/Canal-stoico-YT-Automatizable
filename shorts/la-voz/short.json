@@ -153,6 +153,7 @@
       "beat": "reward",
       "reward": "reveal",
       "say": "So he followed the voice. It led to ads, apps, and midnight sales.",
+      "pause_after": 0.4,
       "onScreen": "Ads. Apps.\n*Midnight sales.*",
       "visual": "Persecución noir: él corre detrás del rastro de humo rojo por callejones mojados. El humo sale de una publicidad gigante, de un enjambre de íconos de apps y de una vidriera con 'MIDNIGHT SALE'. Todas las bocas susurran lo mismo.",
       "camera": "Cámara en mano siguiéndolo; cortes con cada fuente de humo.",

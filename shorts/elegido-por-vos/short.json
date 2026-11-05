@@ -159,6 +159,7 @@
       "beat": "reward",
       "reward": "consequence",
       "say": "Trick three: was $200. Now $99 feels like a gift.",
+      "pause_after": 0.4,
       "onScreen": "Was $200.\nNow a *gift.*",
       "visual": "Un ancla de hierro con '$200' cae y raja el piso. Desde la grieta flota hacia arriba la etiqueta de $99 envuelta como regalo; el moño es un anzuelo.",
       "camera": "Picado mientras cae el ancla; contrapicado del regalo que sube.",

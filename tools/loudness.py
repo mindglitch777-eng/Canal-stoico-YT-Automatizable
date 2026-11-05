@@ -36,18 +36,25 @@ def main() -> None:
     a = ap.parse_args()
     m = measure(a.src, a.lufs, a.tp)
     print(f"Antes: {m['input_i']} LUFS, pico {m['input_tp']} dBTP")
-    af = (
-        f"loudnorm=I={a.lufs}:TP={a.tp}:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
-        f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true,"
-        # limitador de seguridad: el AAC sube el pico ~0,5-1 dB, así que se recorta antes a -2,2 dBFS
-        f"alimiter=limit=0.776:attack=3:release=60:level=disabled,aresample=48000"
-    )
-    subprocess.run(
-        ["ffmpeg", "-y", "-loglevel", "error", "-i", a.src, "-c:v", "copy", "-af", af, "-ar", "48000", "-ac", "2", "-c:a", "aac", "-b:a", "192k", a.dst],
-        check=True,
-    )
-    after = measure(a.dst, a.lufs, a.tp)
-    print(f"Después: {after['input_i']} LUFS, pico {after['input_tp']} dBTP")
+    # El AAC puede subir el pico real por encima del limitador: si pasa de -1 dBTP,
+    # se vuelve a codificar con el limitador 1 dB más abajo (hasta 4 intentos).
+    limit_db = -2.2
+    for intento in range(4):
+        lim = 10 ** (limit_db / 20)
+        af = (
+            f"loudnorm=I={a.lufs}:TP={a.tp}:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+            f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true,"
+            f"alimiter=limit={lim:.4f}:attack=3:release=60:level=disabled,aresample=48000"
+        )
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error", "-i", a.src, "-c:v", "copy", "-af", af, "-ar", "48000", "-ac", "2", "-c:a", "aac", "-b:a", "192k", a.dst],
+            check=True,
+        )
+        after = measure(a.dst, a.lufs, a.tp)
+        print(f"Después: {after['input_i']} LUFS, pico {after['input_tp']} dBTP (limitador {limit_db} dB)")
+        if float(after["input_tp"]) <= -1.2:
+            break
+        limit_db -= 1.0
 
 
 if __name__ == "__main__":

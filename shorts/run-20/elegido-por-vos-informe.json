@@ -1,0 +1,18 @@
+{
+  "duration_s": 44.2,
+  "sample_rate": 48000,
+  "lufs": -14.9,
+  "true_peak_dbtp": -3.0,
+  "silences": [
+    [
+      29.02,
+      29.38
+    ]
+  ],
+  "loop_ssim": 0.980651,
+  "sheet": "salida/elegido-por-vos-hoja.jpg",
+  "ok": false,
+  "fails": [
+    "volumen -14.9 LUFS (objetivo -14 +-0,5)"
+  ]
+}

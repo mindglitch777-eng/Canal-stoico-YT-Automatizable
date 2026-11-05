@@ -1,0 +1,813 @@
+{
+  "id": "elegido-por-vos",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You never chose the medium popcorn. 3 tricks chose it. Why?",
+      "pause_after": 0.35,
+      "onScreen": "You didn't\n*choose* this.",
+      "visual": "Cuadro 0: un mostrador de cine brillante, una mano agarra el pochoclo MEDIANO. En '3 tricks chose it' un barrido convierte todo el cine en blueprint cian y aparecen hilos de marioneta desde el techo atados a los dedos de la mano. En 'Why?' se congela.",
+      "camera": "Macro de la mano; en el barrido la cámara se aleja y se ven los hilos subiendo hasta el techo.",
+      "transition": "El blueprint marca los tres precios con flechas.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Jingle de publicidad + pochoclo que explota"
+        },
+        {
+          "at": "'3 tricks chose it'",
+          "sound": "'Braam' + barrido eléctrico"
+        },
+        {
+          "at": "'Why?'",
+          "sound": "Proyector que se traba"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 4.167,
+      "words": [
+        {
+          "text": "You",
+          "start": 0.03,
+          "end": 0.13
+        },
+        {
+          "text": "never",
+          "start": 0.142,
+          "end": 0.38
+        },
+        {
+          "text": "chose",
+          "start": 0.393,
+          "end": 0.705
+        },
+        {
+          "text": "the",
+          "start": 0.717,
+          "end": 0.792
+        },
+        {
+          "text": "medium",
+          "start": 0.805,
+          "end": 1.155
+        },
+        {
+          "text": "popcorn.",
+          "start": 1.168,
+          "end": 1.705
+        },
+        {
+          "text": "3",
+          "start": 2.155,
+          "end": 2.343
+        },
+        {
+          "text": "tricks",
+          "start": 2.355,
+          "end": 2.655
+        },
+        {
+          "text": "chose",
+          "start": 2.667,
+          "end": 2.967
+        },
+        {
+          "text": "it.",
+          "start": 2.98,
+          "end": 3.13
+        },
+        {
+          "text": "Why?",
+          "start": 3.542,
+          "end": 3.817
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Look at the prices. Small, $3. Large, $7. Medium, $6.50.",
+      "onScreen": "$3 · *$6.50* · $7",
+      "visual": "Los tres baldes de pochoclo aparecen en fila con sus precios, que caen uno por uno como letreros de neón. El mediano se ilumina como 'la opción inteligente'.",
+      "camera": "Travelling por los tres baldes; frena en el mediano.",
+      "transition": "Rayos X sobre el balde grande.",
+      "sfx": [
+        {
+          "at": "cada precio",
+          "sound": "Neón que se enciende con zumbido"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s02.mp3",
+      "start": 4.167,
+      "duration": 7.143,
+      "words": [
+        {
+          "text": "Look",
+          "start": 0.03,
+          "end": 0.143
+        },
+        {
+          "text": "at",
+          "start": 0.155,
+          "end": 0.206
+        },
+        {
+          "text": "the",
+          "start": 0.218,
+          "end": 0.293
+        },
+        {
+          "text": "prices.",
+          "start": 0.305,
+          "end": 0.868
+        },
+        {
+          "text": "Small,",
+          "start": 1.28,
+          "end": 1.668
+        },
+        {
+          "text": "$3.",
+          "start": 1.881,
+          "end": 2.555
+        },
+        {
+          "text": "Large,",
+          "start": 2.968,
+          "end": 3.418
+        },
+        {
+          "text": "$7.",
+          "start": 3.593,
+          "end": 4.368
+        },
+        {
+          "text": "Medium,",
+          "start": 4.781,
+          "end": 5.218
+        },
+        {
+          "text": "$6.50.",
+          "start": 5.456,
+          "end": 7.043
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Nobody wants the large. It's there so the medium looks cheap.",
+      "onScreen": "The large is\n*bait.*",
+      "visual": "Rayos X al balde grande: por dentro está vacío, es de cartón, y tiene un anzuelo de pesca enorme colgando. El anzuelo apunta al mediano.",
+      "camera": "Zoom de golpe al anzuelo.",
+      "transition": "El anzuelo tira y arrastra a una multitud de gente chiquita.",
+      "sfx": [
+        {
+          "at": "rayos X",
+          "sound": "Zumbido de escáner"
+        },
+        {
+          "at": "anzuelo",
+          "sound": "Carrete de pesca que gira (cómico)"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s03.mp3",
+      "start": 11.31,
+      "duration": 3.355,
+      "words": [
+        {
+          "text": "Nobody",
+          "start": 0.03,
+          "end": 0.342
+        },
+        {
+          "text": "wants",
+          "start": 0.355,
+          "end": 0.58
+        },
+        {
+          "text": "the",
+          "start": 0.592,
+          "end": 0.667
+        },
+        {
+          "text": "large.",
+          "start": 0.68,
+          "end": 1.192
+        },
+        {
+          "text": "It's",
+          "start": 1.605,
+          "end": 1.755
+        },
+        {
+          "text": "there",
+          "start": 1.767,
+          "end": 1.968
+        },
+        {
+          "text": "so",
+          "start": 1.98,
+          "end": 2.118
+        },
+        {
+          "text": "the",
+          "start": 2.13,
+          "end": 2.205
+        },
+        {
+          "text": "medium",
+          "start": 2.218,
+          "end": 2.642
+        },
+        {
+          "text": "looks",
+          "start": 2.655,
+          "end": 2.892
+        },
+        {
+          "text": "cheap.",
+          "start": 2.905,
+          "end": 3.255
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "In one famous test, a useless option made 84% pick the expensive one.",
+      "onScreen": "*84%*\ntook the bait.",
+      "visual": "Una multitud de figuritas camina por un embudo de blueprint; un cartel 'opción inútil' las desvía hacia la opción cara. Un contador llega a 84%. Sin el cartel, solo pasan unas pocas (32%).",
+      "camera": "Cenital sobre el embudo, como un gráfico vivo.",
+      "transition": "El contador gira y se vuelve una etiqueta de $4.99.",
+      "sfx": [
+        {
+          "at": "multitud",
+          "sound": "Pasos de muchos"
+        },
+        {
+          "at": "'84%'",
+          "sound": "Golpe seco + 'braam' corto"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s04.mp3",
+      "start": 14.665,
+      "duration": 5.105,
+      "words": [
+        {
+          "text": "In",
+          "start": 0.03,
+          "end": 0.18
+        },
+        {
+          "text": "one",
+          "start": 0.193,
+          "end": 0.418
+        },
+        {
+          "text": "famous",
+          "start": 0.43,
+          "end": 0.83
+        },
+        {
+          "text": "test,",
+          "start": 0.842,
+          "end": 1.255
+        },
+        {
+          "text": "a",
+          "start": 1.53,
+          "end": 1.555
+        },
+        {
+          "text": "useless",
+          "start": 1.567,
+          "end": 2.055
+        },
+        {
+          "text": "option",
+          "start": 2.068,
+          "end": 2.468
+        },
+        {
+          "text": "made",
+          "start": 2.48,
+          "end": 2.692
+        },
+        {
+          "text": "84%",
+          "start": 2.843,
+          "end": 3.73
+        },
+        {
+          "text": "pick",
+          "start": 3.742,
+          "end": 4.055
+        },
+        {
+          "text": "the",
+          "start": 4.068,
+          "end": 4.143
+        },
+        {
+          "text": "expensive",
+          "start": 4.155,
+          "end": 4.705
+        },
+        {
+          "text": "one.",
+          "start": 4.717,
+          "end": 5.005
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Trick two: $4.99. Your brain reads it as 4.",
+      "onScreen": "$4.99 = *$4*",
+      "visual": "Una etiqueta gigante '$4.99'. Un rayo láser (la mirada) la recorre de izquierda a derecha: ilumina el 4 y, cuando llega al '.99', este se encoge y se esconde detrás del 4.",
+      "camera": "Sigue al láser de izquierda a derecha.",
+      "transition": "Un ancla enorme cae desde arriba.",
+      "sfx": [
+        {
+          "at": "láser",
+          "sound": "Barrido agudo"
+        },
+        {
+          "at": "'.99' que se esconde",
+          "sound": "'Pop' chiquito"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s05.mp3",
+      "start": 19.77,
+      "duration": 4.668,
+      "words": [
+        {
+          "text": "Trick",
+          "start": 0.03,
+          "end": 0.242
+        },
+        {
+          "text": "two:",
+          "start": 0.255,
+          "end": 0.58
+        },
+        {
+          "text": "$4.99.",
+          "start": 0.88,
+          "end": 2.792
+        },
+        {
+          "text": "Your",
+          "start": 3.205,
+          "end": 3.305
+        },
+        {
+          "text": "brain",
+          "start": 3.318,
+          "end": 3.655
+        },
+        {
+          "text": "reads",
+          "start": 3.667,
+          "end": 3.892
+        },
+        {
+          "text": "it",
+          "start": 3.905,
+          "end": 3.98
+        },
+        {
+          "text": "as",
+          "start": 3.992,
+          "end": 4.155
+        },
+        {
+          "text": "4.",
+          "start": 4.167,
+          "end": 4.568
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Trick three: was $200. Now $99 feels like a gift.",
+      "pause_after": 0.4,
+      "onScreen": "Was $200.\nNow a *gift.*",
+      "visual": "Un ancla de hierro con '$200' cae y raja el piso. Desde la grieta flota hacia arriba la etiqueta de $99 envuelta como regalo; el moño es un anzuelo.",
+      "camera": "Picado mientras cae el ancla; contrapicado del regalo que sube.",
+      "transition": "Silencio y la cámara empieza a alejarse de todo.",
+      "sfx": [
+        {
+          "at": "ancla",
+          "sound": "Golpe metálico enorme + piso que se raja"
+        },
+        {
+          "at": "regalo",
+          "sound": "Campanitas de regalo"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s06.mp3",
+      "start": 24.438,
+      "duration": 4.892,
+      "words": [
+        {
+          "text": "Trick",
+          "start": 0.03,
+          "end": 0.242
+        },
+        {
+          "text": "three:",
+          "start": 0.255,
+          "end": 0.618
+        },
+        {
+          "text": "was",
+          "start": 1.005,
+          "end": 1.168
+        },
+        {
+          "text": "$200.",
+          "start": 1.18,
+          "end": 2.167
+        },
+        {
+          "text": "Now",
+          "start": 2.58,
+          "end": 2.692
+        },
+        {
+          "text": "$99",
+          "start": 2.705,
+          "end": 3.592
+        },
+        {
+          "text": "feels",
+          "start": 3.605,
+          "end": 3.868
+        },
+        {
+          "text": "like",
+          "start": 3.88,
+          "end": 4.005
+        },
+        {
+          "text": "a",
+          "start": 4.018,
+          "end": 4.055
+        },
+        {
+          "text": "gift.",
+          "start": 4.068,
+          "end": 4.492
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "And this video? It used three tricks on you too.",
+      "onScreen": "This video\n*did it too.*",
+      "visual": "ROMPE LA CUARTA PARED: la cámara se aleja y se ve que todo lo que viste es una pantalla de celular adentro del blueprint, en una mano. Sobre ese celular aparecen marcas rojas a mano: un círculo, una flecha, 'TRICK #1'.",
+      "camera": "Zoom out continuo y rápido, de la escena al celular, del celular a la mano y de la mano al plano técnico.",
+      "transition": "Las marcas rojas se apuntan a tres partes del propio video.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio 0,4 s (pause_after de la escena anterior)"
+        },
+        {
+          "at": "'this video'",
+          "sound": "Rebobinado de cinta + la música vuelve a su arranque"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s07.mp3",
+      "start": 29.33,
+      "duration": 2.692,
+      "words": [
+        {
+          "text": "And",
+          "start": 0.03,
+          "end": 0.105
+        },
+        {
+          "text": "this",
+          "start": 0.118,
+          "end": 0.268
+        },
+        {
+          "text": "video?",
+          "start": 0.28,
+          "end": 0.642
+        },
+        {
+          "text": "It",
+          "start": 1.055,
+          "end": 1.18
+        },
+        {
+          "text": "used",
+          "start": 1.192,
+          "end": 1.455
+        },
+        {
+          "text": "three",
+          "start": 1.492,
+          "end": 1.755
+        },
+        {
+          "text": "tricks",
+          "start": 1.767,
+          "end": 2.08
+        },
+        {
+          "text": "on",
+          "start": 2.093,
+          "end": 2.18
+        },
+        {
+          "text": "you",
+          "start": 2.193,
+          "end": 2.28
+        },
+        {
+          "text": "too.",
+          "start": 2.292,
+          "end": 2.592
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "A question. The number three. Words that light up.",
+      "onScreen": "*Question.* *3.*\nLit words.",
+      "visual": "Las marcas rojas señalan, en el celular, tres cosas reales del propio video: el 'Why?' del gancho (convertido en un anzuelo que tira del espectador), el número 3 que titila y los subtítulos que se iluminan palabra por palabra (con una flecha a la palabra que suena ahora mismo).",
+      "camera": "Corte por golpe a cada una de las tres marcas.",
+      "transition": "El blueprint se apaga y queda una vela.",
+      "sfx": [
+        {
+          "at": "cada truco marcado",
+          "sound": "Golpe seco + trazo de marcador"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s08.mp3",
+      "start": 32.022,
+      "duration": 2.93,
+      "words": [
+        {
+          "text": "A",
+          "start": 0.03,
+          "end": 0.068
+        },
+        {
+          "text": "question.",
+          "start": 0.08,
+          "end": 0.53
+        },
+        {
+          "text": "The",
+          "start": 0.942,
+          "end": 0.992
+        },
+        {
+          "text": "number",
+          "start": 1.005,
+          "end": 1.267
+        },
+        {
+          "text": "three.",
+          "start": 1.28,
+          "end": 1.605
+        },
+        {
+          "text": "Words",
+          "start": 2.017,
+          "end": 2.218
+        },
+        {
+          "text": "that",
+          "start": 2.23,
+          "end": 2.38
+        },
+        {
+          "text": "light",
+          "start": 2.392,
+          "end": 2.605
+        },
+        {
+          "text": "up.",
+          "start": 2.618,
+          "end": 2.83
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Epictetus said: wait for me a little, appearance.",
+      "quote": "Wait for me a little, appearance.",
+      "author": "Epictetus",
+      "source": "Discourses, 2.18",
+      "visual": "Luz de vela y piedra. La cita aparece mientras una mano detiene el reloj de arena a la mitad: el tiempo se para y los hilos de marioneta del principio quedan flojos.",
+      "camera": "Primer plano de la mano que frena el reloj de arena.",
+      "transition": "Los hilos flojos se cortan.",
+      "sfx": [
+        {
+          "at": "reloj de arena",
+          "sound": "Arena que se frena + piano"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s09.mp3",
+      "start": 34.952,
+      "duration": 3.18,
+      "words": [
+        {
+          "text": "Epictetus",
+          "start": 0.03,
+          "end": 0.643
+        },
+        {
+          "text": "said:",
+          "start": 0.655,
+          "end": 0.918
+        },
+        {
+          "text": "wait",
+          "start": 1.317,
+          "end": 1.505
+        },
+        {
+          "text": "for",
+          "start": 1.517,
+          "end": 1.642
+        },
+        {
+          "text": "me",
+          "start": 1.655,
+          "end": 1.78
+        },
+        {
+          "text": "a",
+          "start": 1.793,
+          "end": 1.855
+        },
+        {
+          "text": "little,",
+          "start": 1.868,
+          "end": 2.23
+        },
+        {
+          "text": "appearance.",
+          "start": 2.417,
+          "end": 3.08
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Three seconds of pause. Now the tricks stop working.",
+      "onScreen": "Pause *3 seconds.*",
+      "visual": "De vuelta en el cine: la mano se frena a centímetros del balde. Los hilos de marioneta se aflojan y caen al piso. El balde grande se desarma solo como cartón.",
+      "camera": "Cámara lenta sobre la mano detenida.",
+      "transition": "Vuelve el cine brillante del principio.",
+      "sfx": [
+        {
+          "at": "hilos que caen",
+          "sound": "Cuerdas que se sueltan + silencio corto"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s10.mp3",
+      "start": 38.132,
+      "duration": 2.942,
+      "words": [
+        {
+          "text": "Three",
+          "start": 0.03,
+          "end": 0.179
+        },
+        {
+          "text": "seconds",
+          "start": 0.192,
+          "end": 0.592
+        },
+        {
+          "text": "of",
+          "start": 0.605,
+          "end": 0.692
+        },
+        {
+          "text": "pause.",
+          "start": 0.704,
+          "end": 1.217
+        },
+        {
+          "text": "Now",
+          "start": 1.63,
+          "end": 1.742
+        },
+        {
+          "text": "the",
+          "start": 1.755,
+          "end": 1.83
+        },
+        {
+          "text": "tricks",
+          "start": 1.842,
+          "end": 2.129
+        },
+        {
+          "text": "stop",
+          "start": 2.142,
+          "end": 2.442
+        },
+        {
+          "text": "working.",
+          "start": 2.454,
+          "end": 2.842
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Next time, ask yourself: did I choose this?",
+      "onScreen": "Did *you*\nchoose this?",
+      "visual": "El cine vuelve a ser brillante como en el cuadro 0: la mano agarra el pochoclo mediano. El último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el macro de la mano del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Primera nota del jingle del cuadro 0"
+        }
+      ],
+      "audio": "shorts/elegido-por-vos/build/voice/s11.mp3",
+      "start": 41.074,
+      "duration": 3.005,
+      "words": [
+        {
+          "text": "Next",
+          "start": 0.03,
+          "end": 0.23
+        },
+        {
+          "text": "time,",
+          "start": 0.242,
+          "end": 0.555
+        },
+        {
+          "text": "ask",
+          "start": 0.955,
+          "end": 1.192
+        },
+        {
+          "text": "yourself:",
+          "start": 1.205,
+          "end": 1.73
+        },
+        {
+          "text": "did",
+          "start": 1.955,
+          "end": 2.08
+        },
+        {
+          "text": "I",
+          "start": 2.093,
+          "end": 2.18
+        },
+        {
+          "text": "choose",
+          "start": 2.193,
+          "end": 2.518
+        },
+        {
+          "text": "this?",
+          "start": 2.53,
+          "end": 2.905
+        }
+      ]
+    }
+  ],
+  "total": 44.079
+}

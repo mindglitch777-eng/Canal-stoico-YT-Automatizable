@@ -1,0 +1,262 @@
+{
+  "id": "millonario-invisible",
+  "title": "You'll guess wrong. One of these 2 men has $3 million.",
+  "belief_broken": "Que los ricos se ven ricos. En el estudio más famoso de millonarios de EE. UU., la mayoría gastaba poco en apariencia. El lujo que se ve muchas veces es deuda.",
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "sources": [
+    "Stanley y Danko, The Millionaire Next Door (1996), según The Christian Science Monitor (1/4/1997): tres de cada cuatro millonarios encuestados nunca gastaron más de US$600 en un traje ni US$200 en zapatos; casi el 40 % manejaba un auto estadounidense de al menos dos años; Ford era la marca más común.",
+    "Séneca, Cartas a Lucilio 5 (trad. R. M. Gummere, 1917, dominio público): 'He is a great man who uses earthenware dishes as if they were silver'.",
+    "Los dos personajes, el saldo de −$84,000 y los $3,000,000 son ilustrativos (un juego), no personas ni datos reales."
+  ],
+  "direction": {
+    "concept": "Un concurso de TV: '¿Quién es el millonario?'. El espectador elige, un escáner de rayos X revela la verdad y se lleva la contra.",
+    "look": "ESTILO NUEVO: estética de programa de juegos y de publicidad de lujo brillante (luces de estudio, confeti, flashes), que se convierte en rayos X verde/azul cuando escanea. Después del giro, el brillo del lujo se apaga y se vuelve gris, y el oro cálido aparece en la vida simple.",
+    "pacing": "Cuenta regresiva y suspenso en la primera mitad (el espectador espera la respuesta); revelaciones rápidas después. Impactos en 1, 3, 4, 7 y 11.",
+    "loop": "Termina con los dos hombres de nuevo lado a lado y la pregunta '¿Quién es el millonario?' en pantalla: el mismo cuadro que el 0. 'Look again' empalma con 'You'll guess wrong'."
+  },
+  "music": {
+    "style": "Lounge de lujo brillante con trap suave y campanitas ('bling') en la primera mitad. En la revelación, la música se desafina y frena como una cinta (tape stop) y entra un bajo oscuro. Cierra con la lira del canal, cálida.",
+    "tempo": "96 BPM; tape stop en la escena 3; bajo oscuro a 96 en la 4-7; lira libre en 8-11.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Jingle de concurso + cuenta regresiva de tres golpes"
+      },
+      {
+        "at": "escena 2",
+        "cue": "Lounge de lujo con campanitas"
+      },
+      {
+        "at": "escena 3, escáner",
+        "cue": "Zumbido de escáner + tape stop de toda la música en el saldo negativo"
+      },
+      {
+        "at": "escena 4",
+        "cue": "Cha-ching enorme + bajo oscuro que entra"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Silencio 0,4 s → golpe de sub-bajo"
+      },
+      {
+        "at": "escenas 8-11",
+        "cue": "Lira cálida y coro; el final vuelve al jingle del concurso para empalmar"
+      }
+    ],
+    "mix": "Voz al frente, música -10 dB bajo la voz, final a -14 LUFS, pico ≤ -1 dBTP."
+  },
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'll guess wrong. One of these 2 men has $3 million. Which?",
+      "onScreen": "Who's the\n*millionaire?*",
+      "visual": "Cuadro 0: estudio de TV con luces que barren. Dos hombres en atriles. IZQUIERDA: cadena de oro, lentes de marca, auto deportivo detrás. DERECHA: buzo gris, auto viejo. Arriba, cuenta regresiva 3-2-1 y botones LEFT / RIGHT que parpadean.",
+      "camera": "Arranca con un barrido de luces que cruza la cámara; zoom alternado a cada hombre.",
+      "transition": "La cuenta regresiva llega a 0 y la imagen se congela con un flash.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Jingle de concurso + golpe"
+        },
+        {
+          "at": "3-2-1",
+          "sound": "Tres golpes de cuenta regresiva"
+        }
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Left: sports car, gold watch, designer everything. Right: a used sedan.",
+      "onScreen": "LEFT or *RIGHT?*",
+      "visual": "Presentación tipo publicidad: cada objeto del de la izquierda aparece con brillo, precio y estrellitas. El de la derecha: su auto viejo hace un 'puf' de humo y el foco de estudio parpadea, cómico.",
+      "camera": "Giros 360° de producto para la izquierda; plano fijo y aburrido para la derecha (el contraste da risa).",
+      "transition": "Baja una máquina de rayos X sobre los dos.",
+      "sfx": [
+        {
+          "at": "objetos de lujo",
+          "sound": "'Bling' brillante en cada uno"
+        },
+        {
+          "at": "sedán",
+          "sound": "Bocina triste + tos de motor"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Now scan them. Left: car loan, credit cards, nothing saved.",
+      "onScreen": "LEFT: *−$84,000*",
+      "visual": "Rayos X verde: a través del hombre de la izquierda se ven cadenas de deuda enganchadas al auto, al reloj y a la ropa. Un saldo rojo baja hasta −$84,000. Su sonrisa se queda congelada.",
+      "camera": "La franja del escáner baja por la pantalla; zoom al saldo.",
+      "transition": "El escáner pasa al de la derecha.",
+      "sfx": [
+        {
+          "at": "escáner",
+          "sound": "Zumbido eléctrico que sube"
+        },
+        {
+          "at": "'nothing saved'",
+          "sound": "Tape stop de la música + buzzer de respuesta incorrecta"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Right: 3 million dollars. Quietly invested.",
+      "onScreen": "RIGHT: *$3,000,000*",
+      "visual": "Rayos X sobre el de buzo gris: adentro brilla una bóveda dorada que crece. El contador vuela a $3,000,000 y le cae confeti de oro. Él ni se inmuta.",
+      "camera": "Zoom a la bóveda; contrapicado del hombre tranquilo bajo el confeti.",
+      "transition": "Una página de libro tapa el estudio.",
+      "sfx": [
+        {
+          "at": "'3 million'",
+          "sound": "Cha-ching enorme + entrada del bajo oscuro"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "In a famous study, 3 in 4 millionaires never paid over $600 for a suit.",
+      "onScreen": "3 in 4:\nsuit under *$600.*",
+      "visual": "Un libro de estudio se abre; salen de las páginas 4 trajes colgados, 3 con etiquetas baratas que se encienden en verde. Gráfico de 3/4 que se llena.",
+      "camera": "Cenital sobre el libro abierto; los trajes suben hacia la cámara.",
+      "transition": "Un traje barato se convierte en la puerta de una camioneta.",
+      "sfx": [
+        {
+          "at": "páginas",
+          "sound": "Hojas que pasan rápido"
+        },
+        {
+          "at": "'three in four'",
+          "sound": "Tres golpes de sello"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Their most common car brand? Ford.",
+      "onScreen": "Their car?\n*Ford.*",
+      "visual": "Una camioneta Ford común y polvorienta entra derrapando al estudio de lujo y estaciona encima de la alfombra roja. Una patente: 'MILLIONAIRE'.",
+      "camera": "Plano bajo desde la alfombra; la camioneta frena a centímetros de la cámara.",
+      "transition": "Al frenar, se apagan todas las luces del estudio.",
+      "sfx": [
+        {
+          "at": "camioneta",
+          "sound": "Motor y derrape"
+        },
+        {
+          "at": "'Ford'",
+          "sound": "Bocina corta + golpe"
+        }
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Because looking rich is how most people stay poor.",
+      "onScreen": "Looking rich\nkeeps you *poor.*",
+      "visual": "Estudio a oscuras. Al hombre de la izquierda le salen hilos de marioneta desde cada logo y cada cuota; arriba, manos gigantes (bancos, marcas) lo mueven. En 'poor' los hilos tiran de golpe.",
+      "camera": "Cámara quieta en 'rich' (silencio) y tirón hacia arriba en 'poor'.",
+      "transition": "Los hilos se cortan y caen como lluvia.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio total 0,4 s (pause_after de la escena anterior) y arranca el giro"
+        },
+        {
+          "at": "'poor'",
+          "sound": "Hilos que se tensan + golpe de sub-bajo"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca: a great man uses earthenware dishes as if they were silver.",
+      "quote": "Earthenware dishes as if they were silver.",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 5",
+      "visual": "Un plato de barro común sobre una mesa; la luz de la cita lo hace brillar como plata. Al lado, platos de plata que se opacan.",
+      "camera": "Macro del plato de barro que gira lento.",
+      "transition": "El plato se parte en dos mitades: una para cada hombre.",
+      "sfx": [
+        {
+          "at": "brillo del barro",
+          "sound": "Campana suave y cálida"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Left bought the look. Right bought his freedom.",
+      "onScreen": "The look vs\n*freedom.*",
+      "visual": "Pantalla partida: a la izquierda el lujo se pone gris y se desarma en cuotas; a la derecha el hombre del buzo gris cierra la laptop y se va a pescar al amanecer, en oro cálido.",
+      "camera": "La línea del medio se corre hacia la izquierda hasta que gana la derecha.",
+      "transition": "El amanecer llena toda la pantalla.",
+      "sfx": [
+        {
+          "at": "'the look'",
+          "sound": "Vidrio que se raja"
+        },
+        {
+          "at": "'freedom'",
+          "sound": "Respiración + pájaros + lira"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Real wealth is the money you don't see.",
+      "onScreen": "Wealth is\n*invisible.*",
+      "visual": "La palabra WEALTH escrita en oro se vuelve transparente; solo se ve cuando la cruza el escáner de rayos X.",
+      "camera": "Frontal; el escáner cruza en cámara lenta.",
+      "transition": "El escáner revela de nuevo el estudio de TV.",
+      "sfx": [
+        {
+          "at": "escáner",
+          "sound": "Zumbido suave + brillo"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Now look again. Still sure you'd guess right?",
+      "onScreen": "Look *again.*",
+      "visual": "Vuelve el estudio de TV con los dos hombres lado a lado y la pregunta arriba: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el encuadre del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Primeras notas del jingle del concurso, que empalman con el cuadro 0"
+        }
+      ]
+    }
+  ]
+}

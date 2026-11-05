@@ -378,6 +378,17 @@ export const S8: React.FC<P> = ({scene, dur}) => {
       </div>
       {/* la cita */}
       <div style={{position: 'absolute', top: 210, left: 80, width: W - 220, padding: '30px 40px', borderRadius: 26, background: 'rgba(10,6,4,0.82)', border: '2px solid rgba(255,220,180,0.35)', textAlign: 'center'}}>
+        {/* lo que la voz dice antes de la cita: cero tiempo muerto */}
+        <div style={{fontFamily: font.sans, fontWeight: 800, fontSize: 40, letterSpacing: '0.16em', color: '#E9A070', marginBottom: 14}}>
+          {['SENECA:', 'A', 'GREAT', 'MAN', 'USES'].map((w, i) => {
+            const at = syncTokens(['Seneca', 'a', 'great', 'man', 'uses'], scene.words, 1.5)[i] * fps;
+            return (
+              <span key={i} style={{display: 'inline-block', marginRight: '0.3em', opacity: Math.max(0, Math.min(1, (f - at + 3) / 4))}}>
+                {w}
+              </span>
+            );
+          })}
+        </div>
         <div style={{fontFamily: font.serif, fontStyle: 'italic', fontWeight: 700, fontSize: 94, lineHeight: 1.05, color: '#F6EBDD'}}>
           {tokens.map((tok, i) => {
             const a = times[i] ?? 0;

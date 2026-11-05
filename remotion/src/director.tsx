@@ -70,6 +70,7 @@ export const goldWords = (text: string) => {
 // Si la voz no la dice, se reparte entre la anterior y la siguiente.
 export const syncTokens = (tokens: string[], words: Word[], fallbackSpan: number): number[] => {
   const times: Array<number | null> = [];
+  const used = new Set<number>();
   let j = 0;
   for (const tok of tokens) {
     const n = norm(tok);
@@ -77,8 +78,19 @@ export const syncTokens = (tokens: string[], words: Word[], fallbackSpan: number
     for (let k = j; k < words.length; k++) {
       if (norm(words[k].text) === n) {
         found = words[k].start;
+        used.add(k);
         j = k + 1;
         break;
+      }
+    }
+    // si el texto en pantalla ordena las palabras distinto que la voz, se busca en toda la frase
+    if (found === null && n) {
+      for (let k = 0; k < words.length; k++) {
+        if (!used.has(k) && norm(words[k].text) === n) {
+          found = words[k].start;
+          used.add(k);
+          break;
+        }
       }
     }
     times.push(found);
@@ -97,7 +109,9 @@ export const syncTokens = (tokens: string[], words: Word[], fallbackSpan: number
     const next = k < out.length ? (out[k] as number) : prev + 0.4 * (k - i + 1);
     out[i] = prev + ((next - prev) * 1) / (k - i + 1);
   }
-  return out as number[];
+  // nunca después de la última palabra dicha (si no, el texto no llega a aparecer)
+  const last = words.length ? words[words.length - 1].start : fallbackSpan;
+  return (out as number[]).map((x) => Math.min(x, last));
 };
 
 type DirectorData = {

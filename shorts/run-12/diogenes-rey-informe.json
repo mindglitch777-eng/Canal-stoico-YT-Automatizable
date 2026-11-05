@@ -1,0 +1,22 @@
+{
+  "duration_s": 42.1,
+  "sample_rate": 48000,
+  "lufs": -14.0,
+  "true_peak_dbtp": 0.6,
+  "silences": [
+    [
+      5.3,
+      5.63
+    ],
+    [
+      28.25,
+      28.63
+    ]
+  ],
+  "loop_ssim": 0.98422,
+  "sheet": "salida/diogenes-rey-hoja.jpg",
+  "ok": false,
+  "fails": [
+    "pico real 0.6 dBTP (máximo -1)"
+  ]
+}

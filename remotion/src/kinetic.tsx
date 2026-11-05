@@ -42,7 +42,10 @@ export const KineticText: React.FC<{
   style?: React.CSSProperties;
   lineStyle?: React.CSSProperties;
   goldScale?: number;
-}> = ({text, words, entry = 'slam', startFrame = 0, span = 1.6, lead = 3, style, lineStyle, goldScale = 1.08}) => {
+  // estilos propios de cada video (por defecto: oro con volumen y marfil)
+  accentStyle?: (frame: number, i: number) => React.CSSProperties;
+  plainStyle?: React.CSSProperties;
+}> = ({text, words, entry = 'slam', startFrame = 0, span = 1.6, lead = 3, style, lineStyle, goldScale = 1.08, accentStyle, plainStyle}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const lines = text.split('\n').map((l) => parseEmphasis(l));
@@ -84,7 +87,7 @@ export const KineticText: React.FC<{
                   opacity: vis * interpolate(f, [0, 3], [0, 1], clamp),
                   transform: `${transform} translateX(${shake}px) scale(${pulse})`,
                   transformOrigin: '50% 60%',
-                  ...(gold ? goldStyle(frame, i) : inkStyle()),
+                  ...(gold ? (accentStyle ? accentStyle(frame, i) : goldStyle(frame, i)) : plainStyle ?? inkStyle()),
                   ...(blur > 0.3 ? {filter: `blur(${blur}px)`} : {}),
                 }}
               >

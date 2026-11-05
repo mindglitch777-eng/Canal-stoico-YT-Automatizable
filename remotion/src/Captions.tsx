@@ -43,7 +43,18 @@ export const coveredByScreen = (group: Word[], screen: Set<string>) => {
 
 // Subtítulos tipo karaoke: cada bloque entra con un rebote, la palabra que suena
 // lleva una placa dorada detrás y las palabras clave salen en oro y más grandes.
-export const Captions: React.FC<{words: Word[]; gold?: string[]; screen?: string[]}> = ({words, gold = [], screen = []}) => {
+// Paleta de los subtítulos (cada video puede tener la suya).
+export type CaptionTheme = {pill: string; edge: string; glow: string; text: string; activeText: string; key: string; font?: string};
+export const GOLD_CAPTIONS: CaptionTheme = {
+  pill: 'linear-gradient(180deg, #FFE7A3, #D8AE52 60%, #A9822E)',
+  edge: '#6B4E17',
+  glow: 'rgba(232,184,90,0.75)',
+  text: color.ink,
+  activeText: '#1A1204',
+  key: color.gold,
+};
+
+export const Captions: React.FC<{words: Word[]; gold?: string[]; screen?: string[]; theme?: CaptionTheme}> = ({words, gold = [], screen = [], theme = GOLD_CAPTIONS}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -64,7 +75,7 @@ export const Captions: React.FC<{words: Word[]; gold?: string[]; screen?: string
         left: safe.side,
         width: W - safe.side * 2,
         textAlign: 'center',
-        fontFamily: font.sans,
+        fontFamily: theme.font ?? font.sans,
         fontWeight: 800,
         fontSize: 66,
         lineHeight: 1.25,
@@ -87,7 +98,7 @@ export const Captions: React.FC<{words: Word[]; gold?: string[]; screen?: string
               position: 'relative',
               margin: '0 0.16em',
               padding: '0 0.14em',
-              color: active ? '#1A1204' : key ? color.gold : color.ink,
+              color: active ? theme.activeText : key ? theme.key : theme.text,
               transform: `scale(${active ? 1 + 0.12 * pop : key ? 1.06 : 1})`,
               textShadow: active ? 'none' : '0 4px 0 rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.9)',
               zIndex: active ? 1 : 0,
@@ -99,8 +110,8 @@ export const Captions: React.FC<{words: Word[]; gold?: string[]; screen?: string
                   position: 'absolute',
                   inset: '0.02em -0.04em',
                   borderRadius: 14,
-                  background: 'linear-gradient(180deg, #FFE7A3, #D8AE52 60%, #A9822E)',
-                  boxShadow: '0 6px 0 #6B4E17, 0 0 34px rgba(232,184,90,0.75)',
+                  background: theme.pill,
+                  boxShadow: `0 6px 0 ${theme.edge}, 0 0 34px ${theme.glow}`,
                   transform: `scaleX(${0.7 + 0.3 * pop}) rotate(${(hash(i + gi * 7) - 0.5) * 6}deg)`,
                   zIndex: -1,
                 }}

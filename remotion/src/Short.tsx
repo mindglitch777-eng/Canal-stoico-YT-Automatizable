@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Background} from './Background';
-import {Captions} from './Captions';
+import {Captions, type CaptionTheme} from './Captions';
 import {DirectorProvider, goldWords, norm, onScreenText, screenTexts} from './director';
 import {useFontsReady} from './fonts';
 import {Camera, Flashes, Lens, Progress, transitionStyle} from './fx';
@@ -69,12 +69,13 @@ const Voice: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}
   </>
 );
 
-const CaptionsLayer: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}>; skip?: number[]; screen?: Record<number, string[]>; fadeAt?: number}> = ({
+const CaptionsLayer: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}>; skip?: number[]; screen?: Record<number, string[]>; fadeAt?: number; theme?: CaptionTheme}> = ({
   scenes,
   spans,
   skip = [],
   screen = {},
   fadeAt,
+  theme,
 }) => {
   const f = useCurrentFrame();
   const fade = fadeAt === undefined ? 1 : Math.max(0, Math.min(1, (fadeAt - f) / 6));
@@ -83,7 +84,7 @@ const CaptionsLayer: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur:
     {scenes.map((scene, i) =>
       duplicated(scene) || skip.includes(i + 1) ? null : (
         <Sequence key={`c${i}`} from={spans[i].from} durationInFrames={spans[i].dur} layout="none">
-          <Captions words={scene.words} gold={goldWords(onScreenText(scene))} screen={[...screenTexts(scene), ...(screen[i + 1] ?? [])]} />
+          <Captions words={scene.words} gold={goldWords(onScreenText(scene))} screen={[...screenTexts(scene), ...(screen[i + 1] ?? [])]} theme={theme} />
         </Sequence>
       ),
     )}
@@ -106,7 +107,7 @@ export const Short: React.FC<Timeline> = (timeline) => {
       <DirectorProvider timeline={timeline}>
         <AbsoluteFill style={{overflow: 'hidden', backgroundColor: '#050505'}}>
           <Custom timeline={timeline} spans={spans} />
-          {captions ? <CaptionsLayer scenes={scenes} spans={spans} skip={custom.noCaptions} screen={custom.screen} fadeAt={custom.loop ? Math.round(timeline.total * fps) : undefined} /> : null}
+          {captions ? <CaptionsLayer scenes={scenes} spans={spans} skip={custom.noCaptions} screen={custom.screen} fadeAt={custom.loop ? Math.round(timeline.total * fps) : undefined} theme={custom.captionTheme} /> : null}
           <Voice scenes={scenes} spans={spans} soundtrack={timeline.soundtrack} />
         </AbsoluteFill>
       </DirectorProvider>

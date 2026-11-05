@@ -1,0 +1,782 @@
+{
+  "id": "millonario-invisible",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'll guess wrong. One of these 2 men has $3 million. Which?",
+      "onScreen": "Who's the\n*millionaire?*",
+      "visual": "Cuadro 0: estudio de TV con luces que barren. Dos hombres en atriles. IZQUIERDA: cadena de oro, lentes de marca, auto deportivo detrás. DERECHA: buzo gris, auto viejo. Arriba, cuenta regresiva 3-2-1 y botones LEFT / RIGHT que parpadean.",
+      "camera": "Arranca con un barrido de luces que cruza la cámara; zoom alternado a cada hombre.",
+      "transition": "La cuenta regresiva llega a 0 y la imagen se congela con un flash.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Jingle de concurso + golpe"
+        },
+        {
+          "at": "3-2-1",
+          "sound": "Tres golpes de cuenta regresiva"
+        }
+      ],
+      "pause_after": 0.4,
+      "audio": "shorts/millonario-invisible/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 5.008,
+      "words": [
+        {
+          "text": "You'll",
+          "start": 0.03,
+          "end": 0.138
+        },
+        {
+          "text": "guess",
+          "start": 0.152,
+          "end": 0.424
+        },
+        {
+          "text": "wrong.",
+          "start": 0.437,
+          "end": 0.763
+        },
+        {
+          "text": "One",
+          "start": 1.212,
+          "end": 1.32
+        },
+        {
+          "text": "of",
+          "start": 1.334,
+          "end": 1.416
+        },
+        {
+          "text": "these",
+          "start": 1.429,
+          "end": 1.647
+        },
+        {
+          "text": "2",
+          "start": 1.66,
+          "end": 1.864
+        },
+        {
+          "text": "men",
+          "start": 1.878,
+          "end": 2.231
+        },
+        {
+          "text": "has",
+          "start": 2.244,
+          "end": 2.489
+        },
+        {
+          "text": "$3 million",
+          "start": 2.503,
+          "end": 3.834
+        },
+        {
+          "text": "Which?",
+          "start": 4.282,
+          "end": 4.608
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Left: sports car, gold watch, designer everything. Right: a used sedan.",
+      "onScreen": "LEFT or *RIGHT?*",
+      "visual": "Presentación tipo publicidad: cada objeto del de la izquierda aparece con brillo, precio y estrellitas. El de la derecha: su auto viejo hace un 'puf' de humo y el foco de estudio parpadea, cómico.",
+      "camera": "Giros 360° de producto para la izquierda; plano fijo y aburrido para la derecha (el contraste da risa).",
+      "transition": "Baja una máquina de rayos X sobre los dos.",
+      "sfx": [
+        {
+          "at": "objetos de lujo",
+          "sound": "'Bling' brillante en cada uno"
+        },
+        {
+          "at": "sedán",
+          "sound": "Bocina triste + tos de motor"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s02.mp3",
+      "start": 5.008,
+      "duration": 6.013,
+      "words": [
+        {
+          "text": "Left:",
+          "start": 0.03,
+          "end": 0.437
+        },
+        {
+          "text": "sports",
+          "start": 0.723,
+          "end": 1.103
+        },
+        {
+          "text": "car,",
+          "start": 1.117,
+          "end": 1.497
+        },
+        {
+          "text": "gold",
+          "start": 1.782,
+          "end": 2.054
+        },
+        {
+          "text": "watch,",
+          "start": 2.068,
+          "end": 2.57
+        },
+        {
+          "text": "designer",
+          "start": 2.774,
+          "end": 3.331
+        },
+        {
+          "text": "everything.",
+          "start": 3.467,
+          "end": 3.956
+        },
+        {
+          "text": "Right:",
+          "start": 4.405,
+          "end": 4.69
+        },
+        {
+          "text": "a",
+          "start": 5.016,
+          "end": 5.043
+        },
+        {
+          "text": "used",
+          "start": 5.057,
+          "end": 5.383
+        },
+        {
+          "text": "sedan.",
+          "start": 5.397,
+          "end": 5.913
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Now scan them. Left: car loan, credit cards, nothing saved.",
+      "onScreen": "LEFT: *−$84,000*",
+      "visual": "Rayos X verde: a través del hombre de la izquierda se ven cadenas de deuda enganchadas al auto, al reloj y a la ropa. Un saldo rojo baja hasta −$84,000. Su sonrisa se queda congelada.",
+      "camera": "La franja del escáner baja por la pantalla; zoom al saldo.",
+      "transition": "El escáner pasa al de la derecha.",
+      "sfx": [
+        {
+          "at": "escáner",
+          "sound": "Zumbido eléctrico que sube"
+        },
+        {
+          "at": "'nothing saved'",
+          "sound": "Tape stop de la música + buzzer de respuesta incorrecta"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s03.mp3",
+      "start": 11.021,
+      "duration": 4.654,
+      "words": [
+        {
+          "text": "Now",
+          "start": 0.03,
+          "end": 0.166
+        },
+        {
+          "text": "scan",
+          "start": 0.179,
+          "end": 0.492
+        },
+        {
+          "text": "them.",
+          "start": 0.505,
+          "end": 0.695
+        },
+        {
+          "text": "Left:",
+          "start": 1.144,
+          "end": 1.497
+        },
+        {
+          "text": "car",
+          "start": 1.905,
+          "end": 2.136
+        },
+        {
+          "text": "loan,",
+          "start": 2.149,
+          "end": 2.557
+        },
+        {
+          "text": "credit",
+          "start": 2.801,
+          "end": 3.087
+        },
+        {
+          "text": "cards,",
+          "start": 3.1,
+          "end": 3.562
+        },
+        {
+          "text": "nothing",
+          "start": 3.793,
+          "end": 4.079
+        },
+        {
+          "text": "saved.",
+          "start": 4.092,
+          "end": 4.554
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Right: 3 million dollars. Quietly invested.",
+      "onScreen": "RIGHT: *$3,000,000*",
+      "visual": "Rayos X sobre el de buzo gris: adentro brilla una bóveda dorada que crece. El contador vuela a $3,000,000 y le cae confeti de oro. Él ni se inmuta.",
+      "camera": "Zoom a la bóveda; contrapicado del hombre tranquilo bajo el confeti.",
+      "transition": "Una página de libro tapa el estudio.",
+      "sfx": [
+        {
+          "at": "'3 million'",
+          "sound": "Cha-ching enorme + entrada del bajo oscuro"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s04.mp3",
+      "start": 15.675,
+      "duration": 3.554,
+      "words": [
+        {
+          "text": "Right:",
+          "start": 0.03,
+          "end": 0.329
+        },
+        {
+          "text": "3 million dollars",
+          "start": 0.668,
+          "end": 2.013
+        },
+        {
+          "text": "Quietly",
+          "start": 2.462,
+          "end": 2.869
+        },
+        {
+          "text": "invested.",
+          "start": 2.883,
+          "end": 3.454
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "In a famous study, 3 in 4 millionaires never paid over $600 for a suit.",
+      "onScreen": "3 in 4:\nsuit under *$600.*",
+      "visual": "Un libro de estudio se abre; salen de las páginas 4 trajes colgados, 3 con etiquetas baratas que se encienden en verde. Gráfico de 3/4 que se llena.",
+      "camera": "Cenital sobre el libro abierto; los trajes suben hacia la cámara.",
+      "transition": "Un traje barato se convierte en la puerta de una camioneta.",
+      "sfx": [
+        {
+          "at": "páginas",
+          "sound": "Hojas que pasan rápido"
+        },
+        {
+          "at": "'three in four'",
+          "sound": "Tres golpes de sello"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s05.mp3",
+      "start": 19.229,
+      "duration": 5.768,
+      "words": [
+        {
+          "text": "In",
+          "start": 0.03,
+          "end": 0.111
+        },
+        {
+          "text": "a",
+          "start": 0.125,
+          "end": 0.179
+        },
+        {
+          "text": "famous",
+          "start": 0.193,
+          "end": 0.614
+        },
+        {
+          "text": "study,",
+          "start": 0.628,
+          "end": 1.008
+        },
+        {
+          "text": "3",
+          "start": 1.307,
+          "end": 1.606
+        },
+        {
+          "text": "in",
+          "start": 1.619,
+          "end": 1.742
+        },
+        {
+          "text": "4",
+          "start": 1.755,
+          "end": 2.095
+        },
+        {
+          "text": "millionaires",
+          "start": 2.109,
+          "end": 2.801
+        },
+        {
+          "text": "never",
+          "start": 2.815,
+          "end": 3.209
+        },
+        {
+          "text": "paid",
+          "start": 3.223,
+          "end": 3.617
+        },
+        {
+          "text": "over",
+          "start": 3.63,
+          "end": 3.902
+        },
+        {
+          "text": "$600",
+          "start": 3.916,
+          "end": 4.989
+        },
+        {
+          "text": "for",
+          "start": 5.003,
+          "end": 5.166
+        },
+        {
+          "text": "a",
+          "start": 5.179,
+          "end": 5.233
+        },
+        {
+          "text": "suit.",
+          "start": 5.247,
+          "end": 5.668
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Their most common car brand? Ford.",
+      "onScreen": "Their car?\n*Ford.*",
+      "visual": "Una camioneta Ford común y polvorienta entra derrapando al estudio de lujo y estaciona encima de la alfombra roja. Una patente: 'MILLIONAIRE'.",
+      "camera": "Plano bajo desde la alfombra; la camioneta frena a centímetros de la cámara.",
+      "transition": "Al frenar, se apagan todas las luces del estudio.",
+      "sfx": [
+        {
+          "at": "camioneta",
+          "sound": "Motor y derrape"
+        },
+        {
+          "at": "'Ford'",
+          "sound": "Bocina corta + golpe"
+        }
+      ],
+      "pause_after": 0.4,
+      "audio": "shorts/millonario-invisible/build/voice/s06.mp3",
+      "start": 24.997,
+      "duration": 2.604,
+      "words": [
+        {
+          "text": "Their",
+          "start": 0.03,
+          "end": 0.139
+        },
+        {
+          "text": "most",
+          "start": 0.153,
+          "end": 0.451
+        },
+        {
+          "text": "common",
+          "start": 0.465,
+          "end": 0.764
+        },
+        {
+          "text": "car",
+          "start": 0.778,
+          "end": 0.981
+        },
+        {
+          "text": "brand?",
+          "start": 0.995,
+          "end": 1.362
+        },
+        {
+          "text": "Ford.",
+          "start": 1.865,
+          "end": 2.204
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Because looking rich is how most people stay poor.",
+      "onScreen": "Looking rich\nkeeps you *poor.*",
+      "visual": "Estudio a oscuras. Al hombre de la izquierda le salen hilos de marioneta desde cada logo y cada cuota; arriba, manos gigantes (bancos, marcas) lo mueven. En 'poor' los hilos tiran de golpe.",
+      "camera": "Cámara quieta en 'rich' (silencio) y tirón hacia arriba en 'poor'.",
+      "transition": "Los hilos se cortan y caen como lluvia.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio total 0,4 s (pause_after de la escena anterior) y arranca el giro"
+        },
+        {
+          "at": "'poor'",
+          "sound": "Hilos que se tensan + golpe de sub-bajo"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s07.mp3",
+      "start": 27.601,
+      "duration": 2.834,
+      "words": [
+        {
+          "text": "Because",
+          "start": 0.03,
+          "end": 0.302
+        },
+        {
+          "text": "looking",
+          "start": 0.316,
+          "end": 0.682
+        },
+        {
+          "text": "rich",
+          "start": 0.696,
+          "end": 0.995
+        },
+        {
+          "text": "is",
+          "start": 1.076,
+          "end": 1.185
+        },
+        {
+          "text": "how",
+          "start": 1.199,
+          "end": 1.362
+        },
+        {
+          "text": "most",
+          "start": 1.375,
+          "end": 1.742
+        },
+        {
+          "text": "people",
+          "start": 1.756,
+          "end": 2.055
+        },
+        {
+          "text": "stay",
+          "start": 2.068,
+          "end": 2.313
+        },
+        {
+          "text": "poor.",
+          "start": 2.326,
+          "end": 2.734
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca: a great man uses earthenware dishes as if they were silver.",
+      "quote": "Earthenware dishes as if they were silver.",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 5",
+      "visual": "Un plato de barro común sobre una mesa; la luz de la cita lo hace brillar como plata. Al lado, platos de plata que se opacan.",
+      "camera": "Macro del plato de barro que gira lento.",
+      "transition": "El plato se parte en dos mitades: una para cada hombre.",
+      "sfx": [
+        {
+          "at": "brillo del barro",
+          "sound": "Campana suave y cálida"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s08.mp3",
+      "start": 30.435,
+      "duration": 4.505,
+      "words": [
+        {
+          "text": "Seneca:",
+          "start": 0.03,
+          "end": 0.519
+        },
+        {
+          "text": "a",
+          "start": 0.941,
+          "end": 0.995
+        },
+        {
+          "text": "great",
+          "start": 1.009,
+          "end": 1.321
+        },
+        {
+          "text": "man",
+          "start": 1.335,
+          "end": 1.62
+        },
+        {
+          "text": "uses",
+          "start": 1.634,
+          "end": 2.068
+        },
+        {
+          "text": "earthenware",
+          "start": 2.163,
+          "end": 2.707
+        },
+        {
+          "text": "dishes",
+          "start": 2.72,
+          "end": 3.196
+        },
+        {
+          "text": "as",
+          "start": 3.223,
+          "end": 3.4
+        },
+        {
+          "text": "if",
+          "start": 3.413,
+          "end": 3.536
+        },
+        {
+          "text": "they",
+          "start": 3.549,
+          "end": 3.672
+        },
+        {
+          "text": "were",
+          "start": 3.685,
+          "end": 3.821
+        },
+        {
+          "text": "silver.",
+          "start": 3.835,
+          "end": 4.405
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Left bought the look. Right bought his freedom.",
+      "onScreen": "The look vs\n*freedom.*",
+      "visual": "Pantalla partida: a la izquierda el lujo se pone gris y se desarma en cuotas; a la derecha el hombre del buzo gris cierra la laptop y se va a pescar al amanecer, en oro cálido.",
+      "camera": "La línea del medio se corre hacia la izquierda hasta que gana la derecha.",
+      "transition": "El amanecer llena toda la pantalla.",
+      "sfx": [
+        {
+          "at": "'the look'",
+          "sound": "Vidrio que se raja"
+        },
+        {
+          "at": "'freedom'",
+          "sound": "Respiración + pájaros + lira"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s09.mp3",
+      "start": 34.94,
+      "duration": 2.344,
+      "words": [
+        {
+          "text": "Left",
+          "start": 0.03,
+          "end": 0.206
+        },
+        {
+          "text": "bought",
+          "start": 0.22,
+          "end": 0.437
+        },
+        {
+          "text": "the",
+          "start": 0.451,
+          "end": 0.546
+        },
+        {
+          "text": "look.",
+          "start": 0.56,
+          "end": 0.886
+        },
+        {
+          "text": "Right",
+          "start": 1.334,
+          "end": 1.511
+        },
+        {
+          "text": "bought",
+          "start": 1.524,
+          "end": 1.714
+        },
+        {
+          "text": "his",
+          "start": 1.728,
+          "end": 1.864
+        },
+        {
+          "text": "freedom.",
+          "start": 1.878,
+          "end": 2.244
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Real wealth is the money you don't see.",
+      "onScreen": "Wealth is\n*invisible.*",
+      "visual": "La palabra WEALTH escrita en oro se vuelve transparente; solo se ve cuando la cruza el escáner de rayos X.",
+      "camera": "Frontal; el escáner cruza en cámara lenta.",
+      "transition": "El escáner revela de nuevo el estudio de TV.",
+      "sfx": [
+        {
+          "at": "escáner",
+          "sound": "Zumbido suave + brillo"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s10.mp3",
+      "start": 37.284,
+      "duration": 2.236,
+      "words": [
+        {
+          "text": "Real",
+          "start": 0.03,
+          "end": 0.288
+        },
+        {
+          "text": "wealth",
+          "start": 0.301,
+          "end": 0.668
+        },
+        {
+          "text": "is",
+          "start": 0.763,
+          "end": 0.872
+        },
+        {
+          "text": "the",
+          "start": 0.886,
+          "end": 0.967
+        },
+        {
+          "text": "money",
+          "start": 0.981,
+          "end": 1.348
+        },
+        {
+          "text": "you",
+          "start": 1.361,
+          "end": 1.497
+        },
+        {
+          "text": "don't",
+          "start": 1.511,
+          "end": 1.782
+        },
+        {
+          "text": "see.",
+          "start": 1.796,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Now look again. Still sure you'd guess right?",
+      "onScreen": "Look *again.*",
+      "visual": "Vuelve el estudio de TV con los dos hombres lado a lado y la pregunta arriba: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el encuadre del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Primeras notas del jingle del concurso, que empalman con el cuadro 0"
+        }
+      ],
+      "audio": "shorts/millonario-invisible/build/voice/s11.mp3",
+      "start": 39.52,
+      "duration": 2.439,
+      "words": [
+        {
+          "text": "Now",
+          "start": 0.03,
+          "end": 0.152
+        },
+        {
+          "text": "look",
+          "start": 0.166,
+          "end": 0.329
+        },
+        {
+          "text": "again.",
+          "start": 0.342,
+          "end": 0.695
+        },
+        {
+          "text": "Still",
+          "start": 1.157,
+          "end": 1.361
+        },
+        {
+          "text": "sure",
+          "start": 1.375,
+          "end": 1.606
+        },
+        {
+          "text": "you'd",
+          "start": 1.619,
+          "end": 1.769
+        },
+        {
+          "text": "guess",
+          "start": 1.782,
+          "end": 2.027
+        },
+        {
+          "text": "right?",
+          "start": 2.041,
+          "end": 2.339
+        }
+      ]
+    }
+  ],
+  "total": 41.959
+}

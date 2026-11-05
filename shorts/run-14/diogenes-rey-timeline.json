@@ -1,0 +1,849 @@
+{
+  "id": "diogenes-rey",
+  "fps": 30,
+  "captions": true,
+  "voice": "en-US-AndrewNeural",
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never risk insulting a king. Diogenes told Alexander to move. Why?",
+      "onScreen": "He told a *king:*\n*move.*",
+      "visual": "Cuadro 0: un hombre chiquito tirado al sol sobre la terracota. Una sombra GIGANTE (rey a caballo + lanzas de un ejército) avanza y lo tapa entero. En 'move' el hombre hace un gesto con la mano sin levantarse y la sombra se congela.",
+      "camera": "Picado extremo desde arriba; en 'move' zoom de golpe a la mano.",
+      "transition": "La sombra congelada se despega de la vasija y se vuelve el perfil de Alejandro.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Cuerno de guerra grave + cascos"
+        },
+        {
+          "at": "'move'",
+          "sound": "Golpe seco + disco que frena"
+        }
+      ],
+      "pause_after": 0.4,
+      "audio": "shorts/diogenes-rey/build/voice/s01.mp3",
+      "start": 0.0,
+      "duration": 5.583,
+      "words": [
+        {
+          "text": "You'd",
+          "start": 0.03,
+          "end": 0.209
+        },
+        {
+          "text": "never",
+          "start": 0.221,
+          "end": 0.566
+        },
+        {
+          "text": "risk",
+          "start": 0.578,
+          "end": 0.872
+        },
+        {
+          "text": "insulting",
+          "start": 0.885,
+          "end": 1.369
+        },
+        {
+          "text": "a",
+          "start": 1.382,
+          "end": 1.42
+        },
+        {
+          "text": "king.",
+          "start": 1.433,
+          "end": 1.765
+        },
+        {
+          "text": "Diogenes",
+          "start": 2.186,
+          "end": 2.951
+        },
+        {
+          "text": "told",
+          "start": 3.079,
+          "end": 3.397
+        },
+        {
+          "text": "Alexander",
+          "start": 3.41,
+          "end": 3.997
+        },
+        {
+          "text": "to",
+          "start": 4.01,
+          "end": 4.073
+        },
+        {
+          "text": "move.",
+          "start": 4.086,
+          "end": 4.482
+        },
+        {
+          "text": "Why?",
+          "start": 4.902,
+          "end": 5.183
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Alexander the Great. King at twenty. Leader of all Greece.",
+      "onScreen": "King at *20.*",
+      "visual": "Perfil de Alejandro estilo moneda/vasija; un '20' enorme se graba en la cerámica y detrás se despliega un mapa de Grecia que se tiñe del color de su ejército.",
+      "camera": "Giro alrededor del perfil como una moneda que rota.",
+      "transition": "El mapa se pliega y queda una tinaja de barro.",
+      "sfx": [
+        {
+          "at": "'twenty'",
+          "sound": "Golpe de cincel + tambor"
+        },
+        {
+          "at": "mapa",
+          "sound": "Marcha de miles de pasos"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s02.mp3",
+      "start": 5.583,
+      "duration": 3.651,
+      "words": [
+        {
+          "text": "Alexander",
+          "start": 0.03,
+          "end": 0.566
+        },
+        {
+          "text": "the",
+          "start": 0.579,
+          "end": 0.655
+        },
+        {
+          "text": "Great.",
+          "start": 0.668,
+          "end": 1.051
+        },
+        {
+          "text": "King",
+          "start": 1.472,
+          "end": 1.625
+        },
+        {
+          "text": "at",
+          "start": 1.637,
+          "end": 1.714
+        },
+        {
+          "text": "twenty.",
+          "start": 1.727,
+          "end": 2.071
+        },
+        {
+          "text": "Leader",
+          "start": 2.492,
+          "end": 2.734
+        },
+        {
+          "text": "of",
+          "start": 2.747,
+          "end": 2.849
+        },
+        {
+          "text": "all",
+          "start": 2.862,
+          "end": 3.053
+        },
+        {
+          "text": "Greece.",
+          "start": 3.066,
+          "end": 3.551
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Diogenes? He lived in a clay jar, owning almost nothing.",
+      "onScreen": "A clay *jar.*",
+      "visual": "Una tinaja de barro gira; adentro, Diógenes acostado con su capa. Un inventario aparece al lado como lista de vasija: capa, bastón, bolsa… y se terminan los ítems.",
+      "camera": "Zoom hacia adentro de la tinaja.",
+      "transition": "Desde adentro de la tinaja se ve la sombra del rey asomando por la boca.",
+      "sfx": [
+        {
+          "at": "tinaja",
+          "sound": "Cerámica que suena hueca (golpe con eco)"
+        },
+        {
+          "at": "lista que se termina",
+          "sound": "Tres 'tics' y un silencio cómico"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s03.mp3",
+      "start": 9.234,
+      "duration": 4.122,
+      "words": [
+        {
+          "text": "Diogenes?",
+          "start": 0.03,
+          "end": 0.732
+        },
+        {
+          "text": "He",
+          "start": 1.165,
+          "end": 1.255
+        },
+        {
+          "text": "lived",
+          "start": 1.267,
+          "end": 1.599
+        },
+        {
+          "text": "in",
+          "start": 1.612,
+          "end": 1.688
+        },
+        {
+          "text": "a",
+          "start": 1.701,
+          "end": 1.752
+        },
+        {
+          "text": "clay",
+          "start": 1.765,
+          "end": 2.045
+        },
+        {
+          "text": "jar,",
+          "start": 2.058,
+          "end": 2.466
+        },
+        {
+          "text": "owning",
+          "start": 2.9,
+          "end": 3.193
+        },
+        {
+          "text": "almost",
+          "start": 3.206,
+          "end": 3.627
+        },
+        {
+          "text": "nothing.",
+          "start": 3.64,
+          "end": 4.022
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "The king offered him anything. Diogenes: stand from between me and the sun.",
+      "quote": "Stand from between me and the sun.",
+      "author": "Diogenes",
+      "source": "Plutarch, Life of Alexander 14",
+      "visual": "El rey parado delante, tapando el sol. En 'sun' el sol estalla en rayos detrás de Alejandro y lo vuelve una silueta negra recortada: el sol le gana al rey.",
+      "camera": "Contrapicado desde Diógenes: el rey enorme; en 'sun', destello que encandila.",
+      "transition": "Destello blanco y aparecen los guardias riéndose.",
+      "sfx": [
+        {
+          "at": "'sun'",
+          "sound": "Golpe de luz (riser + impacto brillante) y corte de la música"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s04.mp3",
+      "start": 13.356,
+      "duration": 4.913,
+      "words": [
+        {
+          "text": "The",
+          "start": 0.03,
+          "end": 0.094
+        },
+        {
+          "text": "king",
+          "start": 0.106,
+          "end": 0.336
+        },
+        {
+          "text": "offered",
+          "start": 0.349,
+          "end": 0.629
+        },
+        {
+          "text": "him",
+          "start": 0.642,
+          "end": 0.77
+        },
+        {
+          "text": "anything.",
+          "start": 0.897,
+          "end": 1.318
+        },
+        {
+          "text": "Diogenes:",
+          "start": 1.739,
+          "end": 2.504
+        },
+        {
+          "text": "stand",
+          "start": 2.747,
+          "end": 3.066
+        },
+        {
+          "text": "from",
+          "start": 3.078,
+          "end": 3.206
+        },
+        {
+          "text": "between",
+          "start": 3.219,
+          "end": 3.652
+        },
+        {
+          "text": "me",
+          "start": 3.665,
+          "end": 4.035
+        },
+        {
+          "text": "and",
+          "start": 4.15,
+          "end": 4.277
+        },
+        {
+          "text": "the",
+          "start": 4.29,
+          "end": 4.367
+        },
+        {
+          "text": "sun.",
+          "start": 4.379,
+          "end": 4.813
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "His guards burst out laughing. Alexander didn't.",
+      "onScreen": "They *laughed.*",
+      "visual": "Fila de guardias de figuras negras doblados de risa, con los cascos temblando. En 'didn't' corte a la cara de Alejandro, seria, pensando.",
+      "camera": "Paneo rápido por los guardias; corte seco a primer plano.",
+      "transition": "La cara de Alejandro se parte al medio como una máscara.",
+      "sfx": [
+        {
+          "at": "risas",
+          "sound": "Risas graves sintetizadas que rebotan con eco"
+        },
+        {
+          "at": "'didn't'",
+          "sound": "Corte a silencio"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s05.mp3",
+      "start": 18.269,
+      "duration": 2.796,
+      "words": [
+        {
+          "text": "His",
+          "start": 0.03,
+          "end": 0.132
+        },
+        {
+          "text": "guards",
+          "start": 0.145,
+          "end": 0.438
+        },
+        {
+          "text": "burst",
+          "start": 0.502,
+          "end": 0.821
+        },
+        {
+          "text": "out",
+          "start": 0.834,
+          "end": 0.974
+        },
+        {
+          "text": "laughing.",
+          "start": 0.987,
+          "end": 1.408
+        },
+        {
+          "text": "Alexander",
+          "start": 1.816,
+          "end": 2.339
+        },
+        {
+          "text": "didn't.",
+          "start": 2.351,
+          "end": 2.696
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "He said: if I were not Alexander, I would be Diogenes.",
+      "quote": "If I were not Alexander, I'd be Diogenes.",
+      "author": "Alexander the Great",
+      "source": "Plutarch, Life of Alexander 14",
+      "visual": "La máscara partida: una mitad es Alejandro con corona, la otra Diógenes al sol. Las dos mitades se juntan y se miran.",
+      "camera": "Pantalla partida que se cierra al centro.",
+      "transition": "La vasija se quiebra y por las grietas se ve el mundo de hoy.",
+      "sfx": [
+        {
+          "at": "unión de mitades",
+          "sound": "Dos golpes de cerámica que encajan"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s06.mp3",
+      "start": 21.065,
+      "duration": 3.982,
+      "words": [
+        {
+          "text": "He",
+          "start": 0.03,
+          "end": 0.093
+        },
+        {
+          "text": "said:",
+          "start": 0.106,
+          "end": 0.463
+        },
+        {
+          "text": "if",
+          "start": 0.948,
+          "end": 1.024
+        },
+        {
+          "text": "I",
+          "start": 1.037,
+          "end": 1.126
+        },
+        {
+          "text": "were",
+          "start": 1.139,
+          "end": 1.267
+        },
+        {
+          "text": "not",
+          "start": 1.28,
+          "end": 1.522
+        },
+        {
+          "text": "Alexander,",
+          "start": 1.535,
+          "end": 2.262
+        },
+        {
+          "text": "I",
+          "start": 2.683,
+          "end": 2.721
+        },
+        {
+          "text": "would",
+          "start": 2.734,
+          "end": 2.874
+        },
+        {
+          "text": "be",
+          "start": 2.887,
+          "end": 3.001
+        },
+        {
+          "text": "Diogenes.",
+          "start": 3.014,
+          "end": 3.882
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "In any deal, whoever can walk away holds the power.",
+      "onScreen": "Who can *walk away?*",
+      "visual": "Ahora en el mundo moderno, pero en estilo vasija: una mesa de negociación, un jefe y un empleado. Una flecha de 'poder' pasa al que se levanta y se va. Etiqueta en pantalla: BATNA.",
+      "camera": "Plano lateral de la mesa; la silla que se aleja en primer plano.",
+      "transition": "La silla vacía se vuelve una cadena tirante.",
+      "sfx": [
+        {
+          "at": "'walk away'",
+          "sound": "Silla que se arrastra + puerta que se cierra"
+        }
+      ],
+      "pause_after": 0.4,
+      "audio": "shorts/diogenes-rey/build/voice/s07.mp3",
+      "start": 25.047,
+      "duration": 3.542,
+      "words": [
+        {
+          "text": "In",
+          "start": 0.03,
+          "end": 0.17
+        },
+        {
+          "text": "any",
+          "start": 0.183,
+          "end": 0.387
+        },
+        {
+          "text": "deal,",
+          "start": 0.4,
+          "end": 0.77
+        },
+        {
+          "text": "whoever",
+          "start": 1.191,
+          "end": 1.535
+        },
+        {
+          "text": "can",
+          "start": 1.548,
+          "end": 1.714
+        },
+        {
+          "text": "walk",
+          "start": 1.726,
+          "end": 1.982
+        },
+        {
+          "text": "away",
+          "start": 1.994,
+          "end": 2.3
+        },
+        {
+          "text": "holds",
+          "start": 2.313,
+          "end": 2.581
+        },
+        {
+          "text": "the",
+          "start": 2.594,
+          "end": 2.67
+        },
+        {
+          "text": "power.",
+          "start": 2.683,
+          "end": 3.142
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Money doesn't make you free. Needing less does.",
+      "onScreen": "Need *less.*",
+      "visual": "Un hombre de hoy atado con cadenas hechas de logos, cuotas, sueldo y suscripciones, que tiran de él. En 'needing less' cada eslabón se corta solo, uno por golpe, y queda acostado al sol como Diógenes.",
+      "camera": "Zoom lento hacia el hombre; en cada eslabón cortado, temblor.",
+      "transition": "Los eslabones caídos se ordenan en dos columnas.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio total 0,4 s (pause_after de la escena anterior) y arranca el giro con un golpe"
+        },
+        {
+          "at": "cada eslabón",
+          "sound": "Metal que se corta + golpe de sub-bajo"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s08.mp3",
+      "start": 28.589,
+      "duration": 2.515,
+      "words": [
+        {
+          "text": "Money",
+          "start": 0.03,
+          "end": 0.221
+        },
+        {
+          "text": "doesn't",
+          "start": 0.234,
+          "end": 0.476
+        },
+        {
+          "text": "make",
+          "start": 0.489,
+          "end": 0.655
+        },
+        {
+          "text": "you",
+          "start": 0.668,
+          "end": 0.77
+        },
+        {
+          "text": "free.",
+          "start": 0.783,
+          "end": 1.127
+        },
+        {
+          "text": "Needing",
+          "start": 1.548,
+          "end": 1.79
+        },
+        {
+          "text": "less",
+          "start": 1.803,
+          "end": 1.994
+        },
+        {
+          "text": "does.",
+          "start": 2.007,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "The king needed an army to feel powerful. Diogenes needed sunlight.",
+      "onScreen": "Army vs *sunlight.*",
+      "visual": "Pantalla partida: a la izquierda miles de soldados, caballos y oro (todo lo que hace falta mantener); a la derecha, un rayo de sol y un hombre acostado. La izquierda se pone pesada y se hunde; la derecha brilla.",
+      "camera": "Balanza: la imagen se inclina hacia la izquierda.",
+      "transition": "El rayo de sol cruza toda la pantalla.",
+      "sfx": [
+        {
+          "at": "ejército",
+          "sound": "Metal pesado que cruje"
+        },
+        {
+          "at": "'sunlight'",
+          "sound": "Campana cálida"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s09.mp3",
+      "start": 31.104,
+      "duration": 4.25,
+      "words": [
+        {
+          "text": "The",
+          "start": 0.03,
+          "end": 0.094
+        },
+        {
+          "text": "king",
+          "start": 0.106,
+          "end": 0.361
+        },
+        {
+          "text": "needed",
+          "start": 0.374,
+          "end": 0.642
+        },
+        {
+          "text": "an",
+          "start": 0.655,
+          "end": 0.77
+        },
+        {
+          "text": "army",
+          "start": 0.782,
+          "end": 1.165
+        },
+        {
+          "text": "to",
+          "start": 1.178,
+          "end": 1.293
+        },
+        {
+          "text": "feel",
+          "start": 1.305,
+          "end": 1.637
+        },
+        {
+          "text": "powerful.",
+          "start": 1.65,
+          "end": 2.262
+        },
+        {
+          "text": "Diogenes",
+          "start": 2.683,
+          "end": 3.308
+        },
+        {
+          "text": "needed",
+          "start": 3.321,
+          "end": 3.589
+        },
+        {
+          "text": "sunlight.",
+          "start": 3.601,
+          "end": 4.15
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "You can't buy a man who wants nothing. Or rule him.",
+      "onScreen": "Can't be *bought.*",
+      "visual": "Manos de todos lados le ofrecen a Diógenes bolsas de oro, coronas y contratos; todo rebota contra él como contra un escudo de luz y se hace polvo.",
+      "camera": "Bullet time alrededor de Diógenes mientras rebota todo.",
+      "transition": "El polvo de oro sube y tapa el sol: vuelve la sombra.",
+      "sfx": [
+        {
+          "at": "cada rebote",
+          "sound": "Golpe metálico que se apaga"
+        },
+        {
+          "at": "'rule him'",
+          "sound": "Coro que sube"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s10.mp3",
+      "start": 35.354,
+      "duration": 2.898,
+      "words": [
+        {
+          "text": "You",
+          "start": 0.03,
+          "end": 0.119
+        },
+        {
+          "text": "can't",
+          "start": 0.132,
+          "end": 0.387
+        },
+        {
+          "text": "buy",
+          "start": 0.4,
+          "end": 0.566
+        },
+        {
+          "text": "a",
+          "start": 0.578,
+          "end": 0.63
+        },
+        {
+          "text": "man",
+          "start": 0.642,
+          "end": 0.987
+        },
+        {
+          "text": "who",
+          "start": 0.999,
+          "end": 1.114
+        },
+        {
+          "text": "wants",
+          "start": 1.127,
+          "end": 1.382
+        },
+        {
+          "text": "nothing.",
+          "start": 1.395,
+          "end": 1.765
+        },
+        {
+          "text": "Or",
+          "start": 2.198,
+          "end": 2.339
+        },
+        {
+          "text": "rule",
+          "start": 2.351,
+          "end": 2.568
+        },
+        {
+          "text": "him.",
+          "start": 2.581,
+          "end": 2.798
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Want less. Then you can tell anyone to move. Even a king...",
+      "onScreen": "Want *less.*",
+      "visual": "La sombra gigante del rey vuelve a caer sobre Diógenes al sol: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Vuelve al picado extremo del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Riser que lo resuelve el cuerno del cuadro 0"
+        }
+      ],
+      "audio": "shorts/diogenes-rey/build/voice/s11.mp3",
+      "start": 38.252,
+      "duration": 3.701,
+      "words": [
+        {
+          "text": "Want",
+          "start": 0.03,
+          "end": 0.196
+        },
+        {
+          "text": "less.",
+          "start": 0.209,
+          "end": 0.617
+        },
+        {
+          "text": "Then",
+          "start": 1.038,
+          "end": 1.14
+        },
+        {
+          "text": "you",
+          "start": 1.152,
+          "end": 1.255
+        },
+        {
+          "text": "can",
+          "start": 1.267,
+          "end": 1.382
+        },
+        {
+          "text": "tell",
+          "start": 1.395,
+          "end": 1.637
+        },
+        {
+          "text": "anyone",
+          "start": 1.714,
+          "end": 2.033
+        },
+        {
+          "text": "to",
+          "start": 2.045,
+          "end": 2.147
+        },
+        {
+          "text": "move.",
+          "start": 2.16,
+          "end": 2.556
+        },
+        {
+          "text": "Even",
+          "start": 2.964,
+          "end": 3.155
+        },
+        {
+          "text": "a",
+          "start": 3.168,
+          "end": 3.219
+        },
+        {
+          "text": "king...",
+          "start": 3.232,
+          "end": 3.601
+        }
+      ]
+    }
+  ],
+  "total": 41.953
+}

@@ -6,7 +6,7 @@ Los tres pasan el control final y no subí nada. Los MP4 están en la carpeta [`
 |---|---|---|---|---|---|
 | [seneca-tiempo](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/blob/salidas/final/seneca-tiempo.mp4) | 42,2 s | 0,96 | -14,3 LUFS | -2,0 dBTP | 1 (el del giro) |
 | [millonario-invisible](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/blob/salidas/final/millonario-invisible.mp4) | 42,2 s | 0,98 | -14,4 LUFS | -1,2 dBTP | 1 (el del giro) |
-| [diogenes-rey](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/blob/salidas/final/diogenes-rey.mp4) | 42,2 s | 0,98 | -14,0 LUFS | -2,0 dBTP | 2 (después de "Why?" y antes del giro) |
+| [diogenes-rey](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/blob/salidas/final/diogenes-rey.mp4) | 42,1 s | 0,98 | -14,3 LUFS | -3,4 dBTP | 2 (después de "Why?" y antes del giro) |
 
 Mínimos que había que cumplir: loop ≥ 0,90, -14 ±0,5 LUFS, pico ≤ -1 dBTP, 48 kHz, solo silencios intencionales y 40 a 48 s. Revisé las hojas de cuadros una por una.
 
@@ -46,7 +46,7 @@ Mínimos que había que cumplir: loop ≥ 0,90, -14 ±0,5 LUFS, pico ≤ -1 dBTP
 
 ## Decisiones que tomé solo
 1. **Velocidad de la voz.** Con la velocidad del guion, la voz real dura mucho menos que lo estimado: `seneca-tiempo` dio 34 s, por debajo del mínimo de 40. Para no cambiar el texto, `tts.py` ahora vuelve a generar la voz más lenta, de a -4 %, hasta entrar en 41 a 47 s. **seneca-tiempo quedó a -20 %**, el máximo que permito. Los otros dos también se ralentizaron; el valor exacto no quedó en la parte del log que pude leer. Desde ahora la velocidad queda guardada en `timeline.json`. **Escuchá si suena lenta.** Si te gusta más rápida, hay dos caminos: bajar el mínimo a ~35 s o sumar una escena al guion.
-2. **Volumen.** En dos videos el códec de audio subió el pico real por encima de -1 dBTP. Lo corregí volviendo a normalizar el audio de los MP4 terminados (la imagen es la misma), y el workflow ya lo hace solo.
+2. **Volumen.** En `millonario-invisible` el códec de audio subió el pico real por encima de -1 dBTP. Lo corregí volviendo a normalizar el audio del MP4 terminado (la imagen es la misma), y el workflow ya lo hace solo (el último render de `diogenes-rey` salió bien de una).
 3. **Dos citas sin tiempo muerto.** En millonario y en Diógenes, la voz presenta la cita antes de decirla ("Seneca: a great man uses…", "The king offered him anything"). Esas palabras aparecen escritas mientras se dicen.
 4. **Marcas.** "Ford" está en la voz y en el texto, como pide el guion. La camioneta es genérica, sin logo. Ningún auto, reloj ni celular tiene marca.
 5. **Las personas son dibujos** hechos por código: concursantes en caricatura, siluetas y figuras de vasija. No hay imágenes de terceros.

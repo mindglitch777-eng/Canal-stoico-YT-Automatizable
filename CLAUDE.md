@@ -155,6 +155,21 @@ Aprendido:
 - **Los primeros 0,5 s:** algo tiene que pasar antes de la primera palabra fuerte (en este video, el segundero se traba y se raja el cristal).
 - Los subtítulos y los textos de la composición se pisaban abajo de y = 1100: dejar libre la franja de 1180 a 1330 para los subtítulos.
 
+### Tanda 2 (05/11/2026): la-voz, dos-hermanos, elegido-por-vos
+
+Pedido en `prompts/tanda-2.md` (reemplazan a `diogenes-rey`, descartado). Mismo esquema de carpetas que la noche de 3 videos. Resumen para el dueño en `salidas/TANDA-2.md`.
+
+- **la-voz:** cine negro en blanco y negro con lluvia; el rojo es la voz que tienta (humo y letras rojas) y el oro, la respuesta propia. Giro: plano cenital del charco, el reflejo tiene la boca roja y un giro 3D (CSS `rotateX`) da vuelta los lugares. **Susurros con la voz real:** `shorts/la-voz/sound.py` carga cada `sNN.mp3`, recorta la frase ("you deserve it", "sounds like you") con los tiempos por palabra y la vuelve susurro (agudos + ruido que sigue la envolvente + copia desafinada 3 % + reverb). Sin voz (modo `--silent`) no agrega nada.
+- **dos-hermanos:** diorama de juguete en three.js con sombras (`World` en `parts.tsx`, un solo mundo con estado por escena). La cámara atraviesa el suelo: bajo tierra se oculta la base, se ve el techo de tierra desde abajo y aparecen raíces de oro (TubeGeometry ramificada, emisiva) y cadenas. El efecto miniatura es bruma clara arriba y abajo (sin desenfoque real: es caro en WebGL por software).
+- **elegido-por-vos:** dos capas (cine brillante / plano técnico cian) con un barrido eléctrico (`clip-path`). Giro: el Short aparece en un celular; **lo que se ve en el celular son cuadros reales del propio video**, con `<Freeze>` de Remotion sobre las escenas 6 y 1, y en la escena 8 con los subtítulos reales (`<Captions>`) del "Why?". La flecha del truco 3 apunta a los subtítulos que suenan en ese momento.
+
+Herramientas y lecciones nuevas:
+- **Un video puede mostrarse a sí mismo:** las escenas reciben `all` y `spans` (todas las escenas del timeline) y se renderizan dentro de `<Freeze frame={n}>`.
+- **3D con estado por escena:** cada escena arma un objeto `WorldState` (cámara, piezas, luz) y lo pasa al mismo `World`; así el cuadro 0 es `frame0State(t)` y el loop da SSIM 1,0.
+- **Materiales dorados sin mapa de entorno:** con `metalness` alto salen marrones; usar `metalness` ~0,25 y un poco de `emissive`.
+- No lanzar más de 3 o 4 `remotion still` en paralelo en la sesión: con 8 se colgó uno.
+- `sweep_bp` necesita `q > 1` (si no, la banda queda invertida y scipy falla).
+
 ## Monetización: fechas clave
 
 - Hasta el 31/01/2027: 1.000 suscriptores + 4.000 horas de video largo en 12 meses, o 10 millones de vistas de Shorts en 90 días.
@@ -193,7 +208,7 @@ Revisados antes de instalar: sin llamadas de red ocultas ni código peligroso.
 2a. ✅ Soporte para videos a medida (registro en `remotion/src/shorts/index.ts`). Falta hacer a medida `seneca-300-millones`: composición por Short en `remotion/src/shorts/<id>/` (registrada en `Root.tsx`), que el render elija si existe y si no use las escenas genéricas; primera: `seneca-300-millones`, cumpliendo cada `visual` de su `short.json`.
 2b. **Escenas de imagen literal** que pide `prompts/estandar-viral.md` (ver los campos `visual` de `shorts/seneca-300-millones`): transformaciones de objetos (toga → harapos, oro → pan), balanza, busto de mármol, montaña de monedas, texto que estalla. Las imágenes de dominio público (`tools/pd_images.py`) pueden servir para el busto.
 2c. ✅ **Sonido y música por código:** `tools/sfx/synth.py` (paleta) y `tools/sfx/mix.py` (mezclador); cada video escribe su `shorts/<id>/sound.py`.
-2f. **Próximo trabajo: `prompts/tanda-2.md`.** Tres videos de viralidad pura que reemplazan a `diogenes-rey`: `shorts/la-voz` ("you deserve it" sale de tu propia boca; cine negro con rojo), `shorts/dos-hermanos` (parábola en diorama de juguete; nunca hubo dos hermanos, es el espectador) y `shorts/elegido-por-vos` (tres trucos de precios y el video que se delata; blueprint). Guiones con dirección completa, pasan `check_short.py`; ganchos 80, 76 y 67 en `hookscore.py`.
+2f. ✅ **Hecho (05/11/2026), ver "Tanda 2": `prompts/tanda-2.md`.** Tres videos de viralidad pura que reemplazan a `diogenes-rey`: `shorts/la-voz` ("you deserve it" sale de tu propia boca; cine negro con rojo), `shorts/dos-hermanos` (parábola en diorama de juguete; nunca hubo dos hermanos, es el espectador) y `shorts/elegido-por-vos` (tres trucos de precios y el video que se delata; blueprint). Guiones con dirección completa, pasan `check_short.py`; ganchos 80, 76 y 67 en `hookscore.py`.
 2e. **Trabajo de la noche del 05/11/2026: `prompts/noche-3-videos.md`.** Tres videos a medida, cada uno con un estilo visual nuevo, para subir a YouTube y TikTok: `shorts/seneca-tiempo` (el tiempo vale más que la plata), `shorts/millonario-invisible` (los ricos no se ven ricos) y `shorts/diogenes-rey` (Diógenes y Alejandro). Los guiones ya pasan `check_short.py` y traen dirección completa; el dueño duerme mientras se hacen, así que se decide sin preguntar y se deja un resumen en `salidas/MAÑANA.md`.
 2d. ✅ **Hecho (v2, 05/11/2026: loop exacto, cita legible, subtítulos sin repetir, -14 LUFS, 44-46 s):** composición a medida en `remotion/src/shorts/marco-aurelio-chatarra/` y sonido en `shorts/marco-aurelio-chatarra/sound.py` (ver "Videos a medida y sonido"). Guion: `shorts/marco-aurelio-chatarra/short.json`. Rompe la creencia de que lo caro vale lo que cuesta (Marco Aurelio, *Meditaciones* 6.13). 11 escenas, ~46 s, gancho 72/STRONG. Pasa `check_short.py`. Trae dirección completa: concepto, look, `music` por secciones y, por escena, `visual`, `camera`, `transition` y `sfx`. Es el guion para el primer video **a medida** con sonido: hacerlo cumpliendo cada campo.
 3. **Música y efectos** con licencia comercial clara (el dueño lo deja para después; los Shorts salen solo con voz).

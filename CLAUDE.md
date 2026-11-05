@@ -135,6 +135,7 @@ Pedido en `prompts/noche-3-videos.md`. Cada uno con estilo nuevo, composición p
 
 Herramientas nuevas que quedaron generales:
 - **`Frame0(t)` por video:** el cuadro 0 es un componente que depende del tiempo; la última escena lo dibuja con `t = (f + 1 - dur) / fps` (negativo hasta 0), así el último cuadro es idéntico al primero (SSIM 1,0 en las pruebas).
+- **Decisión del dueño (05/11/2026): la voz va a velocidad normal y el video dura lo que dura la voz.** No usar `duration_range` para estirar (los guiones de la tanda 2 ya no lo tienen). La herramienta queda por si algún día se pide.
 - **`duration_range` en el `short.json`** (`tools/tts.py`): si la voz real queda corta, se regenera más lenta de a -4 % (hasta -20 %) y, si hace falta, se suma aire entre escenas. La estimación sin voz (2,6 palabras/s) se pasa de larga con `rate: +0%`: `seneca-tiempo` estimado en 41,6 s salió en 34,1 s.
 - **Estilos propios en `KineticText`** (`accentStyle`, `plainStyle`) y **paleta de subtítulos por video** (`captionTheme` en el registro).
 - **Paleta de sonidos ampliada** en `tools/sfx/synth.py`: notificación, billetera, succión digital, fuego, arena, moneda contra vidrio, jingle, bling, bocina triste, motor que tose, escáner, chicharra, caja registradora, hojas, derrape, bocina, hilos que se tensan, pájaros, respiración, cuerno de guerra, cascos, cerámica hueca, grieta de cerámica, risas, silla, puerta, corte de metal, tambor de guerra, aulós, piano eléctrico, hi-hat, caja, 808 y golpe de luz.

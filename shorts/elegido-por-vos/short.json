@@ -7,10 +7,6 @@
   "pitch": "-2Hz",
   "captions": true,
   "gap": 0.1,
-  "duration_range": [
-    41,
-    47
-  ],
   "sources": [
     "Opción señuelo: Dan Ariely, Predictably Irrational (2008), prueba con suscripciones de The Economist: con una opción inútil (solo papel al mismo precio que papel + web), el 84 % eligió la opción cara; sin el señuelo, el 32 %.",
     "Efecto del primer dígito ($4.99 se siente cerca de $4): Thomas y Morwitz (2005), Journal of Consumer Research.",

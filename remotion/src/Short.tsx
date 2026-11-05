@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Background} from './Background';
 import {Captions} from './Captions';
-import {DirectorProvider, goldWords, norm, onScreenText} from './director';
+import {DirectorProvider, goldWords, norm, onScreenText, screenTexts} from './director';
 import {useFontsReady} from './fonts';
 import {Camera, Flashes, Lens, Progress, transitionStyle} from './fx';
 import {Chart} from './scenes/Chart';
@@ -69,23 +69,35 @@ const Voice: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}
   </>
 );
 
-const CaptionsLayer: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}>; skip?: number[]}> = ({scenes, spans, skip = []}) => (
-  <>
+const CaptionsLayer: React.FC<{scenes: Scene[]; spans: Array<{from: number; dur: number}>; skip?: number[]; screen?: Record<number, string[]>; fadeAt?: number}> = ({
+  scenes,
+  spans,
+  skip = [],
+  screen = {},
+  fadeAt,
+}) => {
+  const f = useCurrentFrame();
+  const fade = fadeAt === undefined ? 1 : Math.max(0, Math.min(1, (fadeAt - f) / 6));
+  return (
+  <div style={{position: 'absolute', inset: 0, opacity: fade}}>
     {scenes.map((scene, i) =>
       duplicated(scene) || skip.includes(i + 1) ? null : (
         <Sequence key={`c${i}`} from={spans[i].from} durationInFrames={spans[i].dur} layout="none">
-          <Captions words={scene.words} gold={goldWords(onScreenText(scene))} />
+          <Captions words={scene.words} gold={goldWords(onScreenText(scene))} screen={[...screenTexts(scene), ...(screen[i + 1] ?? [])]} />
         </Sequence>
       ),
     )}
-  </>
-);
+  </div>
+  );
+};
 
 export const Short: React.FC<Timeline> = (timeline) => {
   useFontsReady();
   const {scenes, captions = true} = timeline;
   const {fps} = useVideoConfig();
   const spans = scenes.map((s) => ({from: Math.round(s.start * fps), dur: Math.max(1, Math.round(s.duration * fps))}));
+  // La última escena llega exactamente hasta el final de la línea de tiempo (sin cuadros vacíos por redondeo).
+  if (spans.length) spans[spans.length - 1].dur = Math.max(1, Math.round(timeline.total * fps) - spans[spans.length - 1].from);
   // Video a medida: si el Short tiene su propia composición (src/shorts/<id>/), se usa esa.
   const custom = customShorts[timeline.id];
   if (custom) {
@@ -94,7 +106,7 @@ export const Short: React.FC<Timeline> = (timeline) => {
       <DirectorProvider timeline={timeline}>
         <AbsoluteFill style={{overflow: 'hidden', backgroundColor: '#050505'}}>
           <Custom timeline={timeline} spans={spans} />
-          {captions ? <CaptionsLayer scenes={scenes} spans={spans} skip={custom.noCaptions} /> : null}
+          {captions ? <CaptionsLayer scenes={scenes} spans={spans} skip={custom.noCaptions} screen={custom.screen} fadeAt={custom.loop ? Math.round(timeline.total * fps) : undefined} /> : null}
           <Voice scenes={scenes} spans={spans} soundtrack={timeline.soundtrack} />
         </AbsoluteFill>
       </DirectorProvider>

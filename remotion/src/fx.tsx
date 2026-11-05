@@ -85,9 +85,12 @@ export const Flashes: React.FC = () => {
 };
 
 // Filtraciones de luz que flotan (como en lentes de cine) + grano + viñeta.
-export const Lens: React.FC = () => {
-  const {frame, fps, energy} = useDirector();
-  const t = frame / fps;
+// still: luces fijas y grano que se repite cada 10 cuadros (para que un video en loop empalme).
+export const Lens: React.FC<{still?: boolean}> = ({still = false}) => {
+  const {frame, fps, energy: e0, total} = useDirector();
+  const t = still ? 0 : frame / fps;
+  const energy = still ? 0 : e0;
+  const grainSeed = still ? (frame >= total - 1 ? 0 : frame % 10) : frame % 10;
   const blobs = [
     {x: 20 + drift(t * 0.2, 1) * 30, y: 15 + drift(t * 0.15, 2) * 15, c: 'rgba(255,170,70,0.20)', s: 900},
     {x: 85 + drift(t * 0.18, 3) * 20, y: 70 + drift(t * 0.2, 4) * 20, c: 'rgba(200,120,40,0.16)', s: 1100},
@@ -114,7 +117,7 @@ export const Lens: React.FC = () => {
       ))}
       <svg width={W} height={H} style={{position: 'absolute', opacity: 0.11, mixBlendMode: 'overlay'}}>
         <filter id="grain2">
-          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed={frame % 10} />
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed={grainSeed} />
           <feColorMatrix type="saturate" values="0" />
         </filter>
         <rect width="100%" height="100%" filter="url(#grain2)" />

@@ -6,7 +6,10 @@ import * as marcoAurelio from './marco-aurelio-chatarra';
 
 export type CustomShortProps = {timeline: Timeline; spans: Array<{from: number; dur: number}>};
 
-// noCaptions: escenas (desde 1) que no llevan subtítulos.
-export const customShorts: Record<string, {component: React.FC<CustomShortProps>; noCaptions?: number[]}> = {
-  'marco-aurelio-chatarra': {component: marcoAurelio.MarcoAurelioChatarra, noCaptions: marcoAurelio.noCaptions},
+// noCaptions: escenas (desde 1) sin subtítulos.
+// screen: textos que la composición dibuja en cada escena (desde 1), para no repetirlos en subtítulos.
+// loop: el video empalma consigo mismo (sin cola al final, subtítulos que se apagan en el empalme).
+export type CustomShort = {component: React.FC<CustomShortProps>; noCaptions?: number[]; screen?: Record<number, string[]>; loop?: boolean};
+export const customShorts: Record<string, CustomShort> = {
+  'marco-aurelio-chatarra': {component: marcoAurelio.MarcoAurelioChatarra, noCaptions: marcoAurelio.noCaptions, screen: marcoAurelio.screen, loop: true},
 };

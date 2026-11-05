@@ -49,6 +49,15 @@ export const onScreenText = (scene: Scene) => {
   }
 };
 
+// Todo el texto que una escena genérica muestra en pantalla (para no duplicarlo en subtítulos).
+export const screenTexts = (scene: Scene): string[] => {
+  const s = scene as Record<string, unknown>;
+  const out = [onScreenText(scene)];
+  for (const k of ['kicker', 'author', 'source', 'label', 'annotation']) if (typeof s[k] === 'string') out.push(s[k] as string);
+  if (scene.type === 'twoColumns') out.push(scene.left.title, ...scene.left.items, scene.right.title, ...scene.right.items);
+  return out.filter(Boolean);
+};
+
 export const goldWords = (text: string) => {
   const out: string[] = [];
   text.split('*').forEach((part, i) => {
@@ -112,7 +121,7 @@ export const buildDirector = (tl: Timeline): DirectorData => {
     const start = Math.round(s.start * fps);
     const dur = Math.round(s.duration * fps);
     sceneStarts.push(start);
-    hits.push({frame: start, strength: si === 0 ? 0.35 : 1, kind: 'scene'}); // el primer cuadro no debe quedar blanco
+    hits.push({frame: start, strength: si === 0 ? 0 : 1, kind: 'scene'}); // cuadro 0 sin destello (y el loop empalma)
     const gold = new Set(goldWords(onScreenText(s)));
     for (const w of s.words) {
       const n = norm(w.text);

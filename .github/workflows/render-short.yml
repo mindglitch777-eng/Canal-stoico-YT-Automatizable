@@ -77,9 +77,13 @@ jobs:
             # Música y efectos por código (si el Short tiene sound.py)
             python tools/sfx/mix.py "$d"
             (cd remotion && npm run render -- --short "$d")
-            # Volumen final al nivel al que normaliza YouTube (-14 LUFS)
+            # Volumen final: -14 LUFS integrados, pico real <= -1 dBTP, 48 kHz (dos pasadas)
             id=$(basename "$d")
-            ffmpeg -y -loglevel error -i "$d/build/$id.mp4" -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k "salida/$id.mp4"
+            python tools/loudness.py "$d/build/$id.mp4" "salida/$id.mp4"
+            # Control final con números (loop, volumen, silencios) + hoja de cuadros a 1 fps.
+            # No frena la publicación: el informe queda junto al video para revisarlo.
+            loopflag=""; grep -q '"loop"' "$d/short.json" && loopflag="--loop"
+            python tools/verify_short.py "salida/$id.mp4" $loopflag --sheet "salida/$id-hoja.jpg" --json "salida/$id-informe.json" || echo "::warning::$id no pasa el control final (ver $id-informe.json)"
             cp "$d"/build/timeline.json "salida/$(basename "$d")-timeline.json"
             echo "::endgroup::"
           done

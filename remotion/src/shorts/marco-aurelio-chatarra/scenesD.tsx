@@ -5,7 +5,7 @@ import {hash, rng, syncTokens} from '../../director';
 import {goldStyle, Shockwave} from '../../kinetic';
 import {color, font, H, W} from '../../theme';
 import type {Scene} from '../../types';
-import {AureusCanvas} from './Aureus';
+import {drawAureus} from './Aureus';
 import {clamp, lerp, OnScreen, useLocal, wordFrame} from './util';
 import {Spiral} from './scenesC';
 
@@ -80,7 +80,7 @@ const Reveal: React.FC<{text: string; at: number}> = ({text, at}) => {
 };
 
 const BigWatch: React.FC<{raw: number}> = ({raw}) => (
-  <svg width={520} height={520} viewBox="0 0 100 100" style={{filter: `grayscale(${raw}) brightness(${1 - raw * 0.25})`}}>
+  <svg width={430} height={430} viewBox="0 0 100 100" style={{filter: `grayscale(${raw}) brightness(${1 - raw * 0.25})`}}>
     <defs>
       <linearGradient id="bw" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stopColor="#FFF0B8" />
@@ -98,7 +98,7 @@ const BigWatch: React.FC<{raw: number}> = ({raw}) => (
 );
 
 const BigCar: React.FC<{raw: number}> = ({raw}) => (
-  <svg width={760} height={380} viewBox="0 0 100 50" style={{filter: `grayscale(${raw}) brightness(${1 - raw * 0.3})`}}>
+  <svg width={700} height={350} viewBox="0 0 100 50" style={{filter: `grayscale(${raw}) brightness(${1 - raw * 0.3})`}}>
     <defs>
       <linearGradient id="bc" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stopColor="#FFE9A3" />
@@ -133,13 +133,13 @@ export const S9Labels: React.FC<P & {spiral: {rot: number; zoom: number; dropF: 
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 45%, #1C1812 0%, #050403 75%)'}}>
       <AbsoluteFill style={{transform: `translate(${sx}px, ${sy}px) scale(${cam + kick * 0.05})`, transformOrigin: '50% 45%'}}>
-        <div style={{position: 'absolute', top: 560, width: W, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 40}}>
+        <div style={{position: 'absolute', top: 470, width: W, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 30}}>
           {shot === 0 ? <Sticker text="PREMIUM" sub="Limited edition" ripAt={labelF} power={1} dir={1} /> : null}
           {shot === 1 ? (
             <>
               <div style={{position: 'relative'}}>
                 <BigWatch raw={lerp(f, metalF, metalF + 8)} />
-                <div style={{position: 'absolute', left: -40, top: 190}}>
+                <div style={{position: 'absolute', left: -60, top: 150}}>
                   <Sticker text="WATCH" sub="$5,000" ripAt={metalF} power={1.3} dir={-1} />
                 </div>
               </div>
@@ -230,63 +230,107 @@ const Veins: React.FC = () => {
   );
 };
 
+// Busto de mármol de perfil: la misma cabeza laureada de su moneda, tallada en piedra y en grande.
+const MarbleBust: React.FC<{x: number; y: number; scale: number; light: number}> = ({x, y, scale, light}) => {
+  const ref = React.useRef<HTMLCanvasElement>(null);
+  React.useLayoutEffect(() => {
+    const c = ref.current;
+    if (!c) return;
+    const g = c.getContext('2d')!;
+    g.clearRect(0, 0, 1024, 1024);
+    drawAureus(g, 1024, 'marble');
+  }, []);
+  const size = 512 * scale;
+  return (
+    <canvas
+      ref={ref}
+      width={1024}
+      height={1024}
+      style={{position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, height: size, opacity: 0.85 + light * 0.15, filter: `drop-shadow(0 30px 40px rgba(0,0,0,0.8)) brightness(${0.85 + light * 0.4})`, transform: 'scaleX(-1)'}}
+    />
+  );
+};
+
+const Spark: React.FC<{f: number; seed: number}> = ({f, seed}) => (
+  <>
+    {Array.from({length: 12}, (_, k) => {
+      const life = (f + k * 2) % 10;
+      const ang = -Math.PI / 2 + (hash(k * 13 + seed + Math.floor((f + k * 2) / 10)) - 0.5) * Math.PI * 1.4;
+      const dist = life * 11;
+      return (
+        <span key={k} style={{position: 'absolute', right: -4, top: '50%', width: 6, height: 6, borderRadius: '50%', background: '#FFF4C9', boxShadow: '0 0 10px 4px rgba(255,190,90,0.9)', transform: `translate(${Math.cos(ang) * dist}px, ${Math.sin(ang) * dist + life * life * 0.6}px)`, opacity: 1 - life / 10}} />
+      );
+    })}
+  </>
+);
+
+// Letras que se graban al ritmo de la voz: aparecen al rojo blanco y se asientan en oro.
+const Engrave: React.FC<{tokens: string[]; times: number[]; endTime: number; size: number; style?: React.CSSProperties}> = ({tokens, times, endTime, size, style}) => {
+  const {f} = useLocal();
+  return (
+    <div style={{fontFamily: font.serif, fontWeight: 700, fontSize: size, lineHeight: 1.12, letterSpacing: '0.04em', textTransform: 'uppercase', textAlign: 'center', ...style}}>
+      {tokens.map((tok, i) => {
+        const a = times[i] ?? 0;
+        const b = Math.max(a + 3, Math.min(times[i + 1] ?? endTime, a + 14));
+        const p = Math.max(0, Math.min(1, (f - a) / (b - a)));
+        const n = Math.ceil(p * tok.length);
+        const hot = Math.max(0, 1 - (f - b) / 10);
+        return (
+          <span key={i} style={{position: 'relative', display: 'inline-block', margin: '0 0.14em'}}>
+            <span style={{visibility: 'hidden'}}>{tok}</span>
+            <span style={{position: 'absolute', left: 0, top: 0, whiteSpace: 'nowrap', ...goldStyle(f, i, 5, 1.1 + hot)}}>{tok.slice(0, n)}</span>
+            {p > 0 && hot > 0.6 ? <span style={{position: 'absolute', left: 0, top: 0, whiteSpace: 'nowrap', color: '#FFF8E6', opacity: hot * 0.7}}>{tok.slice(0, n)}</span> : null}
+            {p > 0 && p < 1 ? (
+              <span style={{position: 'absolute', left: 0, top: 0, width: `${p * 100}%`, height: '100%'}}>
+                <Spark f={f} seed={i * 7} />
+              </span>
+            ) : null}
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
 export const S10Marble: React.FC<P> = ({scene, dur}) => {
-  const {f, fps, t} = useLocal();
+  const {f, fps} = useLocal();
   const quote = typeof (scene as {quote?: unknown}).quote === 'string' ? ((scene as {quote?: string}).quote as string) : '';
   const tokens = quote.split(/\s+/).filter(Boolean);
-  const startIdx = Math.max(0, scene.words.findIndex((w) => w.text.toLowerCase().startsWith((tokens[0] ?? '').toLowerCase().slice(0, 4))));
-  const times = syncTokens(tokens, scene.words.slice(startIdx), 2.5).map((s) => s * fps);
-  const endF = wordFrame(scene, fps, 'reason', 1, 'end', 0.92);
-  const travel = lerp(f, 0, dur, 0, 1, (x) => x);
-  const coinIn = spring({frame: f - 4, fps, config: {damping: 20, stiffness: 60}});
-  const authorIn = lerp(f, endF, endF + 10);
+  const qStart = Math.max(0, scene.words.findIndex((w) => w.text.toLowerCase().startsWith((tokens[0] ?? '').toLowerCase().slice(0, 4))));
+  const qWords = scene.words.slice(qStart);
+  const times = syncTokens(tokens, qWords, 2.5).map((x) => Math.round(x * fps));
+  const endF = wordFrame(scene, fps, 'reason', 1, 'end', 0.95);
+  // "Marcus wrote it down:" → se graba la obra mientras la voz lo dice (cero tiempo muerto)
+  const introTokens = ['Meditations', '·', '6.13'];
+  const introEnd = qWords.length ? Math.round(qWords[0].start * fps) : 30;
+  const introTimes = [0, Math.round(introEnd * 0.45), Math.round(introEnd * 0.6)];
+  const push = lerp(f, 0, dur, 0, 1, (x) => x);
+  const bustIn = interpolate(f, [0, Math.round(dur * 0.5)], [0, 1], {...clamp, easing: (x) => 1 - (1 - x) ** 3});
+  const gong = Math.max(0, 1 - (f - endF) / 14) * (f >= endF ? 1 : 0);
   return (
     <AbsoluteFill style={{background: '#0B0A09'}}>
-      <AbsoluteFill style={{transform: `scale(${1.08 - travel * 0.06}) translateX(${(0.5 - travel) * 50}px)`}}>
+      {/* cámara que avanza sobre la piedra */}
+      <AbsoluteFill style={{transform: `scale(${1.04 + push * 0.12}) rotate(${-1 + push * 2}deg)`}}>
         <Veins />
-        <AbsoluteFill style={{background: `radial-gradient(ellipse at ${30 + travel * 40}% 40%, rgba(255,220,150,0.16) 0%, transparent 55%)`}} />
+        <AbsoluteFill style={{background: `radial-gradient(ellipse at ${35 + push * 30}% 45%, rgba(255,220,150,${0.14 + gong * 0.25}) 0%, transparent 55%)`}} />
+        <MarbleBust x={1300 - bustIn * 520} y={1180} scale={1.9} light={gong} />
       </AbsoluteFill>
-      {/* el perfil de Marco Aurelio, en paz */}
-      <div style={{position: 'absolute', left: W / 2 - 160, top: 250, opacity: coinIn, transform: `translateY(${(1 - coinIn) * 40}px) rotate(${-6 + travel * 8}deg)`}}>
-        <AureusCanvas size={320} style={{boxShadow: '0 0 60px rgba(232,184,90,0.35), 0 20px 40px rgba(0,0,0,0.7)'}} />
+      {/* placa oscura detrás del texto: contraste alto */}
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 38% at 50% 46%, rgba(4,3,2,0.88) 0%, rgba(4,3,2,0.65) 55%, transparent 100%)'}} />
+      <div style={{position: 'absolute', top: 280, width: W, display: 'flex', justifyContent: 'center'}}>
+        <Engrave tokens={introTokens} times={introTimes} endTime={introEnd} size={76} style={{letterSpacing: '0.18em'}} />
       </div>
-      {/* la cita se graba letra por letra, al ritmo de la voz */}
-      <div style={{position: 'absolute', top: 640, left: 80, width: W - 160, textAlign: 'center', fontFamily: font.serif, fontWeight: 700, fontSize: 82, lineHeight: 1.18, letterSpacing: '0.05em', textTransform: 'uppercase'}}>
-        {tokens.map((tok, i) => {
-          const a = times[i] ?? 0;
-          const b = times[i + 1] ?? a + 12;
-          const p = Math.max(0, Math.min(1, (f - a) / Math.max(4, b - a)));
-          const n = Math.round(p * tok.length);
-          const done = p >= 1;
-          return (
-            <span key={i} style={{position: 'relative', display: 'inline-block', margin: '0 0.16em'}}>
-              <span style={{visibility: 'hidden'}}>{tok}</span>
-              <span style={{position: 'absolute', left: 0, top: 0, whiteSpace: 'nowrap', color: '#080706', textShadow: '0 -2px 1px rgba(0,0,0,0.95), 0 2px 1px rgba(255,220,150,0.28)'}}>{tok.slice(0, n)}</span>
-              {done ? <span style={{position: 'absolute', left: 0, top: 0, whiteSpace: 'nowrap', opacity: lerp(f, b, b + 10), ...goldStyle(f, i, 4, 0.8)}}>{tok}</span> : null}
-              {p > 0 && p < 1
-                ? Array.from({length: 9}, (_, k) => {
-                    const life = (f + k * 3) % 9;
-                    const ang = hash(k * 13 + Math.floor((f + k * 3) / 9)) * Math.PI * 2;
-                    const dist = life * 9;
-                    return (
-                      <span key={k} style={{position: 'absolute', left: `${p * 100}%`, top: '55%', width: 5, height: 5, borderRadius: '50%', background: '#FFE7A3', boxShadow: '0 0 8px 3px rgba(255,200,100,0.9)', transform: `translate(${Math.cos(ang) * dist}px, ${Math.sin(ang) * dist - life * 3}px)`, opacity: 1 - life / 9}} />
-                    );
-                  })
-                : null}
-            </span>
-          );
-        })}
+      <div style={{position: 'absolute', top: 470, left: 70, width: W - 140, transform: `scale(${1 + gong * 0.04})`}}>
+        <Engrave tokens={tokens} times={times} endTime={endF} size={106} />
       </div>
-      <div style={{position: 'absolute', top: 1110, width: W, textAlign: 'center', opacity: authorIn, transform: `translateY(${(1 - authorIn) * 20}px)`}}>
-        <div style={{fontFamily: font.sans, fontWeight: 800, fontSize: 34, letterSpacing: '0.3em', color: color.gold}}>MARCUS AURELIUS</div>
-        <div style={{fontFamily: font.serif, fontStyle: 'italic', fontSize: 36, color: color.muted, marginTop: 8}}>Meditations, 6.13</div>
+      <div style={{position: 'absolute', top: 1190, width: W, textAlign: 'center', opacity: lerp(f, endF - 2, endF + 8), transform: `translateY(${(1 - lerp(f, endF - 2, endF + 8)) * 20}px)`}}>
+        <div style={{fontFamily: font.sans, fontWeight: 800, fontSize: 38, letterSpacing: '0.3em', color: '#FFE7A3', textShadow: '0 4px 14px rgba(0,0,0,0.9)'}}>MARCUS AURELIUS</div>
       </div>
-      <Shockwave at={endF} x={W / 2} y={820} size={1500} />
+      <Shockwave at={endF} x={W / 2} y={820} size={1600} />
       {/* del busto cae una pieza de reloj que rebota hacia la escena 11 */}
       {f > dur - 12 ? (
-        <div style={{position: 'absolute', left: W / 2 - 30, top: interpolate(f, [dur - 12, dur], [420, 1300], {...clamp, easing: (x) => x * x}), width: 60, height: 60, borderRadius: '50%', border: '8px dashed #E0B04F', transform: `rotate(${f * 20}deg)`}} />
+        <div style={{position: 'absolute', left: 150, top: interpolate(f, [dur - 12, dur], [1150, 1900], {...clamp, easing: (x) => x * x}), width: 60, height: 60, borderRadius: '50%', border: '8px dashed #E0B04F', transform: `rotate(${f * 20}deg)`}} />
       ) : null}
-      {t < 0.2 ? <AbsoluteFill style={{background: '#0B0A09', opacity: 1 - t / 0.2}} /> : null}
     </AbsoluteFill>
   );
 };

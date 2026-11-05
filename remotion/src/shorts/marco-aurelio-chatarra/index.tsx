@@ -33,10 +33,22 @@ export const MarcoAurelioChatarra: React.FC<CustomShortProps> = ({timeline, span
         );
       })}
       <Flashes />
-      <Lens />
+      <Lens still />
     </AbsoluteFill>
   );
 };
 
 // Escenas sin subtítulos (la cita ya se lee grabada en el mármol).
 export const noCaptions = [10];
+
+// Textos que dibuja cada escena (desde 1): si la voz dice lo mismo, el subtítulo se oculta.
+export const screen: Record<number, string[]> = {
+  1: ['$5,000 scrap metal?', 'How?'],
+  2: ['50,000,000 PEOPLE', 'MARCUS AURELIUS'],
+  3: ['Anything.', 'A secret trick.', 'To Himself'],
+  4: ['FEAST', 'FINE WINE'],
+  6: ['$1,200', 'GLASS', 'METAL', 'CHIPS', '24 PAYMENTS'],
+  7: ['NEW', 'NORMAL'],
+  9: ['PREMIUM', 'WATCH $5,000', 'METAL + GEARS', 'CAR $60,000', 'STEEL + A LOAN'],
+  11: ['$5,000 scrap metal?'],
+};

@@ -13,6 +13,61 @@ import {CameraRig, StudioEnv, Watch3D, type WatchState} from './Watch3D';
 
 type P = {scene: Scene; dur: number};
 
+// Titular del gancho: se lee en el cuadro 0 (marfil y oro con placa oscura detrás, por delante de los engranajes).
+// La escena 11 termina con este mismo titular, en el mismo lugar, para que el loop empalme.
+export const HookHeadline: React.FC<{pop?: number; style?: React.CSSProperties}> = ({pop = 0, style}) => {
+  const {f} = useLocal();
+  return (
+    <div style={{position: 'absolute', top: 190, left: 0, width: W, display: 'flex', justifyContent: 'center', zIndex: 6, ...style}}>
+      <div
+        style={{
+          padding: '26px 64px 34px',
+          borderRadius: 40,
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(6,4,2,0.92) 0%, rgba(6,4,2,0.78) 60%, rgba(6,4,2,0) 100%)',
+          textAlign: 'center',
+          transform: `scale(${1 + pop * 0.14})`,
+        }}
+      >
+        <div style={{fontFamily: font.serif, fontWeight: 700, fontSize: 150, lineHeight: 0.95, color: '#FFF8EA', textShadow: '0 4px 0 #3B342A, 0 10px 30px rgba(0,0,0,0.95)'}}>$5,000</div>
+        <div style={{fontFamily: font.serif, fontWeight: 700, fontSize: 118, lineHeight: 1.05}}>
+          <span style={{color: '#FFF8EA', textShadow: '0 4px 0 #3B342A, 0 10px 30px rgba(0,0,0,0.95)'}}>scrap </span>
+          <span style={{...goldStyle(0, 3, 7, 1.2)}}>metal?</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Grieta en el cristal (primeros 0,5 s): anticipa el estallido.
+const Crack: React.FC<{p: number}> = ({p}) => {
+  if (p <= 0) return null;
+  const r = rng(12);
+  const rays = Array.from({length: 9}, () => {
+    const a = r() * Math.PI * 2;
+    const len = 120 + r() * 260;
+    let x = 420;
+    let y = 820;
+    let d = `M${x} ${y}`;
+    for (let k = 1; k <= 4; k++) {
+      x += Math.cos(a + (r() - 0.5) * 0.6) * (len / 4) * p;
+      y += Math.sin(a + (r() - 0.5) * 0.6) * (len / 4) * p;
+      d += ` L${x.toFixed(1)} ${y.toFixed(1)}`;
+    }
+    return d;
+  });
+  return (
+    <svg width={W} height={H} style={{position: 'absolute', inset: 0, zIndex: 4}}>
+      {rays.map((d, i) => (
+        <g key={i}>
+          <path d={d} fill="none" stroke="rgba(0,0,0,0.5)" strokeWidth={5} />
+          <path d={d} fill="none" stroke="rgba(235,245,255,0.95)" strokeWidth={2.2} />
+        </g>
+      ))}
+      <circle cx={420} cy={820} r={10 * p} fill="rgba(255,255,255,0.9)" />
+    </svg>
+  );
+};
+
 // Estado del reloj en el cuadro 0 (la escena 11 tiene que terminar exactamente así).
 // Macro en 3/4: se ve la esfera, el borde de oro y la corona (se reconoce que es un reloj).
 const CAM0: [number, number, number] = [2.2, -1.5, 5.4];
@@ -35,7 +90,10 @@ export const S1Watch: React.FC<P> = ({scene}) => {
   const cam: [number, number, number] =
     f > howF ? [Math.sin(orbit) * dist, 0.35 + orbit * 0.4, Math.cos(orbit) * dist] : [CAM0[0] * (1 - back) - t * 0.04, CAM0[1] * (1 - back), dist - (f < scrapF ? t * 0.12 : 0)];
   const look: [number, number, number] = [LOOK0[0] * (1 - back), LOOK0[1] * (1 - back), 0];
-  const ticks = Math.floor(Math.min(t, howF / fps) / 0.5);
+  // el segundero se traba (cuadros 6-14) y la grieta crece: algo pasa en los primeros 0,5 s
+  const stutter = f >= 6 && f <= 14 ? (f % 2 ? 0.7 : -0.5) : 0;
+  const ticks = Math.floor(Math.min(t, howF / fps) / 0.5) + stutter;
+  const crack = f < scrapF ? lerp(f, 7, 13, 0, 1, outExpo) : 0;
   const state: WatchState = {explode: e, secTicks: ticks, glint: (t / 2.2) % 1, cam, look, fov: FOV0 + back * 8, roll: back * 0.08 - orbit * 0.05, light: 1 + Math.max(0, 1 - since * 3) * 1.5 * (f >= scrapF ? 1 : 0)};
   // Etiqueta: gira y se quema hasta $0
   const burn = lerp(f, scrapF + 2, scrapF + 22, 0, 0.55);
@@ -56,8 +114,9 @@ export const S1Watch: React.FC<P> = ({scene}) => {
         scale={0.9}
         burn={burn}
       />
+      <Crack p={crack} />
       <Shockwave at={scrapF} x={W / 2} y={H * 0.45} size={1600} color="rgba(255,236,200,0.9)" />
-      <OnScreen scene={scene} top={250} size={112} />
+      <HookHeadline pop={Math.max(0, 1 - Math.abs(f - scrapF - 3) / 6)} />
       {frozen ? (
         <div style={{position: 'absolute', top: 1010, width: W, textAlign: 'center', fontFamily: font.serif, fontWeight: 700, fontSize: 210, transform: `scale(${interpolate(howS, [0, 1], [2.2, 1])})`, opacity: Math.min(1, howS * 2), ...goldStyle(f, 4, 10, 1.4)}}>
           How?
@@ -286,6 +345,9 @@ export const S3Instead: React.FC<P> = ({scene, dur}) => {
         </AbsoluteFill>
       ) : (
         <>
+          {/* mesa de madera */}
+          <div style={{position: 'absolute', left: 0, top: 1040, width: W, height: H - 1040, background: 'repeating-linear-gradient(90deg, #2A1A0D 0px, #3A2413 46px, #2E1C0E 92px, #24160A 140px)', opacity: candle}} />
+          <div style={{position: 'absolute', left: 0, top: 1040, width: W, height: 8, background: 'linear-gradient(90deg, #4A3018, #7A5228, #4A3018)', opacity: candle}} />
           {/* luz de vela */}
           <AbsoluteFill style={{background: `radial-gradient(circle at 26% 74%, rgba(255,170,70,${0.42 * candle * flick}) 0%, rgba(255,120,40,${0.12 * candle}) 30%, transparent 60%)`}} />
           {/* pergamino */}
@@ -316,11 +378,32 @@ export const S3Instead: React.FC<P> = ({scene, dur}) => {
               );
             })}
           </div>
-          {/* vela */}
-          <div style={{position: 'absolute', left: 230, top: 1020, transform: `scale(${candle})`, transformOrigin: '50% 100%'}}>
-            <div style={{position: 'absolute', left: -26, top: 0, width: 52, height: 130, background: 'linear-gradient(90deg, #CFC3A8, #F4EEDD, #BFB294)', borderRadius: 6}} />
-            <div style={{position: 'absolute', left: -14, top: -64, width: 28, height: 64 * flick, borderRadius: '50% 50% 50% 50% / 70% 70% 30% 30%', background: 'radial-gradient(ellipse at 50% 75%, #FFFFFF 0%, #FFE08A 30%, #FF9A2E 65%, transparent 72%)', filter: 'blur(1px)', boxShadow: '0 0 60px 20px rgba(255,160,60,0.45)'}} />
-          </div>
+          {/* vela en SVG (sin filtros de CSS: el desenfoque + sombra de antes salía como un rectángulo blanco) */}
+          <svg width={240} height={420} style={{position: 'absolute', left: 120, top: 760, overflow: 'visible'}}>
+            <defs>
+              <radialGradient id="flame" cx="50%" cy="70%" r="60%">
+                <stop offset="0" stopColor="#FFFFFF" />
+                <stop offset="0.35" stopColor="#FFE08A" />
+                <stop offset="0.75" stopColor="#FF9A2E" />
+                <stop offset="1" stopColor="#FF9A2E" stopOpacity={0} />
+              </radialGradient>
+              <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stopColor="#FFB45A" stopOpacity={0.55} />
+                <stop offset="1" stopColor="#FFB45A" stopOpacity={0} />
+              </radialGradient>
+              <linearGradient id="wax" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stopColor="#BFB294" />
+                <stop offset="0.5" stopColor="#F1EAD6" />
+                <stop offset="1" stopColor="#A99C7E" />
+              </linearGradient>
+            </defs>
+            <g transform={`translate(120 300) scale(${Math.min(1.08, candle)}) translate(-120 -300)`}>
+              <circle cx={120} cy={150} r={130 * flick} fill="url(#halo)" />
+              <rect x={94} y={170} width={52} height={150} rx={6} fill="url(#wax)" />
+              <path d="M120 170 L120 156" stroke="#2A1E0C" strokeWidth={3} />
+              <ellipse cx={120} cy={128} rx={15} ry={32 * flick} fill="url(#flame)" />
+            </g>
+          </svg>
           <OnScreen scene={scene} top={300} size={120} />
         </>
       )}
@@ -350,7 +433,8 @@ export const S11Loop: React.FC<P> = ({scene, dur}) => {
   const tl = t - tEnd; // tiempo negativo hasta el final: así el segundero y el brillo empalman con el cuadro 0
   const state: WatchState = {explode: e, secTicks: Math.floor(tl / 0.5), glint: ((tl / 2.2) % 1 + 1) % 1, cam, look, fov: FOV0 + (1 - k) * 8, roll: 0};
   const tagIn = spring({frame: f - priceF + 6, fps, config: {damping: 16, stiffness: 120}});
-  const textOut = lerp(f, bareF + 14, bareF + 24, 1, 0);
+  const textOut = lerp(f, priceF - 8, priceF - 2, 1, 0);
+  const head = spring({frame: f - priceF, fps, config: {damping: 15, stiffness: 160}});
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 45% 40%, #2A2116 0%, #0A0806 70%)'}}>
       <Watch3D {...state} />
@@ -358,6 +442,7 @@ export const S11Loop: React.FC<P> = ({scene, dur}) => {
       <div style={{opacity: textOut}}>
         <OnScreen scene={scene} top={250} size={118} entry="flip" />
       </div>
+      {f >= priceF ? <HookHeadline style={{opacity: Math.min(1, head * 1.5), transform: `scale(${interpolate(head, [0, 1], [1.6, 1])})`}} /> : null}
     </AbsoluteFill>
   );
 };

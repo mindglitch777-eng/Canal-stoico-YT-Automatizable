@@ -54,7 +54,19 @@ def design(tl: M.Timeline, mix: M.Mix) -> None:
     # Escena 11: riser que NO resuelve: corta justo en el final (lo resuelve el golpe del cuadro 0)
     r2 = T - tl.start(11)
     mix.mus(S.riser(r2, 9), T - r2, -6)
-    mix.mus(M.drone([D - 24, D - 17], r2, 500, 4), tl.start(11), -8)
+    # El drone del final sigue sonando debajo del arranque (wrap): el loop empalma en la misma nota (Re).
+    mix.mus(M.drone([D - 24, D - 17, D - 12], r2 + 1.2, 460, 4), tl.start(11), -7, wrap=True)
+    # Mismo tempo que el arranque: latido a 72 BPM y tic-tac cada 0,5 s, con el último golpe justo en el cuadro 0.
+    for k in range(1, 20):
+        bt = T - k * 60 / BPM
+        if bt < tl.start(11) + 0.3:
+            break
+        mix.mus(S.heartbeat(), bt, -8)
+    for k in range(1, 12):
+        tk = T - k * 0.5
+        if tk < tl.word(11, "5000", edge="start"):
+            break
+        mix.fx(S.tick(3800 if k % 2 else 3200), tk, -11)
 
     # ---------- EFECTOS (sfx de cada escena) ----------
     # 1) cuadro 0: tic-tac + sub-bajo
@@ -80,7 +92,7 @@ def design(tl: M.Timeline, mix: M.Mix) -> None:
     # 3) cascada de monedas (riqueza); 'Instead' → silencio + vela; pluma que raspa
     mix.fx(S.coins_cascade(1.4), tl.start(3) + 0.05, -6)
     t_instead = tl.word(3, "instead")
-    mix.silence(t_instead - 0.12, t_instead + 0.05)
+    mix.silence(t_instead - 0.06, t_instead + 0.02)  # corte seco de 0,08 s (se siente, no cuenta como silencio)
     mix.fx(S.candle(), t_instead + 0.05, -6)
     mix.fx(S.pen_scratch(1.6), tl.word(3, "wrote"), -12)
 
@@ -121,9 +133,27 @@ def design(tl: M.Timeline, mix: M.Mix) -> None:
         mix.fx(M.sub_hit(), t, -4)
 
     # 10) cincel con chispas durante el grabado; gong al final de la cita
-    t_out = tl.word(10, "outward")
-    mix.fx(S.chisel(10), t_out, -13)
     mix.fx(S.gong(65, 4.0), tl.word(10, "reason", edge="end"), -4)
+
+    # Arranque: el segundero se traba y el cristal se raja (cuadros 6-14)
+    mix.fx(S.clicks(4, 0.05, 401), 6 / 30, -9)
+    mix.fx(S.shatter("glass", 0.35, 402), 8 / 30, -13, 0.2)
+
+    # Transiciones que no tenían su efecto
+    for i in (4, 6, 8, 10, 11):
+        mix.fx(S.whoosh(0.5, i % 2 == 0, 500 + i), tl.start(i) - 0.25, -10)
+    mix.fx(S.whoosh(0.4, True, 520), tl.word(4, "fine") - 0.2, -10)  # corte al vino
+    mix.fx(M.sub_hit(), tl.start(10), -6)  # entra el mármol
+
+    # Cinta: cada compra que aparece brillando suena (y después se apaga con el 'wah')
+    for w in ("upgrade", "fades", "normal"):
+        mix.fx(S.coin(len(w)), tl.word(7, w) - 0.7, -14)
+
+    # Cita: un golpe de cincel en cada palabra, sincronizado con la voz
+    q_words = tl.scenes[9]["words"]
+    q_from = next((k for k, w in enumerate(q_words) if w["text"].lower().startswith("outw")), 0)
+    for w in q_words[q_from:]:
+        mix.fx(S.chisel(2, 600 + int(w["start"] * 100)), tl.start(10) + w["start"], -12)
 
     # 11) piezas que encajan en reversa
     rev = S.clicks(9, 0.05, 301)[::-1].copy()

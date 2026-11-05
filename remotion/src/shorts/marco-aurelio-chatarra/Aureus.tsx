@@ -23,10 +23,12 @@ const laurel: Array<[number, number, number]> = Array.from({length: 13}, (_, i) 
   return [262 + Math.cos(a) * 112, 222 + Math.sin(a) * 112, (a * 180) / Math.PI + 90] as [number, number, number];
 });
 
-export const drawAureus = (g: CanvasRenderingContext2D, size = 1024) => {
+export const drawAureus = (g: CanvasRenderingContext2D, size = 1024, material: 'gold' | 'marble' = 'gold') => {
   const k = size / 512;
+  const marble = material === 'marble';
   g.save();
   g.scale(k, k);
+  if (!marble) {
   // campo de oro con relieve
   const grad = g.createRadialGradient(190, 170, 30, 256, 256, 262);
   grad.addColorStop(0, '#FFE9A8');
@@ -57,6 +59,7 @@ export const drawAureus = (g: CanvasRenderingContext2D, size = 1024) => {
     g.fillText(legend[i], 0, 0);
     g.restore();
   }
+  }
   // relieve: sombra abajo-derecha, luz arriba-izquierda
   const head = new Path2D(HEAD);
   g.save();
@@ -65,9 +68,9 @@ export const drawAureus = (g: CanvasRenderingContext2D, size = 1024) => {
   g.fill(head);
   g.restore();
   const hg = g.createLinearGradient(170, 110, 380, 410);
-  hg.addColorStop(0, '#FFF0C0');
-  hg.addColorStop(0.55, '#E2B457');
-  hg.addColorStop(1, '#A87526');
+  hg.addColorStop(0, marble ? '#FFFFFF' : '#FFF0C0');
+  hg.addColorStop(0.55, marble ? '#D6D0C4' : '#E2B457');
+  hg.addColorStop(1, marble ? '#8A8378' : '#A87526');
   g.fillStyle = hg;
   g.fill(head);
   g.strokeStyle = 'rgba(90,55,10,0.7)';

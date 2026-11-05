@@ -116,19 +116,35 @@ def main() -> None:
     vdir = build / "voice"
     vdir.mkdir(parents=True, exist_ok=True)
 
+    # Aire entre escenas: `gap` del short.json (por defecto 0,25 s). Una escena puede pedir
+    # una pausa propia con `pause_after` (silencios intencionales: "How?", antes del giro).
+    # La voz se recorta: sin el silencio que Edge TTS deja al principio y al final de cada frase.
+    gap = float(spec.get("gap", GAP))
     t = 0.0
     scenes = []
     for i, scene in enumerate(spec["scenes"], start=1):
         say = scene["say"].strip()
+        tail = float(scene.get("pause_after", gap))
         if args.silent:
-            dur = max(2.2, len(say.split()) / WORDS_PER_SEC + 0.4)
+            dur = max(2.2, len(say.split()) / WORDS_PER_SEC + 0.4) - 0.4 + tail
             words, audio_rel = fake_words(say, dur), None
         else:
+            raw = vdir / f"s{i:02d}.raw.mp3"
             mp3 = vdir / f"s{i:02d}.mp3"
-            bounds = asyncio.run(synth(say, voice, rate, pitch, mp3))
+            bounds = asyncio.run(synth(say, voice, rate, pitch, raw))
             words = align_words(say, bounds)
-            spoken = audio_duration(mp3) or (words[-1]["end"] + 0.35 if words else 2.0)
-            dur = spoken + GAP
+            if words and shutil.which("ffmpeg"):
+                lead = max(0.0, words[0]["start"] - 0.03)
+                keep = words[-1]["end"] - lead + 0.08  # cola corta para que no se corte la última sílaba
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{lead:.3f}", "-i", str(raw), "-t", f"{keep:.3f}",
+                                "-c:a", "libmp3lame", "-q:a", "2", str(mp3)], check=True)
+                words = [{**w, "start": round(w["start"] - lead, 3), "end": round(w["end"] - lead, 3)} for w in words]
+                dur = keep - 0.08 + tail
+            else:
+                shutil.copy(raw, mp3)
+                spoken = audio_duration(mp3) or (words[-1]["end"] + 0.35 if words else 2.0)
+                dur = spoken + gap
+            dur = max(dur, (words[-1]["end"] if words else 0) + 0.05)
             audio_rel = mp3.relative_to(REPO).as_posix()
         scenes.append({**scene, "say": say, "audio": audio_rel, "start": round(t, 3),
                        "duration": round(dur, 3), "words": words})

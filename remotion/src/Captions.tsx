@@ -20,9 +20,30 @@ const groupWords = (words: Word[]) => {
   return groups;
 };
 
+// ¿La pantalla ya muestra lo que dice este bloque de la voz? Se compara palabra por palabra
+// (no por igualdad exacta): "+" cuenta como "and", se ignoran mayúsculas, signos y palabras
+// vacías. Si las palabras con contenido del bloque ya están en pantalla, el subtítulo sobra.
+const STOP = new Set(['a', 'an', 'the', 'and', 'or', 'of', 'to', 'in', 'on', 'for', 'is', 'it', 'its', 'his', 'her', 'their', 'your', 'you', "you're", "you'd", 'youre', 'youd', 'he', 'she', 'we', 'i', 'that', 'this', 'but', 'with', 'at', 'by', 'be', 'was', 'are', 'so', 'just', 'did', 'do', 'does', 'over', 'even']);
+export const screenTokens = (texts: string[]) =>
+  new Set(
+    texts
+      .join(' ')
+      .replace(/[+&]/g, ' and ')
+      .replace(/\*/g, '')
+      .split(/\s+/)
+      .map(norm)
+      .filter(Boolean),
+  );
+export const coveredByScreen = (group: Word[], screen: Set<string>) => {
+  const content = group.map((w) => norm(w.text)).filter((n) => n && !STOP.has(n));
+  if (!content.length || !screen.size) return false;
+  const hit = content.filter((n) => screen.has(n)).length;
+  return hit / content.length >= 0.6;
+};
+
 // Subtítulos tipo karaoke: cada bloque entra con un rebote, la palabra que suena
 // lleva una placa dorada detrás y las palabras clave salen en oro y más grandes.
-export const Captions: React.FC<{words: Word[]; gold?: string[]}> = ({words, gold = []}) => {
+export const Captions: React.FC<{words: Word[]; gold?: string[]; screen?: string[]}> = ({words, gold = [], screen = []}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -30,6 +51,7 @@ export const Captions: React.FC<{words: Word[]; gold?: string[]}> = ({words, gol
   const gi = groups.findIndex((g) => t >= g[0].start - 0.05 && t <= g[g.length - 1].end + 0.12);
   if (gi < 0) return null;
   const group = groups[gi];
+  if (coveredByScreen(group, screenTokens(screen))) return null;
   const enter = Math.round((group[0].start - 0.05) * fps);
   const s = spring({frame: frame - enter, fps, config: {damping: 12, stiffness: 220, mass: 0.6}});
   const tilt = (hash(gi) - 0.5) * 5;

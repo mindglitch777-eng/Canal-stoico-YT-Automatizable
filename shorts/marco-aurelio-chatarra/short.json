@@ -6,6 +6,7 @@
   "rate": "-2%",
   "pitch": "-2Hz",
   "captions": true,
+  "gap": 0.1,
   "sources": [
     "Marco Aurelio, Meditaciones 6.13 (trad. George Long, 1862, dominio público): la carne como 'the dead body of a fish', el vino falerno como 'a little grape juice', la túnica púrpura como lana de oveja teñida con sangre de un marisco, y 'outward show is a wonderful perverter of the reason'.",
     "Las Meditaciones eran notas privadas para sí mismo, no escritas para publicar.",
@@ -42,6 +43,7 @@
       "beat": "hook",
       "reward": "paradox",
       "say": "You'd never pay $5,000 for scrap metal. But you just did. How?",
+      "pause_after": 0.45,
       "onScreen": "$5,000\nscrap *metal?*",
       "visual": "Cuadro 0 ya en acción: reloj de oro en macro extremo, segundero corriendo, brillo que cruza el cristal. En 'scrap metal' el reloj EXPLOTA en sus piezas (engranajes, tornillos, resortes, esquirlas de acero) que vuelan hacia la cámara en cámara lenta; la etiqueta '$5,000' gira y se quema hasta '$0'. En 'How?' todo se congela en el aire.",
       "camera": "Arranca pegada al cristal; latigazo hacia atrás en 'scrap'; en 'How?' rotación lenta alrededor de las piezas congeladas (bullet time).",
@@ -145,6 +147,7 @@
       "beat": "twist",
       "reward": "twist",
       "say": "You're not broke. You're hypnotized.",
+      "pause_after": 0.45,
       "onScreen": "Not broke.\n*Hypnotized.*",
       "visual": "Espiral hipnótica hecha de etiquetas de precio girando. En 'hypnotized' un chasquido de dedos: la pantalla se congela, silencio total, y la espiral se rompe como vidrio de golpe.",
       "camera": "Zoom lento hacia el centro de la espiral; en el chasquido, quieta (corte de patrón).",

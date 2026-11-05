@@ -10,8 +10,8 @@ import {clamp, inOut, lerp, OnScreen, outExpo, PriceTag, useLocal, wordFrame} fr
 type P = {scene: Scene; dur: number};
 
 // ---------------- 6) $1,200 = vidrio, metal y un plan de pagos ----------------
-const PW = 420;
-const PH = 860;
+const PW = 380;
+const PH = 760;
 const layer = (bg: string, extra?: React.CSSProperties): React.CSSProperties => ({
   position: 'absolute',
   inset: 0,
@@ -48,11 +48,12 @@ export const S6Phone: React.FC<P> = ({scene, dur}) => {
           style={{
             position: 'absolute',
             left: W / 2 - PW / 2,
-            top: 700 - PH / 2,
+            top: 860 - PH / 2,
             width: PW,
             height: PH,
             transformStyle: 'preserve-3d',
-            transform: `translateY(${-contract * 160}px) scale(${1 - contract * 0.25}) rotateY(${spin + view * -38}deg) rotateX(${view * 18}deg) rotateZ(${view * -6}deg)`,
+            opacity: 1 - contract * 0.55,
+            transform: `translateY(${contract * 60}px) scale(${1 - contract * 0.2}) rotateY(${spin + view * -38}deg) rotateX(${view * 18}deg) rotateZ(${view * -6}deg)`,
           }}
         >
           {/* parte de atrás (cuando gira se ve el metal, no la pantalla espejada) */}
@@ -84,16 +85,16 @@ export const S6Phone: React.FC<P> = ({scene, dur}) => {
           })}
         </div>
       </AbsoluteFill>
-      <PriceTag text="$1,200" x={230} y={480} rot={Math.sin(t * 2) * 20} scale={0.8 * (1 - ex * 0.3)} />
+      <PriceTag text="$1,200" x={210} y={620} rot={Math.sin(t * 2) * 20} scale={0.8 * (1 - ex * 0.3)} />
       {/* contrato larguísimo que se despliega hasta el piso */}
-      <div style={{position: 'absolute', left: 170, top: 520, width: 740, height: 1500 * contract, overflow: 'hidden', background: 'linear-gradient(180deg, #F4EFE3, #E6DECB)', boxShadow: '0 30px 60px rgba(0,0,0,0.6)', borderRadius: 4}}>
+      <div style={{position: 'absolute', left: 170, top: 600, width: 740, height: 1400 * contract, overflow: 'hidden', background: 'linear-gradient(180deg, #F4EFE3, #E6DECB)', boxShadow: '0 30px 60px rgba(0,0,0,0.6)', borderRadius: 4}}>
         <div style={{padding: '40px 50px', fontFamily: font.serif, fontWeight: 700, fontSize: 40, color: '#2A2418'}}>INSTALLMENT AGREEMENT</div>
         {Array.from({length: 40}, (_, i) => (
           <div key={i} style={{margin: '0 50px 16px', height: 9, borderRadius: 4, background: 'rgba(40,36,24,0.25)', width: `${60 + hash(i) * 38}%`}} />
         ))}
       </div>
       {f >= planF ? (
-        <div style={{position: 'absolute', left: W / 2, top: 880, transform: `translate(-50%,-50%) rotate(-12deg) scale(${interpolate(stamp, [0, 1], [3, 1])})`, padding: '20px 40px', border: '10px solid #D0312D', borderRadius: 14, fontFamily: font.sans, fontWeight: 900, fontSize: 96, color: '#D0312D', letterSpacing: '0.04em', whiteSpace: 'nowrap', opacity: Math.min(1, stamp * 2), mixBlendMode: 'multiply'}}>
+        <div style={{position: 'absolute', left: W / 2, top: 930, transform: `translate(-50%,-50%) rotate(-12deg) scale(${interpolate(stamp, [0, 1], [3, 1])})`, padding: '20px 40px', border: '10px solid #D0312D', borderRadius: 14, fontFamily: font.sans, fontWeight: 900, fontSize: 96, color: '#D0312D', letterSpacing: '0.04em', whiteSpace: 'nowrap', opacity: Math.min(1, stamp * 2), mixBlendMode: 'multiply'}}>
           24 PAYMENTS
         </div>
       ) : null}
@@ -106,6 +107,71 @@ export const S6Phone: React.FC<P> = ({scene, dur}) => {
 };
 
 // ---------------- 7) La cinta hedónica ----------------
+const Limb: React.FC<{x1: number; y1: number; x2: number; y2: number; w: number; back?: boolean}> = ({x1, y1, x2, y2, w, back}) => (
+  <g>
+    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={back ? '#6B4E17' : 'url(#mBody)'} strokeWidth={w} strokeLinecap="round" />
+    {!back ? <line x1={x1 - w * 0.18} y1={y1 - w * 0.1} x2={x2 - w * 0.18} y2={y2 - w * 0.1} stroke="rgba(255,246,210,0.55)" strokeWidth={w * 0.22} strokeLinecap="round" /> : null}
+  </g>
+);
+
+// Maniquí corriendo: piernas y brazos en dos segmentos, articulaciones esféricas, luz de borde dorada.
+const Mannequin: React.FC<{phase: number; x: number; footY: number}> = ({phase, x, footY}) => {
+  const rad = (d: number) => (d * Math.PI) / 180;
+  const bob = Math.abs(Math.sin(phase)) * -14;
+  const hip = {x, y: footY - 300 + bob};
+  const sh = {x: x + 30, y: hip.y - 190};
+  const leg = (ph: number) => {
+    const th = 34 * Math.sin(ph);
+    const kn = {x: hip.x + Math.sin(rad(th)) * 150, y: hip.y + Math.cos(rad(th)) * 150};
+    const sb = th - (20 + 55 * (0.5 + 0.5 * Math.sin(ph - 1.3)));
+    return {kn, ft: {x: kn.x + Math.sin(rad(sb)) * 145, y: kn.y + Math.cos(rad(sb)) * 145}};
+  };
+  const arm = (ph: number) => {
+    const up = -36 * Math.sin(ph);
+    const el = {x: sh.x + Math.sin(rad(up)) * 110, y: sh.y + Math.cos(rad(up)) * 110};
+    const fa = up + 75;
+    return {el, hd: {x: el.x + Math.sin(rad(fa)) * 100, y: el.y + Math.cos(rad(fa)) * 100}};
+  };
+  const L = leg(phase);
+  const R = leg(phase + Math.PI);
+  const A = arm(phase + Math.PI);
+  const B = arm(phase);
+  return (
+    <svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
+      <defs>
+        <linearGradient id="mBody" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#FFF0B8" />
+          <stop offset="0.45" stopColor="#D9A845" />
+          <stop offset="1" stopColor="#7A5214" />
+        </linearGradient>
+        <radialGradient id="mHead" cx="35%" cy="30%" r="70%">
+          <stop offset="0" stopColor="#FFF4C9" />
+          <stop offset="0.5" stopColor="#D9A845" />
+          <stop offset="1" stopColor="#6B4E17" />
+        </radialGradient>
+      </defs>
+      <ellipse cx={x + 10} cy={footY + 8} rx={150} ry={14} fill="rgba(0,0,0,0.55)" />
+      {/* brazo y pierna de atrás, más oscuros */}
+      <Limb x1={sh.x} y1={sh.y} x2={B.el.x} y2={B.el.y} w={34} back />
+      <Limb x1={B.el.x} y1={B.el.y} x2={B.hd.x} y2={B.hd.y} w={28} back />
+      <Limb x1={hip.x} y1={hip.y} x2={R.kn.x} y2={R.kn.y} w={46} back />
+      <Limb x1={R.kn.x} y1={R.kn.y} x2={R.ft.x} y2={R.ft.y} w={38} back />
+      {/* torso */}
+      <line x1={hip.x} y1={hip.y} x2={sh.x} y2={sh.y} stroke="url(#mBody)" strokeWidth={96} strokeLinecap="round" />
+      <line x1={hip.x - 20} y1={hip.y - 10} x2={sh.x - 20} y2={sh.y} stroke="rgba(255,246,210,0.45)" strokeWidth={18} strokeLinecap="round" />
+      <circle cx={sh.x + 22} cy={sh.y - 92} r={52} fill="url(#mHead)" />
+      <line x1={sh.x + 8} y1={sh.y - 40} x2={sh.x + 14} y2={sh.y - 20} stroke="url(#mBody)" strokeWidth={30} strokeLinecap="round" />
+      {/* pierna y brazo de adelante */}
+      <Limb x1={hip.x} y1={hip.y} x2={L.kn.x} y2={L.kn.y} w={50} />
+      <Limb x1={L.kn.x} y1={L.kn.y} x2={L.ft.x} y2={L.ft.y} w={42} />
+      <Limb x1={sh.x} y1={sh.y} x2={A.el.x} y2={A.el.y} w={36} />
+      <Limb x1={A.el.x} y1={A.el.y} x2={A.hd.x} y2={A.hd.y} w={30} />
+      {[L.kn, A.el, hip, sh].map((j, i) => (
+        <circle key={i} cx={j.x} cy={j.y} r={i < 2 ? 20 : 28} fill="url(#mHead)" />
+      ))}
+    </svg>
+  );
+};
 const ItemIcon: React.FC<{kind: number}> = ({kind}) => {
   const st = {fill: 'url(#itemGold)', stroke: '#6B4E17', strokeWidth: 3};
   return (
@@ -151,9 +217,6 @@ export const S7Treadmill: React.FC<P> = ({scene, dur}) => {
   const sx = Math.sin(f * 2.1) * shake;
   const sy = Math.cos(f * 2.9) * shake * 0.6;
   const runnerX = 380;
-  const legA = Math.sin(phase) * 38;
-  const legB = -legA;
-  const armA = -legA * 0.8;
   const spiralOut = lerp(f, dur - 8, dur, 0, 1, (x) => x * x);
   return (
     <AbsoluteFill style={{background: 'linear-gradient(180deg, #120E08 0%, #1E160B 60%, #0A0805 100%)'}}>
@@ -163,17 +226,8 @@ export const S7Treadmill: React.FC<P> = ({scene, dur}) => {
         <div style={{position: 'absolute', left: 140, top: 1080, width: 30, height: 140, background: '#8A6420'}} />
         <div style={{position: 'absolute', left: 900, top: 1080, width: 30, height: 140, background: '#8A6420'}} />
         <div style={{position: 'absolute', left: 140, top: 640, width: 18, height: 400, background: '#C8A24A', transform: 'rotate(-12deg)', transformOrigin: '50% 100%'}} />
-        {/* corredor */}
-        <svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
-          <g transform={`translate(${runnerX} ${720 + Math.abs(Math.sin(phase)) * -12})`} stroke="#EFE8D8" strokeWidth={26} strokeLinecap="round" fill="none">
-            <circle cx={20} cy={-40} r={34} fill="#EFE8D8" stroke="none" />
-            <path d="M14 0 L0 150" />
-            <path d={`M0 150 L${Math.sin((legA * Math.PI) / 180) * 120} ${150 + Math.cos((legA * Math.PI) / 180) * 120} l${legA > 0 ? 30 : -10} 10`} />
-            <path d={`M0 150 L${Math.sin((legB * Math.PI) / 180) * 120} ${150 + Math.cos((legB * Math.PI) / 180) * 120} l${legB > 0 ? 30 : -10} 10`} />
-            <path d={`M10 30 L${Math.sin((armA * Math.PI) / 180) * 90 + 10} ${30 + Math.cos((armA * Math.PI) / 180) * 90}`} />
-            <path d={`M10 30 L${Math.sin((-armA * Math.PI) / 180) * 90 + 10} ${30 + Math.cos((-armA * Math.PI) / 180) * 90}`} />
-          </g>
-        </svg>
+        {/* corredor: maniquí de oro con volumen (degradé + luz de borde) */}
+        <Mannequin phase={phase} x={runnerX} footY={1010} />
         {/* compras que llegan brillando y se apagan al alcanzarlas */}
         {hits.map((hf, i) => {
           const appear = hf - 22;

@@ -94,7 +94,7 @@ export const S4Feast: React.FC<P> = ({scene, dur}) => {
               </g>
             ) : null}
           </svg>
-          <Struck text="FEAST" at={deadF} x={W / 2} y={1170} />
+          <Struck text="FEAST" at={deadF} x={W / 2} y={1105} />
         </AbsoluteFill>
       ) : (
         <AbsoluteFill style={{transform: `scale(${1.12 - lerp(f, fineF, dur, 0, 0.1)})`}}>
@@ -130,7 +130,7 @@ export const S4Feast: React.FC<P> = ({scene, dur}) => {
               ))}
             </g>
           </svg>
-          <Struck text="FINE WINE" at={grapeF} x={W / 2} y={1180} rot={4} />
+          <Struck text="FINE WINE" at={grapeF} x={W / 2} y={1110} rot={4} />
           <Shockwave at={grapeF + 12} x={W / 2} y={800} size={900} color="rgba(200,60,90,0.8)" />
         </AbsoluteFill>
       )}
@@ -175,6 +175,9 @@ const Sheep: React.FC<{f: number}> = ({f}) => {
   );
 };
 
+// Silueta de túnica: cuello, hombros, mangas y caída hasta el ruedo.
+const ROBE = 'M462 500 Q540 548 618 500 L770 572 L920 760 L836 836 L752 746 L800 1470 L280 1470 L328 746 L244 836 L160 760 L310 572 Z';
+
 const Murex: React.FC = () => (
   <svg width={220} height={220} viewBox="0 0 100 100">
     {Array.from({length: 9}, (_, i) => {
@@ -198,14 +201,18 @@ export const S5Robe: React.FC<P> = ({scene, dur}) => {
   const dye = lerp(f, bloodF + 6, bloodF + 22, 0, 1);
   const N = 13;
   const threads = 70;
-  const inSwirl = lerp(f, 0, 8, 1, 0);
+  const inSwirl = lerp(f, 0, 4, 0.6, 0);
   const lastDrop = f < bloodF + 6;
   return (
     <AbsoluteFill style={{background: '#12060F'}}>
-      {/* Tela púrpura en cámara lenta */}
+      {/* Túnica imperial púrpura en cámara lenta (se reconoce desde el primer cuadro) */}
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 45%, rgba(150,70,170,0.35) 0%, transparent 60%)'}} />
       {unravel < 1 ? (
-        <svg width={W} height={H} style={{position: 'absolute', inset: 0, opacity: 1 - unravel}}>
+        <svg width={W} height={H} style={{position: 'absolute', inset: 0, opacity: 1 - unravel, transform: `rotate(${Math.sin(t * 1.2) * 1.5}deg)`, transformOrigin: '50% 30%'}}>
           <defs>
+            <clipPath id="robe">
+              <path d={ROBE} />
+            </clipPath>
             {[0, 1].map((k) => (
               <linearGradient key={k} id={`fold${k}`} x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0" stopColor={k ? '#3E0B4C' : '#5C1670'} />
@@ -214,6 +221,7 @@ export const S5Robe: React.FC<P> = ({scene, dur}) => {
               </linearGradient>
             ))}
           </defs>
+          <g clipPath="url(#robe)">
           {Array.from({length: N}, (_, i) => {
             const w = W / N;
             const pts = Array.from({length: 34}, (_, k) => {
@@ -224,19 +232,24 @@ export const S5Robe: React.FC<P> = ({scene, dur}) => {
             const d = [...pts, ...pts2].map(([x, y], k) => `${k ? 'L' : 'M'}${x.toFixed(1)} ${y}`).join(' ') + 'Z';
             return <path key={i} d={d} fill={`url(#fold${i % 2})`} />;
           })}
-          {/* ribete de oro */}
-          <rect x={0} y={1500} width={W} height={60} fill="#C8A24A" opacity={0.8} />
+          </g>
+          {/* ribete y broche de oro */}
+          <path d={ROBE} fill="none" stroke="#E0B04F" strokeWidth={14} strokeLinejoin="round" />
+          <path d="M300 1440 L780 1440" stroke="#E0B04F" strokeWidth={22} />
+          <path d="M300 1400 L780 1400" stroke="#C8A24A" strokeWidth={6} />
+          <circle cx={430} cy={575} r={30} fill="#E0B04F" stroke="#6B4E17" strokeWidth={5} />
+          <circle cx={430} cy={575} r={12} fill="#7B1E8C" />
         </svg>
       ) : null}
       {/* Se deshilacha en lana */}
       {unravel > 0 ? (
         <svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
           {Array.from({length: threads}, (_, i) => {
-            const x0 = (i / threads) * W;
+            const x0 = 300 + (i / threads) * 480;
             const fall = unravel;
             const col = interpolateColors(fall, [0, 1], ['#8A2BA0', '#F2EEE4']);
             const d = Array.from({length: 18}, (_, k) => {
-              const y = k * 115 * (1 - fall * 0.55) + fall * 700 + hash(i) * 80 * fall;
+              const y = 520 + k * 56 * (1 - fall * 0.5) + fall * 420 + hash(i) * 80 * fall;
               const x = x0 + Math.sin(k * 0.9 + i + t * 2) * (8 + fall * 60) + (W / 2 - x0) * fall * 0.35;
               return `${k ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`;
             }).join(' ');

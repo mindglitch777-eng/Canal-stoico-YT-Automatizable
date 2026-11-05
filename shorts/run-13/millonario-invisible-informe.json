@@ -1,0 +1,18 @@
+{
+  "duration_s": 42.1,
+  "sample_rate": 48000,
+  "lufs": -14.1,
+  "true_peak_dbtp": 0.1,
+  "silences": [
+    [
+      27.29,
+      27.65
+    ]
+  ],
+  "loop_ssim": 0.976795,
+  "sheet": "salida/millonario-invisible-hoja.jpg",
+  "ok": false,
+  "fails": [
+    "pico real 0.1 dBTP (máximo -1)"
+  ]
+}

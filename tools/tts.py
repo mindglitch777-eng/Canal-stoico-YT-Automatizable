@@ -180,7 +180,7 @@ def main() -> None:
     print(f"  velocidad de la voz: {rate}")
 
     timeline = {"id": spec["id"], "fps": 30, "captions": spec.get("captions", True),
-                "voice": None if args.silent else voice, "scenes": scenes, "total": round(t, 3)}
+                "voice": None if args.silent else voice, "rate": rate, "scenes": scenes, "total": round(t, 3)}
     (build / "timeline.json").write_text(json.dumps(timeline, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Línea de tiempo: {build / 'timeline.json'} ({t:.1f}s, voz: {timeline['voice'] or 'ninguna'})")
 

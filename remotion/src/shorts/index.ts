@@ -7,6 +7,7 @@ import * as senecaTiempo from './seneca-tiempo';
 import * as millonario from './millonario-invisible';
 import * as diogenes from './diogenes-rey';
 import * as laVoz from './la-voz';
+import * as dosHermanos from './dos-hermanos';
 
 export type CustomShortProps = {timeline: Timeline; spans: Array<{from: number; dur: number}>};
 
@@ -22,4 +23,5 @@ export const customShorts: Record<string, CustomShort> = {
   'millonario-invisible': {component: millonario.MillonarioInvisible, noCaptions: millonario.noCaptions, screen: millonario.screen, loop: true, captionTheme: millonario.captionTheme},
   'diogenes-rey': {component: diogenes.DiogenesRey, noCaptions: diogenes.noCaptions, screen: diogenes.screen, loop: true, captionTheme: diogenes.captionTheme},
   'la-voz': {component: laVoz.LaVoz, noCaptions: laVoz.noCaptions, screen: laVoz.screen, loop: true, captionTheme: laVoz.captionTheme},
+  'dos-hermanos': {component: dosHermanos.DosHermanos, noCaptions: dosHermanos.noCaptions, screen: dosHermanos.screen, loop: true, captionTheme: dosHermanos.captionTheme},
 };

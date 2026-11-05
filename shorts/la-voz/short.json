@@ -1,0 +1,254 @@
+{
+  "id": "la-voz",
+  "title": "Someone whispers 3 words before you waste money.",
+  "belief_broken": "Que la frase 'you deserve it' es tuya y es un premio. La instalaron afuera, y el golpe final: ya no hace falta que te la digan, ahora suena con tu propia voz.",
+  "fiction": true,
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "duration_range": [
+    41,
+    47
+  ],
+  "sources": [
+    "Historia inventada (thriller noir). El personaje, los $84 y las situaciones son ficción.",
+    "Cuenta: $84 × 2 veces por semana × 52 semanas = $8,736 por año.",
+    "Séneca, Cartas a Lucilio 16 (trad. R. M. Gummere, 1917, dominio público): 'If you live according to nature, you will never be poor; if you live according to opinion, you will never be rich.'"
+  ],
+  "direction": {
+    "concept": "Un thriller de detectives. Una voz susurra 'you deserve it' antes de cada compra y se ve como humo rojo que sale de vidrieras y pantallas. El protagonista la persigue por la ciudad hasta su origen (publicidades, apps, ofertas de medianoche) y descubre lo peor: el humo ya no viene de afuera, le sale de su propia boca.",
+    "look": "ESTILO NUEVO: cine negro en blanco y negro, lluvia, ciudad de noche, sombras duras de persianas, con UN SOLO color: el rojo de la voz (humo, ondas de sonido, letras). El oro aparece recién al final, cuando él responde con su propia voz.",
+    "pacing": "Arranca lento y con tensión; la escena 4 es un montaje cada vez más rápido; la persecución (6) acelera; en el giro (7) todo se frena. Impactos en 1, 3, 7 y 9.",
+    "loop": "Termina con el hombre frente a la vidriera bajo la lluvia y el humo rojo que aparece detrás de su oreja: el mismo cuadro que el 0. 'Because someone whispers…' empalma con 'Someone whispers 3 words…'."
+  },
+  "music": {
+    "style": "Jazz noir: contrabajo caminando, batería con escobillas, trompeta con sordina (sintetizada), lluvia de ambiente. Los susurros funcionan como parte del ritmo. En el giro se cae todo y quedan solo la lluvia y el susurro, doblado con la voz del narrador. En el cierre, cuerdas graves cálidas.",
+    "tempo": "84 BPM; el montaje de la escena 4 dobla el ritmo; corte total en la 7.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Lluvia + contrabajo que arranca + primer susurro en rojo"
+      },
+      {
+        "at": "escenas 2-5",
+        "cue": "Jazz noir; un golpe de platillo con escobilla en cada compra"
+      },
+      {
+        "at": "escena 6",
+        "cue": "Persecución: contrabajo y batería al doble"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Silencio 0,4 s → solo lluvia + el susurro con la voz del narrador"
+      },
+      {
+        "at": "escenas 9-10",
+        "cue": "Cuerdas graves cálidas cuando él dice 'not today'"
+      },
+      {
+        "at": "escena 11",
+        "cue": "Vuelven el contrabajo y la lluvia del cuadro 0 para empalmar"
+      }
+    ],
+    "mix": "Voz al frente, música -10 dB bajo la voz, final a -14 LUFS, pico ≤ -1 dBTP. El 'you deserve it' de cada escena se procesa como susurro (filtrado, reverb, doblado) además de la voz principal."
+  },
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "Someone whispers 3 words before you waste money. You never notice. Why?",
+      "pause_after": 0.35,
+      "onScreen": "*3 words.*\nEvery time.",
+      "visual": "Cuadro 0: noche, lluvia, blanco y negro. Un hombre frente a una vidriera iluminada. Detrás de su oreja aparece una boca de humo ROJO que susurra; tres letras rojas borrosas se forman en el aire. En 'Why?' un relámpago congela todo.",
+      "camera": "Primer plano de la oreja; en 'Why?', flash blanco y cuadro quieto.",
+      "transition": "El humo rojo entra por la ventana de su casa.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Lluvia + contrabajo + susurro ininteligible"
+        },
+        {
+          "at": "'Why?'",
+          "sound": "Trueno"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Long day. You're tired. Then you hear it: you deserve it.",
+      "onScreen": "*You deserve it.*",
+      "visual": "El hombre llega a casa agotado y se tira en el sillón con el celular. El humo rojo sale de la pantalla, le rodea la cabeza y escribe en rojo 'YOU DESERVE IT' en el aire.",
+      "camera": "Sombras de persiana sobre su cara; zoom lento al celular.",
+      "transition": "Su dedo se acerca al botón COMPRAR.",
+      "sfx": [
+        {
+          "at": "'you deserve it'",
+          "sound": "Susurro doblado con reverb, procesado en rojo (filtrado)"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Click. 84 dollars, gone.",
+      "onScreen": "Click. *−$84.*",
+      "visual": "El dedo aprieta COMPRAR. De su billetera sale un fantasma de billetes que se lo lleva el humo rojo por la ventana. Contador rojo: −$84.",
+      "camera": "Macro del dedo; corte seco a la billetera.",
+      "transition": "Montaje rápido de tres escenas.",
+      "sfx": [
+        {
+          "at": "'Click'",
+          "sound": "Clic de mouse exageradamente fuerte"
+        },
+        {
+          "at": "'gone'",
+          "sound": "Caja registradora + viento"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Friday? You deserve it. Payday? You deserve it. Breakup? You really deserve it.",
+      "onScreen": "Friday. Payday.\n*Breakup.*",
+      "visual": "Montaje noir cada vez más rápido: viernes en un bar, día de cobro frente a un cajero, ruptura llorando en la lluvia. En cada uno, el humo rojo susurra y caen bolsas de compras del cielo, cada vez más, hasta taparlo.",
+      "camera": "Cortes que se aceleran con la música.",
+      "transition": "Las bolsas se apilan y forman un número.",
+      "sfx": [
+        {
+          "at": "cada 'you deserve it'",
+          "sound": "Susurro rojo + platillo con escobilla"
+        },
+        {
+          "at": "bolsas",
+          "sound": "Bolsas de papel que caen"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Twice a week, that's over 8,000 dollars a year.",
+      "onScreen": "*$8,736*\na year.",
+      "visual": "Las bolsas forman un número gigante, $8,736, que se ilumina en rojo sobre la ciudad como un cartel de neón en la lluvia.",
+      "camera": "Contrapicado del cartel de neón con lluvia cayendo hacia la cámara.",
+      "transition": "Un hilo de humo rojo se escapa del cartel y él lo sigue.",
+      "sfx": [
+        {
+          "at": "número",
+          "sound": "Neón que se enciende con zumbido + golpe grave"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "So he followed the voice. It led to ads, apps, and midnight sales.",
+      "onScreen": "Ads. Apps.\n*Midnight sales.*",
+      "visual": "Persecución noir: él corre detrás del rastro de humo rojo por callejones mojados. El humo sale de una publicidad gigante, de un enjambre de íconos de apps y de una vidriera con 'MIDNIGHT SALE'. Todas las bocas susurran lo mismo.",
+      "camera": "Cámara en mano siguiéndolo; cortes con cada fuente de humo.",
+      "transition": "Él frena en seco frente a un charco.",
+      "sfx": [
+        {
+          "at": "persecución",
+          "sound": "Pasos sobre agua + contrabajo al doble"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "But the voice stopped needing them. Now it sounds like you.",
+      "onScreen": "It sounds\nlike *you.*",
+      "visual": "Silencio. Todas las publicidades se apagan de golpe. Él mira el charco: su reflejo tiene la boca roja y es EL REFLEJO el que susurra 'you deserve it'. El humo rojo ahora le sale de su propia boca.",
+      "camera": "Picado al charco; la imagen del reflejo se da vuelta y queda al derecho (él y su reflejo cambian de lugar).",
+      "transition": "Una gota cae en el charco y rompe el reflejo.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio 0,4 s (pause_after de la escena anterior)"
+        },
+        {
+          "at": "'sounds like you'",
+          "sound": "El susurro con la voz del narrador doblada + gota que cae"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca warned: if you live according to opinion, you will never be rich.",
+      "quote": "Live according to opinion, you will never be rich.",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 16",
+      "visual": "La cita aparece escrita en la lluvia: cada gota que cae ilumina una letra. Es lo primero del video que no es rojo ni gris: es blanco cálido.",
+      "camera": "Frontal, con la lluvia en cámara lenta.",
+      "transition": "Las gotas se juntan en una luz dorada en el pecho del hombre.",
+      "sfx": [
+        {
+          "at": "cada letra",
+          "sound": "Gota que suena como nota de piano"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Their voice says you deserve it. Yours can say: not today.",
+      "onScreen": "*Not today.*",
+      "visual": "Él se da vuelta y enfrenta a su reflejo rojo. De su boca sale una voz DORADA (letras doradas, primera vez que aparece el oro) que dice 'NOT TODAY', choca contra el humo rojo y lo hace estallar en mil pedazos.",
+      "camera": "Pantalla partida rojo contra oro; el oro empuja la línea hasta ganar.",
+      "transition": "Los pedazos rojos caen como lluvia y se apagan.",
+      "sfx": [
+        {
+          "at": "'not today'",
+          "sound": "Golpe grave + vidrio que estalla + cuerdas cálidas"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Two words. Worth 8,000 dollars a year.",
+      "onScreen": "*2 words.*\n$8,000 a year.",
+      "visual": "El cartel de neón de $8,736 cambia de rojo a dorado y los billetes vuelven volando a la billetera del hombre.",
+      "camera": "Contrapicado del cartel dorado bajo la lluvia.",
+      "transition": "La lluvia se intensifica y vuelve a la vidriera del principio.",
+      "sfx": [
+        {
+          "at": "billetes que vuelven",
+          "sound": "Viento al revés + caja registradora invertida"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Listen tonight. You'll hear it. Because someone whispers...",
+      "onScreen": "Listen *tonight.*",
+      "visual": "El hombre vuelve a estar frente a la vidriera iluminada bajo la lluvia, y la boca de humo rojo vuelve a aparecer detrás de su oreja: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el primer plano de la oreja del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Susurro que empalma con el del cuadro 0 + lluvia continua"
+        }
+      ]
+    }
+  ]
+}

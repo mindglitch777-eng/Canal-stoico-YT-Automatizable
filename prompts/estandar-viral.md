@@ -14,7 +14,9 @@ Regla permanente del dueño del canal (04/11/2026): **cada Short busca dopamina 
 4. **Un giro (`twist`) entre el 55 % y el 75 % del video** que dé vuelta la idea.
 5. **El final empalma con el primer cuadro.** La última frase lleva a la primera, para que el video se repita sin que se note el corte.
 6. **Cada frase podría ser un gancho.** Sin relleno ni contexto que no pague.
-7. **Datos y citas reales, con fuente** en `sources`. Una cifra verificable pega más fuerte que una inventada, y un error en comentarios mata la credibilidad.
+7. **La ficción vale (decisión del dueño, 05/11/2026).** Parábolas, personajes inventados, "imaginá que…", historias con giro: todo sirve, y se marca con `"fiction": true` y en `sources`. Lo que no se inventa: citas o datos atribuidos a una persona real o a un estudio. Si aparece Séneca, dice lo que Séneca escribió; si aparece un número de un estudio, es el número real, con fuente.
+8. **Viralidad pura primero: frases populares o problemas de todos** ("money can't buy happiness", "you deserve it", "work hard and you'll get rich") que se rompen, o "lo que nadie ve". Que el gancho no necesite contexto: nadie tiene que saber quién era un personaje histórico para engancharse (lección de `diogenes-rey`, que el dueño juzgó malo). Lo estoico entra como la llave que rompe la trampa, no como clase de historia.
+9. **Giros que rompen expectativas:** engañar a propósito en la primera mitad (que el espectador crea lo contrario) y dar vuelta todo en el giro. Los golpes más fuertes: el espectador es el protagonista ("there were never two brothers") o el video se delata a sí mismo (romper la cuarta pared).
 
 ## Visual
 

@@ -1,0 +1,262 @@
+{
+  "id": "dos-hermanos",
+  "title": "You'd never guess which brother went broke.",
+  "belief_broken": "Que el que se ve rico es el que ganó. Y el golpe final: nunca hubo dos hermanos; son las dos versiones del espectador eligiendo en cada cobro.",
+  "fiction": true,
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "duration_range": [
+    41,
+    47
+  ],
+  "sources": [
+    "Historia inventada (parábola). Jake, Sam, los seguidores y los montos son ficción.",
+    "Séneca, Cartas a Lucilio 2 (trad. R. M. Gummere, 1917, dominio público): 'It is not the man who has too little, but the man who craves more, that is poor.'"
+  ],
+  "direction": {
+    "concept": "Una parábola en un mundo de juguete. El video engaña a propósito: durante la primera mitad hace creer que Jake, el que gasta, está ganando. En el mes 12 el banco levanta su mundo pieza por pieza, la cámara baja debajo del suelo y aparece lo que nadie veía: raíces de oro gigantes debajo de Sam. Golpe final: los dos hermanos se dan vuelta, miran a cámara y se funden en una sola silueta, la del espectador.",
+    "look": "ESTILO NUEVO: diorama en miniatura con efecto tilt-shift (desenfoque arriba y abajo, colores de juguete saturados, luz de mañana), figuras tipo juguete de madera/plástico, todo encaja con 'clic'. Debajo del suelo, otro mundo: tierra oscura con raíces de oro que brillan. Nada del negro/oro de los videos anteriores, salvo las raíces.",
+    "pacing": "Primera mitad alegre y rápida (las cosas de Jake caen una tras otra); en el mes 12 todo se frena. Impactos en 1, 6, 7 y 10.",
+    "loop": "El último cuadro vuelve a las dos figuras con los maletines cayendo del cielo, igual que el cuadro 0. 'So which brother are you?' empalma con 'You'd never guess which brother went broke'."
+  },
+  "music": {
+    "style": "Caja de música de juguete (Do mayor) que suena feliz e inocente; en el mes 12 se le acaba la cuerda (baja de tono y se frena con ruido de resorte) y entra un 'braam' orquestal grave debajo del suelo; en la revelación de las raíces, cuerdas y coro cálidos que crecen. Al final vuelve la caja de música en menor y resuelve en mayor para el loop.",
+    "tempo": "110 BPM la caja de música; se frena en la escena 6; 70 BPM con cuerdas desde la 7.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Golpe de los maletines + caja de música que arranca"
+      },
+      {
+        "at": "escenas 2-5",
+        "cue": "Caja de música alegre; un 'clic' de juguete en cada cosa que cae"
+      },
+      {
+        "at": "escena 6",
+        "cue": "La caja de música se queda sin cuerda (tono que cae + resorte) → silencio"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "'Braam' grave al bajar bajo tierra; cuerdas y coro al aparecer las raíces de oro"
+      },
+      {
+        "at": "escena 10",
+        "cue": "Silencio de un instante y golpe grave cuando dice 'never two brothers'"
+      },
+      {
+        "at": "escena 11",
+        "cue": "Caja de música en menor que resuelve en mayor justo en el cuadro 0"
+      }
+    ],
+    "mix": "Voz al frente, música -10 dB bajo la voz, final a -14 LUFS, pico ≤ -1 dBTP."
+  },
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never guess which brother went broke. Both got $1 million. Why?",
+      "pause_after": 0.4,
+      "onScreen": "Both got\n*$1,000,000.*",
+      "visual": "Cuadro 0 en acción: calle de juguete en miniatura, dos figuras de gemelos idénticas. Dos maletines dorados GIGANTES caen del cielo, se clavan en el piso y se abren: los billetes explotan como confeti. En 'Why?' todo se congela y un signo de pregunta hecho de billetes gira entre los dos.",
+      "camera": "Plano tilt-shift desde arriba; latigazo hacia abajo siguiendo los maletines; en 'Why?', órbita alrededor de los gemelos congelados.",
+      "transition": "La cámara se va hacia el lado de Jake.",
+      "sfx": [
+        {
+          "at": "maletines",
+          "sound": "Silbido de caída + golpe grave + lluvia de billetes"
+        },
+        {
+          "at": "'Why?'",
+          "sound": "Congelado: 'whoomp' y la caja de música que se detiene un instante"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Jake bought what you could see. A supercar. A mansion.",
+      "onScreen": "Jake: *what you see.*",
+      "visual": "Las cosas caen del cielo alrededor de Jake y encajan como juguetes con un 'clic': un superauto genérico (sin marca), una mansión que se arma piso por piso, una piscina. Jake sonríe con anteojos de sol.",
+      "camera": "Cortes rápidos: cada objeto en su plano cerrado; termina en plano general de su lote lleno.",
+      "transition": "Barrido lateral al lote de Sam.",
+      "sfx": [
+        {
+          "at": "cada objeto",
+          "sound": "Golpe de juguete + 'clic' + campanita"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Sam bought what you couldn't see. And the family laughed at him.",
+      "onScreen": "Sam: *what you don't.*",
+      "visual": "Lote de Sam casi vacío: un departamento chiquito, una pila de libros, una macetita. En una mesa de cena familiar de juguete, todas las figuras lo señalan y les salen globos de risa ('HA HA').",
+      "camera": "Zoom lento a la macetita; corte a la mesa familiar.",
+      "transition": "Los globos de risa suben y se vuelven íconos de seguidores sobre Jake.",
+      "sfx": [
+        {
+          "at": "macetita",
+          "sound": "'Puf' chiquito y triste"
+        },
+        {
+          "at": "risas",
+          "sound": "Risas de juguete (aceleradas, agudas)"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Six months later, Jake had 2 million followers.",
+      "onScreen": "Jake: *2M followers.*",
+      "visual": "Sobre la mansión de Jake, una nube de flashes de celulares y corazones; un contador enorme llega a 2,000,000. El lote de Jake crece y tapa casi toda la pantalla; el de Sam queda arrinconado.",
+      "camera": "Contrapicado a la mansión; el plano se inclina hacia el lado de Jake.",
+      "transition": "Corte al lote gris de Sam.",
+      "sfx": [
+        {
+          "at": "contador",
+          "sound": "Notificaciones que aceleran hasta volverse un aplauso"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Sam? Still the boring brother. Same old car.",
+      "onScreen": "Sam: *boring.*",
+      "visual": "El lado de Sam en gris y sin gracia, el mismo auto viejo de juguete. PISTA: por una grieta del piso se escapa, un segundo, un brillo dorado que nadie mira.",
+      "camera": "Plano fijo y aburrido; en la grieta, un zoom rapidísimo que vuelve enseguida (el ojo lo ve, la mente no).",
+      "transition": "Hoja de calendario que se arranca.",
+      "sfx": [
+        {
+          "at": "auto viejo",
+          "sound": "Bocina triste"
+        },
+        {
+          "at": "brillo",
+          "sound": "Destello casi inaudible"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Then came month twelve. And the bills.",
+      "pause_after": 0.4,
+      "onScreen": "Month *12.*",
+      "visual": "El calendario cae en 12. Una MANO GIGANTE (el banco, con puño de camisa y corbata) baja del cielo y levanta las piezas de Jake una por una: el auto, la piscina, los pisos de la mansión. Cada etiqueta se da vuelta: 'LOAN'. Jake queda parado en un lote vacío.",
+      "camera": "Plano general fijo para que se vea la mano entera; temblor en cada pieza que se lleva.",
+      "transition": "El piso del lote vacío se rompe y la cámara cae.",
+      "sfx": [
+        {
+          "at": "'month twelve'",
+          "sound": "Caja de música que se queda sin cuerda"
+        },
+        {
+          "at": "cada pieza",
+          "sound": "Juguete que se despega + sello de 'LOAN'"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Everything Jake owned was borrowed. Everything Sam owned was invisible.",
+      "onScreen": "Borrowed vs\n*invisible.*",
+      "visual": "La cámara atraviesa el suelo del diorama: debajo del lote de Jake, vacío negro con cadenas. Debajo del de Sam, una red de RAÍCES DE ORO GIGANTE que brilla y late, que estuvo creciendo todo el video. Es lo que nadie veía.",
+      "camera": "Caída vertical a través de la tierra; se abre en un plano enorme de las raíces.",
+      "transition": "Las raíces suben y hacen florecer el lote de Sam.",
+      "sfx": [
+        {
+          "at": "atravesar el suelo",
+          "sound": "'Braam' grave + tierra que se rompe"
+        },
+        {
+          "at": "raíces",
+          "sound": "Coro cálido + latido"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca knew: the man who craves more is poor.",
+      "quote": "The man who craves more, that is poor.",
+      "author": "Seneca",
+      "source": "Letters to Lucilius, 2",
+      "visual": "Las palabras de la cita crecen como raíces de oro desde abajo de la pantalla y se escriben solas.",
+      "camera": "Frontal; la cámara sube con las raíces.",
+      "transition": "Pantalla partida entre los dos hermanos.",
+      "sfx": [
+        {
+          "at": "cita",
+          "sound": "Raíces que crujen + campana suave"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Jake looked rich. Sam was rich.",
+      "onScreen": "Looked rich.\n*Was* rich.",
+      "visual": "Pantalla partida: Jake sentado solo en su lote vacío; Sam pescando en un lago de juguete que florece sobre sus raíces, al atardecer.",
+      "camera": "La línea del medio se corre hasta que gana Sam.",
+      "transition": "Los dos hermanos se dan vuelta despacio hacia la cámara.",
+      "sfx": [
+        {
+          "at": "'was rich'",
+          "sound": "Golpe cálido + pájaros"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "reveal",
+      "say": "But here's the thing. There were never two brothers.",
+      "onScreen": "There were *never*\ntwo brothers.",
+      "visual": "Los dos gemelos miran DIRECTO a cámara. Se acercan entre sí y se funden en una sola silueta oscura con la forma de una persona mirando el celular: el espectador.",
+      "camera": "Zoom lento hacia sus caras; en 'never', corte a quietud total.",
+      "transition": "La silueta se divide otra vez en dos.",
+      "sfx": [
+        {
+          "at": "antes de 'never'",
+          "sound": "Silencio de un instante"
+        },
+        {
+          "at": "'never'",
+          "sound": "Golpe grave + reverb larga"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "It's you, every payday. So which brother are you?",
+      "onScreen": "Which one\nare *you?*",
+      "visual": "La silueta se separa en los dos gemelos de juguete de nuevo, en la calle del principio, y dos maletines dorados empiezan a caer del cielo: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el plano tilt-shift del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Silbido de los maletines que cae justo en el golpe del cuadro 0"
+        }
+      ]
+    }
+  ]
+}

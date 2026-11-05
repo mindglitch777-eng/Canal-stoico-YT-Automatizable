@@ -8,6 +8,7 @@ import * as millonario from './millonario-invisible';
 import * as diogenes from './diogenes-rey';
 import * as laVoz from './la-voz';
 import * as dosHermanos from './dos-hermanos';
+import * as elegido from './elegido-por-vos';
 
 export type CustomShortProps = {timeline: Timeline; spans: Array<{from: number; dur: number}>};
 
@@ -24,4 +25,5 @@ export const customShorts: Record<string, CustomShort> = {
   'diogenes-rey': {component: diogenes.DiogenesRey, noCaptions: diogenes.noCaptions, screen: diogenes.screen, loop: true, captionTheme: diogenes.captionTheme},
   'la-voz': {component: laVoz.LaVoz, noCaptions: laVoz.noCaptions, screen: laVoz.screen, loop: true, captionTheme: laVoz.captionTheme},
   'dos-hermanos': {component: dosHermanos.DosHermanos, noCaptions: dosHermanos.noCaptions, screen: dosHermanos.screen, loop: true, captionTheme: dosHermanos.captionTheme},
+  'elegido-por-vos': {component: elegido.ElegidoPorVos, noCaptions: elegido.noCaptions, screen: elegido.screen, loop: true, captionTheme: elegido.captionTheme},
 };

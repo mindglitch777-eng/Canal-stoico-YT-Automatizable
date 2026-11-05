@@ -124,6 +124,28 @@ Render: WebGL por software (`REMOTION_GL`, por defecto `swangle`, sirve sin GPU)
 - **Volumen (`tools/loudness.py`):** -14 LUFS en dos pasadas, limitador para que el pico real quede por debajo de -1 dBTP después del AAC, 48 kHz.
 - **Control final (`tools/verify_short.py`):** SSIM entre el primer y el último cuadro (`--loop`, mínimo 0,90), volumen, pico, silencios de más de 0,1 s (se permiten 2 y ninguno en el último segundo), duración (`--min/--max`) y hoja de cuadros (`--sheet`).
 
+### Noche de 3 videos (05/11/2026): seneca-tiempo, millonario-invisible, diogenes-rey
+
+Pedido en `prompts/noche-3-videos.md`. Cada uno con estilo nuevo, composición propia en `remotion/src/shorts/<id>/` (`parts.tsx` con sus piezas, `scenes.tsx` con las escenas y `Frame0`, `index.tsx` con el registro) y sonido en `shorts/<id>/sound.py`. Resumen para el dueño en `salidas/MAÑANA.md`.
+
+- **seneca-tiempo:** oscuridad con luz fría de pantalla, glitch e interfaz; el oro solo para el tiempo (arena de píxeles). Música hecha de tics que aceleran de 90 a 128 BPM y se paran en el giro.
+- **millonario-invisible:** concurso de TV (haces de luz, marquesina de focos, LED) que se vuelve rayos X; después del giro los focos se apagan. Lounge con trap suave, tape stop, bajo oscuro, lira; el jingle empalma el loop.
+- **diogenes-rey:** vasija griega de figuras negras (terracota, guardas, líneas incisas, sol como única luz) que se quiebra y muestra el mundo de hoy en el mismo estilo. Aulós y lira en modo frigio, tambores de guerra.
+
+Herramientas nuevas que quedaron generales:
+- **`Frame0(t)` por video:** el cuadro 0 es un componente que depende del tiempo; la última escena lo dibuja con `t = (f + 1 - dur) / fps` (negativo hasta 0), así el último cuadro es idéntico al primero (SSIM 1,0 en las pruebas).
+- **`duration_range` en el `short.json`** (`tools/tts.py`): si la voz real queda corta, se regenera más lenta de a -4 % (hasta -20 %) y, si hace falta, se suma aire entre escenas. La estimación sin voz (2,6 palabras/s) se pasa de larga con `rate: +0%`: `seneca-tiempo` estimado en 41,6 s salió en 34,1 s.
+- **Estilos propios en `KineticText`** (`accentStyle`, `plainStyle`) y **paleta de subtítulos por video** (`captionTheme` en el registro).
+- **Paleta de sonidos ampliada** en `tools/sfx/synth.py`: notificación, billetera, succión digital, fuego, arena, moneda contra vidrio, jingle, bling, bocina triste, motor que tose, escáner, chicharra, caja registradora, hojas, derrape, bocina, hilos que se tensan, pájaros, respiración, cuerno de guerra, cascos, cerámica hueca, grieta de cerámica, risas, silla, puerta, corte de metal, tambor de guerra, aulós, piano eléctrico, hi-hat, caja, 808 y golpe de luz.
+- **Renders en paralelo:** el workflow agrupa por Short (`concurrency` con la carpeta), así varios Shorts se renderizan a la vez.
+- **`src/shorts/common.tsx`:** las utilidades de tiempo (`wordFrame`, `lerp`, `useLocal`...) para cualquier video a medida.
+
+Aprendido:
+- Las placas de título no tienen que aparecer vacías antes de la primera palabra: se calcula el primer tiempo con `syncTokens` y la placa entra recién ahí.
+- Medir el ancho de los textos grandes: una marquesina de 840 px no entra "suit under $600." a 96 px; una palabra de 6 letras a 250 px se sale de 1080.
+- El oro sobre terracota no contrasta: contorno negro grueso (`WebkitTextStroke`).
+- Cubrir los huecos de la música (lounge entre acordes) con un colchón: si no, `silencedetect` marca silencios que no son intencionales.
+
 ### Aprendido en marco-aurelio-chatarra
 
 - **CSS que falla en el render:** un elemento con `filter: blur()` y `box-shadow` grande a la vez (la llama de una vela) salió en algunos cuadros como un rectángulo blanco con WebGL por software. Para brillos y llamas, usar SVG con degradés radiales.

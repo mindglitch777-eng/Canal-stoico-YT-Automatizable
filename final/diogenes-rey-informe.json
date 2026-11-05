@@ -1,0 +1,20 @@
+{
+  "duration_s": 42.17,
+  "sample_rate": 48000,
+  "lufs": -14.0,
+  "true_peak_dbtp": -2.0,
+  "silences": [
+    [
+      5.31,
+      5.63
+    ],
+    [
+      28.26,
+      28.64
+    ]
+  ],
+  "loop_ssim": 0.98422,
+  "sheet": "final/diogenes-rey-hoja.jpg",
+  "ok": true,
+  "fails": []
+}

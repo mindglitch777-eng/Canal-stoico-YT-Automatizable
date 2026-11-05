@@ -7,6 +7,7 @@
   "pitch": "-2Hz",
   "captions": true,
   "gap": 0.1,
+  "duration_range": [41, 47],
   "sources": [
     "Tiempo en el celular: Reviews.org, 2026 Cell Phone Usage (≈1.000 adultos de EE. UU., Pollfish, 4.º trimestre de 2025): los estadounidenses pasan 'over three hours a day' en el teléfono y lo revisan unas 186 veces por día.",
     "Cuentas: 3 h × 365 = 1.095 h ≈ 45,6 días por año; × 50 años ≈ 6,25 años.",

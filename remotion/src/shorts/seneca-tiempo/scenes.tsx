@@ -295,7 +295,7 @@ export const S6: React.FC<P> = ({scene, dur}) => {
       <div style={{position: 'absolute', left: 120, top: 240, width: W - 360, height: 36, borderRadius: 18, background: 'linear-gradient(180deg, #8A5A2A, #4A2E12)'}} />
       <div style={{position: 'absolute', left: 150, top: 262, width: W - 420, height: 860 * unroll, background: 'linear-gradient(90deg, #C9A86A, #EAD5A4 30%, #E2C990 70%, #B8955A)', overflow: 'hidden', padding: '60px 50px', boxSizing: 'border-box'}}>
         <div style={{fontFamily: font.serif, fontWeight: 700, fontSize: 42, letterSpacing: '0.24em', color: '#6B3E12', marginBottom: 30}}>SENECA · DE BREVITATE VITAE 3</div>
-        <div style={{fontFamily: font.serif, fontStyle: 'italic', fontWeight: 700, fontSize: 84, lineHeight: 1.08}}>
+        <div style={{fontFamily: font.serif, fontStyle: 'italic', fontWeight: 700, fontSize: 96, lineHeight: 1.06}}>
           {tokens.map((tok, i) => {
             const a = times[i] ?? 0;
             const b = Math.max(a + 3, Math.min(times[i + 1] ?? a + 10, a + 12));
@@ -312,7 +312,16 @@ export const S6: React.FC<P> = ({scene, dur}) => {
       <div style={{position: 'absolute', left: 120, top: 250 + 860 * unroll, width: W - 360, height: 36, borderRadius: 18, background: 'linear-gradient(180deg, #8A5A2A, #4A2E12)'}} />
       <Purse squeeze={squeeze} t={t} />
       {/* la tinta se derrama hacia la pantalla de un celular */}
-      {spill > 0 ? <AbsoluteFill style={{background: `radial-gradient(circle at 50% 55%, rgba(10,30,90,${spill}) ${spill * 70}%, transparent ${spill * 70 + 10}%)`}} /> : null}
+      {spill > 0 ? (
+        <>
+          {Array.from({length: 7}, (_, k) => (
+            <div key={k} style={{position: 'absolute', left: 200 + k * 85, top: 1120, width: 14 + (k % 3) * 6, height: spill * (360 + hash(k) * 300), borderRadius: 12, background: 'linear-gradient(180deg, #8A5A0E, #FFC24A)'}} />
+          ))}
+          <div style={{opacity: spill}}>
+            <Phone x={540} y={1560} w={220} />
+          </div>
+        </>
+      ) : null}
     </AbsoluteFill>
   );
 };

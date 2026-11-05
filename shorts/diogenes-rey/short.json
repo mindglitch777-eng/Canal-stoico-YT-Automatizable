@@ -7,6 +7,7 @@
   "pitch": "-2Hz",
   "captions": true,
   "gap": 0.1,
+  "duration_range": [41, 47],
   "sources": [
     "Plutarco, Vida de Alejandro 14 (trad. Evelyn, serie Dryden, dominio público): Alejandro encuentra a Diógenes en el Craneo de Corinto 'lying along in the sun'; Diógenes: 'I would have you stand from between me and the sun'; los seguidores se ríen y Alejandro dice que si no fuera Alejandro elegiría ser Diógenes.",
     "Alejandro fue rey de Macedonia a los 20 años (336 a. C.) y en el Istmo lo eligieron jefe de los griegos contra Persia (Plutarco, Alejandro 14).",

@@ -7,6 +7,7 @@
   "pitch": "-2Hz",
   "captions": true,
   "gap": 0.1,
+  "duration_range": [41, 47],
   "sources": [
     "Stanley y Danko, The Millionaire Next Door (1996), según The Christian Science Monitor (1/4/1997): tres de cada cuatro millonarios encuestados nunca gastaron más de US$600 en un traje ni US$200 en zapatos; casi el 40 % manejaba un auto estadounidense de al menos dos años; Ford era la marca más común.",
     "Séneca, Cartas a Lucilio 5 (trad. R. M. Gummere, 1917, dominio público): 'He is a great man who uses earthenware dishes as if they were silver'.",

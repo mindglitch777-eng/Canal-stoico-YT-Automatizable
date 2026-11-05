@@ -120,36 +120,64 @@ def main() -> None:
     # una pausa propia con `pause_after` (silencios intencionales: "How?", antes del giro).
     # La voz se recorta: sin el silencio que Edge TTS deja al principio y al final de cada frase.
     gap = float(spec.get("gap", GAP))
-    t = 0.0
-    scenes = []
-    for i, scene in enumerate(spec["scenes"], start=1):
-        say = scene["say"].strip()
-        tail = float(scene.get("pause_after", gap))
-        if args.silent:
-            dur = max(2.2, len(say.split()) / WORDS_PER_SEC + 0.4) - 0.4 + tail
-            words, audio_rel = fake_words(say, dur), None
-        else:
-            raw = vdir / f"s{i:02d}.raw.mp3"
-            mp3 = vdir / f"s{i:02d}.mp3"
-            bounds = asyncio.run(synth(say, voice, rate, pitch, raw))
-            words = align_words(say, bounds)
-            if words and shutil.which("ffmpeg"):
-                lead = max(0.0, words[0]["start"] - 0.03)
-                keep = words[-1]["end"] - lead + 0.08  # cola corta para que no se corte la última sílaba
-                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{lead:.3f}", "-i", str(raw), "-t", f"{keep:.3f}",
-                                "-c:a", "libmp3lame", "-q:a", "2", str(mp3)], check=True)
-                words = [{**w, "start": round(w["start"] - lead, 3), "end": round(w["end"] - lead, 3)} for w in words]
-                dur = keep - 0.08 + tail
+
+    def build_scenes(rate: str) -> tuple[list[dict], float]:
+        t = 0.0
+        scenes = []
+        for i, scene in enumerate(spec["scenes"], start=1):
+            say = scene["say"].strip()
+            tail = float(scene.get("pause_after", gap))
+            if args.silent:
+                dur = max(2.2, len(say.split()) / WORDS_PER_SEC + 0.4) - 0.4 + tail
+                words, audio_rel = fake_words(say, dur), None
             else:
-                shutil.copy(raw, mp3)
-                spoken = audio_duration(mp3) or (words[-1]["end"] + 0.35 if words else 2.0)
-                dur = spoken + gap
-            dur = max(dur, (words[-1]["end"] if words else 0) + 0.05)
-            audio_rel = mp3.relative_to(REPO).as_posix()
-        scenes.append({**scene, "say": say, "audio": audio_rel, "start": round(t, 3),
-                       "duration": round(dur, 3), "words": words})
-        print(f"  escena {i} ({scene['type']}): {dur:.2f}s, {len(words)} palabras")
-        t += dur
+                raw = vdir / f"s{i:02d}.raw.mp3"
+                mp3 = vdir / f"s{i:02d}.mp3"
+                bounds = asyncio.run(synth(say, voice, rate, pitch, raw))
+                words = align_words(say, bounds)
+                if words and shutil.which("ffmpeg"):
+                    lead = max(0.0, words[0]["start"] - 0.03)
+                    keep = words[-1]["end"] - lead + 0.08  # cola corta para que no se corte la última sílaba
+                    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{lead:.3f}", "-i", str(raw), "-t", f"{keep:.3f}",
+                                    "-c:a", "libmp3lame", "-q:a", "2", str(mp3)], check=True)
+                    words = [{**w, "start": round(w["start"] - lead, 3), "end": round(w["end"] - lead, 3)} for w in words]
+                    dur = keep - 0.08 + tail
+                else:
+                    shutil.copy(raw, mp3)
+                    spoken = audio_duration(mp3) or (words[-1]["end"] + 0.35 if words else 2.0)
+                    dur = spoken + gap
+                dur = max(dur, (words[-1]["end"] if words else 0) + 0.05)
+                audio_rel = mp3.relative_to(REPO).as_posix()
+            scenes.append({**scene, "say": say, "audio": audio_rel, "start": round(t, 3),
+                           "duration": round(dur, 3), "words": words})
+            t += dur
+        return scenes, t
+
+    # Duración objetivo (`duration_range` del short.json, ej. [41, 47]): si la voz real queda corta,
+    # se vuelve a generar un poco más lenta (de a -4 %, hasta -20 %); si sigue corta, se suma aire
+    # repartido entre escenas. El texto y la voz no cambian.
+    rng_ = spec.get("duration_range")
+    scenes, t = build_scenes(rate)
+    if rng_ and not args.silent:
+        lo, hi = float(rng_[0]), float(rng_[1])
+        r = int(str(rate).replace("%", "") or 0)
+        while t < lo and r > -20:
+            r -= 4
+            rate = f"{r:+d}%"
+            print(f"  dura {t:.1f}s (< {lo}): vuelvo a generar la voz a {rate}")
+            scenes, t = build_scenes(rate)
+        if t < lo:
+            extra = (lo + 0.3 - t) / len(scenes)
+            acc = 0.0
+            for sc in scenes:
+                sc["start"] = round(sc["start"] + acc, 3)
+                sc["duration"] = round(sc["duration"] + extra, 3)
+                acc += extra
+            t += acc
+            print(f"  sumo {extra:.2f}s de aire por escena")
+    for i, sc in enumerate(scenes, start=1):
+        print(f"  escena {i} ({sc['type']}): {sc['duration']:.2f}s, {len(sc['words'])} palabras")
+    print(f"  velocidad de la voz: {rate}")
 
     timeline = {"id": spec["id"], "fps": 30, "captions": spec.get("captions", True),
                 "voice": None if args.silent else voice, "scenes": scenes, "total": round(t, 3)}

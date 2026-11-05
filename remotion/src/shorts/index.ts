@@ -5,6 +5,7 @@ import type {Timeline} from '../types';
 import * as marcoAurelio from './marco-aurelio-chatarra';
 import * as senecaTiempo from './seneca-tiempo';
 import * as millonario from './millonario-invisible';
+import * as diogenes from './diogenes-rey';
 
 export type CustomShortProps = {timeline: Timeline; spans: Array<{from: number; dur: number}>};
 
@@ -18,4 +19,5 @@ export const customShorts: Record<string, CustomShort> = {
   'marco-aurelio-chatarra': {component: marcoAurelio.MarcoAurelioChatarra, noCaptions: marcoAurelio.noCaptions, screen: marcoAurelio.screen, loop: true},
   'seneca-tiempo': {component: senecaTiempo.SenecaTiempo, noCaptions: senecaTiempo.noCaptions, screen: senecaTiempo.screen, loop: true, captionTheme: senecaTiempo.captionTheme},
   'millonario-invisible': {component: millonario.MillonarioInvisible, noCaptions: millonario.noCaptions, screen: millonario.screen, loop: true, captionTheme: millonario.captionTheme},
+  'diogenes-rey': {component: diogenes.DiogenesRey, noCaptions: diogenes.noCaptions, screen: diogenes.screen, loop: true, captionTheme: diogenes.captionTheme},
 };

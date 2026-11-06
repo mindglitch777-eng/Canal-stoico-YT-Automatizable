@@ -1,5 +1,6 @@
 # Muestras de voces de Edge TTS para elegir la voz del canal.
-# Se corre a mano desde la pestaña Actions; los MP3 salen como artifact.
+# Se corre a mano desde la pestaña Actions. Los MP3 quedan en la rama `salidas`
+# (carpeta voces/, se escuchan directo en github.com) y también como artifact.
 name: Muestras de voces
 
 on:
@@ -8,6 +9,9 @@ on:
     branches: [main]
     paths:
       - "tools/voice_samples.py"
+
+permissions:
+  contents: write
 
 jobs:
   samples:
@@ -25,3 +29,5 @@ jobs:
           name: muestras-de-voces
           path: voice-samples/
           retention-days: 14
+      - name: Publicar en la rama salidas
+        run: bash tools/publish_outputs.sh voice-samples voces "Muestras de voces (run ${{ github.run_id }})"

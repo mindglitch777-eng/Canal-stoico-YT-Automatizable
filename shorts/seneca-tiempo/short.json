@@ -1,0 +1,232 @@
+{
+  "id": "seneca-tiempo",
+  "title": "You'd never hand a stranger $100. Why hand your phone 3 hours?",
+  "belief_broken": "Que la plata es lo más valioso que tenés. Lo único que no se recupera es el tiempo, y lo regalás todos los días sin darte cuenta.",
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "duration_range": [41, 47],
+  "sources": [
+    "Tiempo en el celular: Reviews.org, 2026 Cell Phone Usage (≈1.000 adultos de EE. UU., Pollfish, 4.º trimestre de 2025): los estadounidenses pasan 'over three hours a day' en el teléfono y lo revisan unas 186 veces por día.",
+    "Cuentas: 3 h × 365 = 1.095 h ≈ 45,6 días por año; × 50 años ≈ 6,25 años.",
+    "Séneca, Sobre la brevedad de la vida 3 (trad. J. W. Basore): 'You will find no one willing to share out his money; but to how many does each of us divide up his life!' y 'most wasteful of the one thing in which it is right to be stingy'.",
+    "Nadie puede comprar tiempo de vida de vuelta: afirmación general, no dato."
+  ],
+  "direction": {
+    "concept": "El tiempo como plata que se roba: arena dorada que sale del pecho de la persona y se la chupa la pantalla. Todo pasa adentro y alrededor de un celular.",
+    "look": "ESTILO NUEVO: oscuridad total con luz fría de pantalla (azul y blanco), glitch digital, interfaz de notificaciones convertida en armas, arena de reloj de arena hecha de píxeles. El oro aparece SOLO para representar el tiempo de vida: es lo único cálido del video.",
+    "pacing": "Cortes al ritmo de tics de reloj; cada notificación es un corte. Impactos en 1, 4, 7 y 10.",
+    "loop": "La última frase ('would I hand a stranger $100?') empalma con la primera ('You'd never hand a stranger $100'). Visual: la mano con el billete del cuadro 0."
+  },
+  "music": {
+    "style": "Hecha con tics de reloj: el ritmo es un segundero que acelera, más sub-bajo glitch y sintetizador frío. En el giro se detienen todos los relojes y queda un latido + coro cálido (lo humano contra lo digital).",
+    "tempo": "Arranca a 90 BPM de tics; acelera hasta 128 en la escena 5; en la 7 se para.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Tic-tac seco + golpe de sub-bajo en '$100'"
+      },
+      {
+        "at": "escenas 2-5",
+        "cue": "Tics que aceleran, glitches en cada número, riser constante"
+      },
+      {
+        "at": "escena 6",
+        "cue": "Baja todo: solo un drone y la voz (la cita)"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Todos los relojes se paran de golpe: silencio 0,4 s → latido grave"
+      },
+      {
+        "at": "escenas 8-10",
+        "cue": "Latido + coro cálido + un tic suave que vuelve; el último tic empalma con el cuadro 0"
+      }
+    ],
+    "mix": "Voz al frente, música -10 dB bajo la voz, final a -14 LUFS, pico ≤ -1 dBTP."
+  },
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never hand a stranger $100. Why hand your phone 3 hours?",
+      "onScreen": "$100? *No.*\n3 hours? *Sure.*",
+      "visual": "Cuadro 0: una mano le arranca de vuelta un billete de $100 a un extraño (rápido, casi violento). En la otra mano, el celular brilla y le chupa al dueño un chorro de arena dorada del pecho, como una aspiradora.",
+      "camera": "Pantalla partida: billete a la izquierda, celular a la derecha; en '3 hours' la derecha se come la izquierda.",
+      "transition": "La arena entra en la pantalla y se vuelve un contador.",
+      "sfx": [
+        {
+          "at": "billete",
+          "sound": "Billetera que se cierra de golpe"
+        },
+        {
+          "at": "'3 hours'",
+          "sound": "Succión digital + glitch"
+        }
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Americans spend over 3 hours a day on their phones.",
+      "onScreen": "3+ hours.\nEvery *day.*",
+      "visual": "Adentro de la pantalla: un reloj de arena gigante de píxeles se vacía; al lado un contador de horas que sube. Siluetas de gente en la calle, todas con la cara iluminada por la pantalla.",
+      "camera": "Desde adentro del celular hacia la cara del usuario.",
+      "transition": "Cada grano de arena se vuelve una notificación.",
+      "sfx": [
+        {
+          "at": "contador",
+          "sound": "Tics que aceleran"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "And check them about 186 times a day.",
+      "onScreen": "*186* checks.",
+      "visual": "Una lluvia de 186 notificaciones que caen como balas y se clavan en la persona; un contador rojo llega a 186.",
+      "camera": "Temblor con cada notificación; zoom de golpe en el 186.",
+      "transition": "Las notificaciones se ordenan en un calendario.",
+      "sfx": [
+        {
+          "at": "cada notificación",
+          "sound": "Ding corto, cada vez más rápido hasta volverse un zumbido"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "That's 45 full days a year. Gone.",
+      "onScreen": "*45 days.*\nGone.",
+      "visual": "Un calendario anual: 45 días se ponen negros uno por uno y se los traga la pantalla del celular. En 'Gone' el calendario se prende fuego.",
+      "camera": "Plano frontal del calendario; latigazo en 'Gone'.",
+      "transition": "Las cenizas del calendario forman una línea de vida.",
+      "sfx": [
+        {
+          "at": "cada día",
+          "sound": "Sello seco"
+        },
+        {
+          "at": "'Gone'",
+          "sound": "Fuego que se enciende + golpe de sub-bajo"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Over 50 years, that's 6 years of your life. Scrolled.",
+      "onScreen": "*6 years.*\nScrolled.",
+      "visual": "Una línea de vida de 50 años (infancia → vejez). Un dedo gigante hace scroll y 6 años se deslizan fuera de la línea como si fueran un feed. El personaje envejece mientras mira la pantalla.",
+      "camera": "Travelling a lo largo de la línea de vida; scroll vertical de toda la imagen en 'Scrolled'.",
+      "transition": "La imagen hace scroll hasta un pergamino antiguo.",
+      "sfx": [
+        {
+          "at": "'Scrolled'",
+          "sound": "Swoosh de scroll exagerado + tic que se corta"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Seneca wrote: you'll find no one willing to share out his money.",
+      "quote": "No one willing to share out his money.",
+      "author": "Seneca",
+      "source": "On the Shortness of Life, 3",
+      "visual": "Corte de estilo: pergamino antiguo con tinta dorada y luz de vela, lo único cálido hasta ahora. La cita se escribe sola. Un romano aprieta una bolsa de monedas contra el pecho.",
+      "camera": "Primer plano del pergamino; la bolsa de monedas en primer término.",
+      "transition": "La tinta se derrama hacia la pantalla de un celular.",
+      "sfx": [
+        {
+          "at": "pergamino",
+          "sound": "Pluma que raspa + monedas apretadas"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "But your time? You give it to any app. For free.",
+      "onScreen": "Your time?\n*Free.*",
+      "visual": "La persona abraza la bolsa de plata con una mano y con la otra regala su reloj de arena a una fila infinita de apps con forma de manos. En 'For free' TODOS los relojes del video se congelan, silencio, y la arena queda suspendida en el aire.",
+      "camera": "Plano general; en 'free' cámara quieta (corte de patrón).",
+      "transition": "La arena congelada se derrumba sobre un billonario.",
+      "sfx": [
+        {
+          "at": "'For free'",
+          "sound": "Se detienen todos los tics → silencio total 0,4 s → latido grave"
+        }
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "A billionaire can't buy back one minute. You gave away three hours.",
+      "onScreen": "Can't buy\n*one minute.*",
+      "visual": "Un billonario tira montañas de oro contra un reloj de arena vacío que no se vuelve a llenar. Al lado, el espectador (silueta) tira su arena por la canaleta de un celular.",
+      "camera": "Pantalla partida que se cierra al centro.",
+      "transition": "El reloj de arena gira y queda al derecho.",
+      "sfx": [
+        {
+          "at": "oro",
+          "sound": "Monedas que rebotan contra vidrio"
+        },
+        {
+          "at": "'three hours'",
+          "sound": "Arena que cae"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "So be stingy where Seneca said to be. With your time.",
+      "onScreen": "Be *stingy.*\nWith time.",
+      "visual": "La persona apaga el celular: la luz fría se va y entra una luz dorada cálida; la arena vuelve a su pecho y el reloj de arena se llena.",
+      "camera": "Zoom lento hacia la cara iluminada en oro.",
+      "transition": "El celular apagado refleja una mano con un billete de $100.",
+      "sfx": [
+        {
+          "at": "celular que se apaga",
+          "sound": "Clic + silencio corto"
+        },
+        {
+          "at": "arena que vuelve",
+          "sound": "Arena al revés + coro cálido"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Before you unlock it, ask: would I hand a stranger $100?",
+      "onScreen": "Would you hand\na stranger *$100?*",
+      "visual": "La mano agarra el celular, se frena, y en el reflejo de la pantalla aparece la mano con el billete de $100: el último cuadro empalma con el cuadro 0.",
+      "camera": "Termina en el encuadre exacto del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Un tic suave que coincide con el primer tic del cuadro 0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+# Imágenes de dominio público (Met, Art Institute of Chicago, Wikimedia Commons) para los Shorts.
+# Se corre a mano desde la pestaña Actions con una búsqueda en inglés (ej.: "marcus aurelius bust").
+# Las imágenes, la hoja de contactos y los créditos quedan en la rama `salidas` (carpeta imagenes/)
+# y también como artifact.
+name: Imágenes de dominio público
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "Qué buscar, en inglés (ej.: seneca bust, roman statue, stoic philosopher)"
+        required: true
+      limit:
+        description: "Máximo de imágenes por fuente"
+        required: false
+        default: "10"
+      sources:
+        description: "Fuentes separadas por coma: met, aic, commons"
+        required: false
+        default: "met,aic,commons"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pd-images
+  cancel-in-progress: false
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - name: Buscar y bajar
+        env:
+          QUERY: ${{ github.event.inputs.query }}
+          LIMIT: ${{ github.event.inputs.limit }}
+          SOURCES: ${{ github.event.inputs.sources }}
+        run: python tools/pd_images.py "$QUERY" --limit "${LIMIT:-10}" --sources "${SOURCES:-met,aic,commons}" --out imagenes
+      - uses: actions/upload-artifact@v4
+        with:
+          name: imagenes-dominio-publico
+          path: imagenes/
+          retention-days: 14
+      - name: Publicar en la rama salidas
+        run: |
+          for d in imagenes/*/; do
+            bash tools/publish_outputs.sh "$d" "imagenes/$(basename "$d")" "Imágenes: $(basename "$d") (run ${{ github.run_id }})"
+          done

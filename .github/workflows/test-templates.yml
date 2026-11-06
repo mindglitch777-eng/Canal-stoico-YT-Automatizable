@@ -14,10 +14,13 @@ concurrency:
   group: test-templates
   cancel-in-progress: true
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50
     defaults:
       run:
         working-directory: remotion
@@ -32,7 +35,7 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
       - name: Cuadros de cada plantilla
-        run: npm run test:templates
+        run: npm run test:templates -- --at 0.15,0.5,0.9
       - name: Video de muestra (sin voz)
         run: npm run render -- --demo
       - uses: actions/upload-artifact@v4
@@ -42,3 +45,8 @@ jobs:
             remotion/out/stills/
             remotion/out/demo.mp4
           retention-days: 14
+      - name: Publicar en la rama salidas
+        working-directory: .
+        run: |
+          mkdir -p prueba && cp remotion/out/demo.mp4 prueba/ && cp remotion/out/stills/contact-sheet.png prueba/
+          bash tools/publish_outputs.sh prueba "plantillas/run-${{ github.run_number }}" "Prueba de plantillas (run ${{ github.run_id }})"

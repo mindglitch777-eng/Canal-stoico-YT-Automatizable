@@ -26,3 +26,10 @@ export const safe = {
   captionY: 1230, // subtítulos
   side: 90,
 };
+
+// Centro visual del contenido (entre el borde de arriba y los subtítulos).
+export const stage = {
+  top: safe.top,
+  bottom: safe.contentBottom,
+  centerY: (safe.top + safe.contentBottom) / 2,
+};

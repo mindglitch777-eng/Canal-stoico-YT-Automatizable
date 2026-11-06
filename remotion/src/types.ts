@@ -36,6 +36,8 @@ export type CounterScene = Base & {
 };
 export type StatementScene = Base & {type: 'statement'; text: string};
 export type OutroScene = Base & {type: 'outro'; text: string};
+// Escena de un video a medida: la dibuja la composición propia del Short (src/shorts/<id>/).
+export type CustomScene = Base & {type: 'custom'; onScreen?: string; visual?: string; [key: string]: unknown};
 
 export type Scene =
   | HookScene
@@ -44,7 +46,8 @@ export type Scene =
   | ChartScene
   | CounterScene
   | StatementScene
-  | OutroScene;
+  | OutroScene
+  | CustomScene;
 
 export type Timeline = {
   id: string;
@@ -52,4 +55,5 @@ export type Timeline = {
   captions?: boolean;
   scenes: Scene[];
   total: number;
+  soundtrack?: string | null; // música + efectos (build/sound.wav), ruta dentro de public/
 };

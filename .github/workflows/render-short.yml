@@ -1,6 +1,6 @@
 # Render de Shorts con voz: Edge TTS -> línea de tiempo -> Remotion -> MP4.
 # Se dispara solo al subir o cambiar un shorts/<id>/short.json, o a mano indicando la carpeta.
-# El MP4 queda como artifact del run (pestaña Actions -> el run -> Artifacts).
+# El MP4 queda en la rama `salidas` (carpeta shorts/) y como artifact del run.
 name: Render de Short
 
 on:
@@ -18,13 +18,16 @@ on:
       - "shorts/*/short.json"
 
 concurrency:
-  group: render-short-${{ github.ref }}
+  group: render-short-${{ github.ref }}-${{ github.event.inputs.short }}
   cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,9 +72,18 @@ jobs:
           mkdir -p salida
           for d in $DIRS; do
             echo "::group::$d"
+            python tools/check_short.py "$d"
             if [ -n "$VOICE" ]; then python tools/tts.py "$d" --voice "$VOICE"; else python tools/tts.py "$d"; fi
+            # Música y efectos por código (si el Short tiene sound.py)
+            python tools/sfx/mix.py "$d"
             (cd remotion && npm run render -- --short "$d")
-            cp "$d"/build/*.mp4 salida/
+            # Volumen final: -14 LUFS integrados, pico real <= -1 dBTP, 48 kHz (dos pasadas)
+            id=$(basename "$d")
+            python tools/loudness.py "$d/build/$id.mp4" "salida/$id.mp4"
+            # Control final con números (loop, volumen, silencios) + hoja de cuadros a 1 fps.
+            # No frena la publicación: el informe queda junto al video para revisarlo.
+            loopflag=""; grep -q '"loop"' "$d/short.json" && loopflag="--loop"
+            python tools/verify_short.py "salida/$id.mp4" $loopflag --sheet "salida/$id-hoja.jpg" --json "salida/$id-informe.json" || echo "::warning::$id no pasa el control final (ver $id-informe.json)"
             cp "$d"/build/timeline.json "salida/$(basename "$d")-timeline.json"
             echo "::endgroup::"
           done
@@ -81,3 +93,5 @@ jobs:
           name: shorts-renderizados
           path: salida/
           retention-days: 14
+      - name: Publicar en la rama salidas
+        run: bash tools/publish_outputs.sh salida "shorts/run-${{ github.run_number }}" "Shorts renderizados (run ${{ github.run_id }})"

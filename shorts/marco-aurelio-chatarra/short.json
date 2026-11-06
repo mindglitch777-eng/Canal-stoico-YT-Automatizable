@@ -1,0 +1,204 @@
+{
+  "id": "marco-aurelio-chatarra",
+  "title": "You'd never pay $5,000 for scrap metal. But you just did.",
+  "belief_broken": "Que lo caro vale lo que cuesta. Marco Aurelio, el hombre que podía tenerlo todo, se entrenaba para ver las cosas desnudas: la etiqueta es lo que pagás.",
+  "voice": "en-US-AndrewNeural",
+  "rate": "-2%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "sources": [
+    "Marco Aurelio, Meditaciones 6.13 (trad. George Long, 1862, dominio público): la carne como 'the dead body of a fish', el vino falerno como 'a little grape juice', la túnica púrpura como lana de oveja teñida con sangre de un marisco, y 'outward show is a wonderful perverter of the reason'.",
+    "Las Meditaciones eran notas privadas para sí mismo, no escritas para publicar.",
+    "Población del Imperio romano en el siglo II: las estimaciones modernas van de unos 50 a 75 millones ('over 50 million' es la cifra prudente).",
+    "Hedonic treadmill: Brickman y Campbell (1971); la adaptación hedónica dice que las mejoras vuelven a sentirse normales con el tiempo.",
+    "Teléfono, reloj y auto: ejemplos ilustrativos, no datos."
+  ],
+
+  "direction": {
+    "concept": "Todo lo caro se 'desarma' delante del espectador en lo que realmente es. El reloj del gancho es el hilo: aparece entero, explota en piezas, y al final se vuelve a armar para empalmar con el primer cuadro.",
+    "look": "Macro de producto de lujo (reflejos, brillo que pasa, profundidad de campo) que se rompe en materia cruda (metal, tornillos, lana, uva). Mármol y oro para Marco Aurelio. Cada escena con un mundo propio: nada se repite.",
+    "pacing": "Cambio de plano cada 1-2 s; un momento de impacto cada ~8 s (escenas 1, 4, 8, 11).",
+    "loop": "La última frase queda colgada en 'Even that $5,000…' y el video arranca con 'You'd never pay $5,000 for scrap metal'. El reloj se rearma en el último segundo y queda exactamente como en el cuadro 0."
+  },
+
+  "music": {
+    "style": "Cinemático oscuro con alma antigua: drone grave en Re menor, latido de bombo, arpegio de lira (síntesis Karplus-Strong), crescendos con reverb invertida. Calmo pero con tensión, sin hype.",
+    "tempo": "72 BPM (se siente como latido). Desde el giro (escena 8), doble tiempo (144) con sub-bajo en cada golpe.",
+    "sections": [
+      {"at": "escena 1, 'How?'", "cue": "Golpe de entrada: sub-bajo + lira en una nota aguda que queda sonando."},
+      {"at": "escenas 2-3", "cue": "Entra el drone en Re y el latido a 72 BPM."},
+      {"at": "escenas 4-6", "cue": "Arpegio de lira (Re menor: D-F-A-C) en corcheas; sube un tono en la escena 6."},
+      {"at": "escena 7", "cue": "Riser de 3 s que acelera como una cinta de correr."},
+      {"at": "escena 8, después de 'hypnotized'", "cue": "Silencio total 0,4 s (corte de patrón) y caída: doble tiempo, sub-bajo, la lira una octava abajo."},
+      {"at": "escenas 9-10", "cue": "Golpe de sub-bajo en cada etiqueta que se arranca; en la cita, todo baja a drone + coro sintético (formantes)."},
+      {"at": "escena 11", "cue": "Riser que NO resuelve: termina justo en el golpe de entrada del cuadro 0, para que el loop suene continuo."}
+    ],
+    "mix": "La voz manda: la música baja ~10 dB mientras se habla (sidechain). Volumen final cerca de -14 LUFS."
+  },
+
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never pay $5,000 for scrap metal. But you just did. How?",
+      "pause_after": 0.45,
+      "onScreen": "$5,000\nscrap *metal?*",
+      "visual": "Cuadro 0 ya en acción: reloj de oro en macro extremo, segundero corriendo, brillo que cruza el cristal. En 'scrap metal' el reloj EXPLOTA en sus piezas (engranajes, tornillos, resortes, esquirlas de acero) que vuelan hacia la cámara en cámara lenta; la etiqueta '$5,000' gira y se quema hasta '$0'. En 'How?' todo se congela en el aire.",
+      "camera": "Arranca pegada al cristal; latigazo hacia atrás en 'scrap'; en 'How?' rotación lenta alrededor de las piezas congeladas (bullet time).",
+      "transition": "Las piezas congeladas se arremolinan y forman el busto de la escena 2.",
+      "sfx": [
+        {"at": "cuadro 0", "sound": "Tic-tac de reloj nítido + golpe de sub-bajo"},
+        {"at": "'scrap'", "sound": "Estallido metálico (cristal + metal) con reverb invertida que lo anticipa"},
+        {"at": "'How?'", "sound": "Parada de tiempo: 'whoomp' grave + cinta que frena"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Marcus Aurelius ruled over 50 million people.",
+      "onScreen": "50,000,000\nMARCUS AURELIUS",
+      "visual": "Las piezas del reloj forman un busto de mármol de Marco Aurelio. Detrás, el mapa del Imperio se llena de millones de puntitos de luz (personas) mientras el contador corre a 50,000,000.",
+      "camera": "Contrapicado al busto; el mapa se abre detrás con zoom out rápido.",
+      "transition": "Corte seco al pergamino de la escena 3.",
+      "sfx": [
+        {"at": "inicio", "sound": "Piedra que encaja (mármol) + ráfaga de viento"},
+        {"at": "contador", "sound": "Tics que se aceleran"},
+        {"at": "'50 million'", "sound": "Sello de piedra al frenar el contador"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "He could buy anything. Instead, he wrote himself a secret trick.",
+      "onScreen": "A *secret* trick.",
+      "visual": "Montañas de oro, banquetes y túnicas aparecen alrededor del busto (todo lo que podía comprar) y se apagan de golpe en 'Instead'. Queda un pergamino que se escribe solo, a la luz de una vela.",
+      "camera": "Paneo por la riqueza; en 'Instead' corte a primer plano del pergamino.",
+      "transition": "La tinta del pergamino se derrama y forma el plato de la escena 4.",
+      "sfx": [
+        {"at": "riqueza", "sound": "Monedas que caen en cascada"},
+        {"at": "'Instead'", "sound": "Corte a silencio con una vela que se enciende"},
+        {"at": "pergamino", "sound": "Pluma que raspa"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "His feast? Dead fish. His fine wine? A little grape juice.",
+      "onScreen": "Dead *fish.*\nGrape *juice.*",
+      "visual": "Un banquete imperial dorado y brillante. En 'Dead fish' el plato se 'desarma' en un pescado crudo, gris, con mosca. En 'grape juice' la copa de vino de lujo se escurre hasta ser un poco de jugo en un vaso de barro. Las etiquetas 'FEAST' y 'FINE WINE' se tachan.",
+      "camera": "Plano cenital sobre la mesa; corte a macro del vino.",
+      "transition": "El vino gira como un remolino y se vuelve tela púrpura.",
+      "sfx": [
+        {"at": "'Dead fish'", "sound": "Golpe húmedo + 'record scratch' corto"},
+        {"at": "'grape juice'", "sound": "Líquido que gotea con tono que baja"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "His royal purple robe? Sheep's wool, dyed with shellfish blood.",
+      "onScreen": "Sheep's wool.\nShellfish *blood.*",
+      "visual": "Una túnica púrpura imperial ondea en cámara lenta. Se deshilacha en lana de oveja (aparece una oveja masticando, cómica) y una gota de 'sangre' de un caracol de mar la tiñe.",
+      "camera": "Tela que ocupa toda la pantalla; zoom macro a la gota.",
+      "transition": "La gota cae y se vuelve la pantalla de un celular que se enciende.",
+      "sfx": [
+        {"at": "túnica", "sound": "Whoosh de tela"},
+        {"at": "oveja", "sound": "Balido corto (cómico)"},
+        {"at": "'blood'", "sound": "Gota que cae con eco"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Your $1,200 phone? Glass, metal, and a payment plan.",
+      "onScreen": "Glass. Metal.\n*24 payments.*",
+      "visual": "Un celular de lujo flotando con brillo de publicidad. Se desarma en capas (vidrio, chapa, chips) y detrás aparece un contrato larguísimo que se despliega hasta el piso con '24 payments' en rojo.",
+      "camera": "Giro 360° del celular (render tipo publicidad) y caída siguiendo el contrato.",
+      "transition": "El contrato se enrolla y se vuelve una cinta de correr.",
+      "sfx": [
+        {"at": "celular", "sound": "Notificación brillante"},
+        {"at": "desarme", "sound": "Clics y piezas que se separan"},
+        {"at": "'payment plan'", "sound": "Papel que se despliega + sello de 'aprobado'"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "Psychologists call it the hedonic treadmill. Every upgrade fades to normal.",
+      "onScreen": "The hedonic\n*treadmill.*",
+      "visual": "Una persona en una cinta de correr dorada: cada compra nueva (reloj, auto, celular) aparece brillante delante de ella y se pone gris al alcanzarla. La cinta acelera cada vez más.",
+      "camera": "Lateral, siguiendo la cinta; el plano tiembla cada vez más con la velocidad.",
+      "transition": "La cinta gira tan rápido que se vuelve una espiral hipnótica.",
+      "sfx": [
+        {"at": "cinta", "sound": "Motor que zumba y sube de tono"},
+        {"at": "cada compra que se apaga", "sound": "'Wah' que cae"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "You're not broke. You're hypnotized.",
+      "pause_after": 0.45,
+      "onScreen": "Not broke.\n*Hypnotized.*",
+      "visual": "Espiral hipnótica hecha de etiquetas de precio girando. En 'hypnotized' un chasquido de dedos: la pantalla se congela, silencio total, y la espiral se rompe como vidrio de golpe.",
+      "camera": "Zoom lento hacia el centro de la espiral; en el chasquido, quieta (corte de patrón).",
+      "transition": "Los vidrios rotos caen y dejan ver las etiquetas de la escena 9.",
+      "sfx": [
+        {"at": "espiral", "sound": "Tono que oscila (trémolo) y marea"},
+        {"at": "'hypnotized'", "sound": "Chasquido de dedos → 0,4 s de silencio total → vidrio que estalla"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "Strip the label. Watch? Metal and gears. Car? Steel and a loan.",
+      "onScreen": "Strip the *label.*",
+      "visual": "Etiquetas de lujo pegadas sobre objetos (WATCH, CAR) que se arrancan de un tirón, una por golpe de música, y debajo aparece lo crudo: 'METAL + GEARS', 'STEEL + A LOAN'. Cada arranque, más violento que el anterior.",
+      "camera": "Corte por golpe: cada etiqueta en su plano, alternando cerca y lejos.",
+      "transition": "La última etiqueta arrancada deja ver el mármol de la escena 10.",
+      "sfx": [
+        {"at": "cada etiqueta", "sound": "Cinta que se arranca + golpe de sub-bajo (sincronizado con la música en doble tiempo)"}
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Marcus wrote it down: outward show is a wonderful perverter of the reason.",
+      "quote": "Outward show is a wonderful perverter of the reason.",
+      "author": "Marcus Aurelius",
+      "source": "Meditations, 6.13",
+      "visual": "La cita se graba en mármol con chispas de oro, letra por letra, al ritmo de la voz. El busto de la escena 2 aparece de perfil, en paz.",
+      "camera": "Travelling lento sobre la piedra; termina en el busto.",
+      "transition": "Del busto cae una pieza de reloj que rebota hacia la escena 11.",
+      "sfx": [
+        {"at": "grabado", "sound": "Cincel sobre piedra con chispas"},
+        {"at": "final de la cita", "sound": "Gong grave"}
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Next time you want something, strip it bare. Even that $5,000...",
+      "onScreen": "Strip it *bare.*",
+      "visual": "Las piezas del reloj de la escena 1 vuelan en reversa y se rearman solas. El último cuadro es idéntico al cuadro 0 (reloj entero, macro, brillo pasando), para que el loop no se note.",
+      "camera": "Termina pegada al cristal, igual que el cuadro 0.",
+      "transition": "Ninguna: corta en seco y el video vuelve a empezar.",
+      "sfx": [
+        {"at": "rearmado", "sound": "Piezas que encajan en reversa (clics al revés)"},
+        {"at": "final", "sound": "Riser que corta justo antes de resolver: lo resuelve el golpe del cuadro 0"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "id": "elegido-por-vos",
+  "title": "You never chose the medium popcorn. 3 tricks chose it.",
+  "belief_broken": "Que vos elegís lo que comprás. Tres trucos eligen por vos, y el golpe final: este mismo video usó tres trucos para que lo sigas mirando.",
+  "voice": "en-US-AndrewNeural",
+  "rate": "+0%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "sources": [
+    "Opción señuelo: Dan Ariely, Predictably Irrational (2008), prueba con suscripciones de The Economist: con una opción inútil (solo papel al mismo precio que papel + web), el 84 % eligió la opción cara; sin el señuelo, el 32 %.",
+    "Efecto del primer dígito ($4.99 se siente cerca de $4): Thomas y Morwitz (2005), Journal of Consumer Research.",
+    "Anclaje ('antes $200'): Tversky y Kahneman (1974), Science.",
+    "Precios del pochoclo: ejemplo ilustrativo, no de un cine real.",
+    "Epicteto, Discursos 2.18 (trad. George Long, dominio público): 'Wait for me a little, appearance; let me see who you are... let me put you to the test.'",
+    "Los tres 'trucos' del propio video son reales: la pregunta abierta del gancho, el número 3 y los subtítulos que se iluminan."
+  ],
+  "direction": {
+    "concept": "El mundo es un decorado. Cada vez que se revela un truco, la realidad brillante se vuelve un plano técnico de líneas (un blueprint) y se ven los hilos, las poleas y la gente detrás. El golpe final rompe la cuarta pared: la cámara se aleja y muestra que este Short está en un celular dentro del blueprint, con sus propios trucos marcados en rojo.",
+    "look": "ESTILO NUEVO: dos capas. Arriba, una publicidad brillante (cine, góndola, oferta) con colores saturados. Debajo, el plano técnico: líneas cian sobre azul marino, cotas, flechas, notas a mano en rojo. La transición entre las dos capas es el efecto visual principal: un barrido que 'desviste' la imagen.",
+    "pacing": "Un truco cada ~4 s, cada uno con su revelación visual. Impactos en 1, 3, 7 y 8.",
+    "loop": "El último cuadro vuelve a la mano agarrando el pochoclo mediano en el cine brillante, igual que el cuadro 0. 'Did I pick this?' empalma con 'You didn't pick the medium popcorn'."
+  },
+  "music": {
+    "style": "Suspenso de documental: arpegio de sintetizador que pulsa, el clic de un proyector de cine como ritmo y un 'braam' en cada revelación. En el giro, la música se 'rebobina' (ruido de cinta hacia atrás) hasta los primeros segundos del propio tema, como si el video se descubriera. Cierra con un piano calmo.",
+    "tempo": "100 BPM con el clic del proyector; rebobinado en la escena 7; piano libre desde la 9.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Jingle brillante de publicidad que se corta con un 'braam' cuando todo pasa a blueprint"
+      },
+      {
+        "at": "escenas 2-6",
+        "cue": "Arpegio que pulsa + clic de proyector; un 'braam' corto en cada truco"
+      },
+      {
+        "at": "escena 7 (giro)",
+        "cue": "Silencio 0,4 s → rebobinado de cinta → el tema vuelve a sonar desde el principio, distorsionado"
+      },
+      {
+        "at": "escena 8",
+        "cue": "Tres golpes secos, uno por cada truco del video que se marca"
+      },
+      {
+        "at": "escenas 9-11",
+        "cue": "Piano calmo; el final vuelve al jingle brillante del cuadro 0"
+      }
+    ],
+    "mix": "Voz al frente, música -10 dB bajo la voz, final a -14 LUFS, pico ≤ -1 dBTP."
+  },
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You never chose the medium popcorn. 3 tricks chose it. Why?",
+      "pause_after": 0.35,
+      "onScreen": "You didn't\n*choose* this.",
+      "visual": "Cuadro 0: un mostrador de cine brillante, una mano agarra el pochoclo MEDIANO. En '3 tricks chose it' un barrido convierte todo el cine en blueprint cian y aparecen hilos de marioneta desde el techo atados a los dedos de la mano. En 'Why?' se congela.",
+      "camera": "Macro de la mano; en el barrido la cámara se aleja y se ven los hilos subiendo hasta el techo.",
+      "transition": "El blueprint marca los tres precios con flechas.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Jingle de publicidad + pochoclo que explota"
+        },
+        {
+          "at": "'3 tricks chose it'",
+          "sound": "'Braam' + barrido eléctrico"
+        },
+        {
+          "at": "'Why?'",
+          "sound": "Proyector que se traba"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Look at the prices. Small, $3. Large, $7. Medium, $6.50.",
+      "onScreen": "$3 · *$6.50* · $7",
+      "visual": "Los tres baldes de pochoclo aparecen en fila con sus precios, que caen uno por uno como letreros de neón. El mediano se ilumina como 'la opción inteligente'.",
+      "camera": "Travelling por los tres baldes; frena en el mediano.",
+      "transition": "Rayos X sobre el balde grande.",
+      "sfx": [
+        {
+          "at": "cada precio",
+          "sound": "Neón que se enciende con zumbido"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "Nobody wants the large. It's there so the medium looks cheap.",
+      "onScreen": "The large is\n*bait.*",
+      "visual": "Rayos X al balde grande: por dentro está vacío, es de cartón, y tiene un anzuelo de pesca enorme colgando. El anzuelo apunta al mediano.",
+      "camera": "Zoom de golpe al anzuelo.",
+      "transition": "El anzuelo tira y arrastra a una multitud de gente chiquita.",
+      "sfx": [
+        {
+          "at": "rayos X",
+          "sound": "Zumbido de escáner"
+        },
+        {
+          "at": "anzuelo",
+          "sound": "Carrete de pesca que gira (cómico)"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "In one famous test, a useless option made 84% pick the expensive one.",
+      "onScreen": "*84%*\ntook the bait.",
+      "visual": "Una multitud de figuritas camina por un embudo de blueprint; un cartel 'opción inútil' las desvía hacia la opción cara. Un contador llega a 84%. Sin el cartel, solo pasan unas pocas (32%).",
+      "camera": "Cenital sobre el embudo, como un gráfico vivo.",
+      "transition": "El contador gira y se vuelve una etiqueta de $4.99.",
+      "sfx": [
+        {
+          "at": "multitud",
+          "sound": "Pasos de muchos"
+        },
+        {
+          "at": "'84%'",
+          "sound": "Golpe seco + 'braam' corto"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Trick two: $4.99. Your brain reads it as 4.",
+      "onScreen": "$4.99 = *$4*",
+      "visual": "Una etiqueta gigante '$4.99'. Un rayo láser (la mirada) la recorre de izquierda a derecha: ilumina el 4 y, cuando llega al '.99', este se encoge y se esconde detrás del 4.",
+      "camera": "Sigue al láser de izquierda a derecha.",
+      "transition": "Un ancla enorme cae desde arriba.",
+      "sfx": [
+        {
+          "at": "láser",
+          "sound": "Barrido agudo"
+        },
+        {
+          "at": "'.99' que se esconde",
+          "sound": "'Pop' chiquito"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "consequence",
+      "say": "Trick three: was $200. Now $99 feels like a gift.",
+      "pause_after": 0.4,
+      "onScreen": "Was $200.\nNow a *gift.*",
+      "visual": "Un ancla de hierro con '$200' cae y raja el piso. Desde la grieta flota hacia arriba la etiqueta de $99 envuelta como regalo; el moño es un anzuelo.",
+      "camera": "Picado mientras cae el ancla; contrapicado del regalo que sube.",
+      "transition": "Silencio y la cámara empieza a alejarse de todo.",
+      "sfx": [
+        {
+          "at": "ancla",
+          "sound": "Golpe metálico enorme + piso que se raja"
+        },
+        {
+          "at": "regalo",
+          "sound": "Campanitas de regalo"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "And this video? It used three tricks on you too.",
+      "onScreen": "This video\n*did it too.*",
+      "visual": "ROMPE LA CUARTA PARED: la cámara se aleja y se ve que todo lo que viste es una pantalla de celular adentro del blueprint, en una mano. Sobre ese celular aparecen marcas rojas a mano: un círculo, una flecha, 'TRICK #1'.",
+      "camera": "Zoom out continuo y rápido, de la escena al celular, del celular a la mano y de la mano al plano técnico.",
+      "transition": "Las marcas rojas se apuntan a tres partes del propio video.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio 0,4 s (pause_after de la escena anterior)"
+        },
+        {
+          "at": "'this video'",
+          "sound": "Rebobinado de cinta + la música vuelve a su arranque"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "A question. The number three. Words that light up.",
+      "onScreen": "*Question.* *3.*\nLit words.",
+      "visual": "Las marcas rojas señalan, en el celular, tres cosas reales del propio video: el 'Why?' del gancho (convertido en un anzuelo que tira del espectador), el número 3 que titila y los subtítulos que se iluminan palabra por palabra (con una flecha a la palabra que suena ahora mismo).",
+      "camera": "Corte por golpe a cada una de las tres marcas.",
+      "transition": "El blueprint se apaga y queda una vela.",
+      "sfx": [
+        {
+          "at": "cada truco marcado",
+          "sound": "Golpe seco + trazo de marcador"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "Epictetus said: wait for me a little, appearance.",
+      "quote": "Wait for me a little, appearance.",
+      "author": "Epictetus",
+      "source": "Discourses, 2.18",
+      "visual": "Luz de vela y piedra. La cita aparece mientras una mano detiene el reloj de arena a la mitad: el tiempo se para y los hilos de marioneta del principio quedan flojos.",
+      "camera": "Primer plano de la mano que frena el reloj de arena.",
+      "transition": "Los hilos flojos se cortan.",
+      "sfx": [
+        {
+          "at": "reloj de arena",
+          "sound": "Arena que se frena + piano"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "Three seconds of pause. Now the tricks stop working.",
+      "onScreen": "Pause *3 seconds.*",
+      "visual": "De vuelta en el cine: la mano se frena a centímetros del balde. Los hilos de marioneta se aflojan y caen al piso. El balde grande se desarma solo como cartón.",
+      "camera": "Cámara lenta sobre la mano detenida.",
+      "transition": "Vuelve el cine brillante del principio.",
+      "sfx": [
+        {
+          "at": "hilos que caen",
+          "sound": "Cuerdas que se sueltan + silencio corto"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Next time, ask yourself: did I choose this?",
+      "onScreen": "Did *you*\nchoose this?",
+      "visual": "El cine vuelve a ser brillante como en el cuadro 0: la mano agarra el pochoclo mediano. El último cuadro es idéntico al cuadro 0.",
+      "camera": "Termina en el macro de la mano del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Primera nota del jingle del cuadro 0"
+        }
+      ]
+    }
+  ]
+}

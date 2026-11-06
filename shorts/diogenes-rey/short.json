@@ -1,0 +1,262 @@
+{
+  "id": "diogenes-rey",
+  "title": "He told Alexander the Great to move. Why?",
+  "belief_broken": "Que al poder y a la plata no se les dice que no. El que no necesita nada es el único que no se puede comprar: tiene el poder en cualquier negociación.",
+  "voice": "en-US-AndrewNeural",
+  "rate": "-2%",
+  "pitch": "-2Hz",
+  "captions": true,
+  "gap": 0.1,
+  "duration_range": [41, 47],
+  "sources": [
+    "Plutarco, Vida de Alejandro 14 (trad. Evelyn, serie Dryden, dominio público): Alejandro encuentra a Diógenes en el Craneo de Corinto 'lying along in the sun'; Diógenes: 'I would have you stand from between me and the sun'; los seguidores se ríen y Alejandro dice que si no fuera Alejandro elegiría ser Diógenes.",
+    "Alejandro fue rey de Macedonia a los 20 años (336 a. C.) y en el Istmo lo eligieron jefe de los griegos contra Persia (Plutarco, Alejandro 14).",
+    "Diógenes vivía en una tinaja de barro y casi sin posesiones: Diógenes Laercio, Vidas 6.23.",
+    "BATNA (la mejor alternativa a un acuerdo negociado): Fisher y Ury, Getting to Yes (1981). El que puede levantarse de la mesa negocia con más fuerza."
+  ],
+  "direction": {
+    "concept": "La historia contada como una vasija griega de figuras negras que cobra vida: siluetas negras sobre terracota, con relieves que se mueven. El sol es el personaje: luz contra la sombra gigante del rey.",
+    "look": "ESTILO NUEVO, nada del oro/mármol de los videos anteriores: terracota naranja, negro mate, grietas de cerámica, rayos de sol dorados como única luz. Cuando la idea se vuelve moderna (escenas 7-11), la vasija se quiebra y por las grietas aparece el mundo actual (contratos, logos, sueldos) dibujado en el mismo estilo de vasija.",
+    "pacing": "Cambio de plano cada 1-2 s. Impactos grandes en 1 (la sombra), 4 ('move'), 8 (las cadenas que se cortan) y 11.",
+    "loop": "Termina con la sombra del rey volviendo a caer sobre Diógenes al sol: el mismo encuadre que el cuadro 0."
+  },
+  "music": {
+    "style": "Antiguo griego con tensión: lira y aulós sintetizados en modo frigio, tambores de guerra graves, coro de hombres sintético. En el giro, silencio y después un solo drone cálido, como un amanecer.",
+    "tempo": "80 BPM con tambores de marcha; se rompe en la escena 4 y vuelve en la 7 a 100 BPM.",
+    "sections": [
+      {
+        "at": "escena 1",
+        "cue": "Cuerno de guerra grave + tambores: llega un ejército"
+      },
+      {
+        "at": "escena 4, 'move'",
+        "cue": "Corte en seco a silencio (0,4 s) y después solo la lira"
+      },
+      {
+        "at": "escena 5",
+        "cue": "Risas de los guardias como golpe rítmico"
+      },
+      {
+        "at": "escenas 7-8",
+        "cue": "Tambores a 100 BPM con riser; en el giro, silencio y drone cálido"
+      },
+      {
+        "at": "escenas 9-11",
+        "cue": "Lira + coro, crece hasta el final; el último compás empalma con el cuerno del cuadro 0"
+      }
+    ],
+    "mix": "Voz al frente, música -10 dB bajo la voz, final a -14 LUFS, pico ≤ -1 dBTP."
+  },
+  "scenes": [
+    {
+      "type": "custom",
+      "beat": "hook",
+      "reward": "paradox",
+      "say": "You'd never risk insulting a king. Diogenes told Alexander to move. Why?",
+      "onScreen": "He told a *king:*\n*move.*",
+      "visual": "Cuadro 0: un hombre chiquito tirado al sol sobre la terracota. Una sombra GIGANTE (rey a caballo + lanzas de un ejército) avanza y lo tapa entero. En 'move' el hombre hace un gesto con la mano sin levantarse y la sombra se congela.",
+      "camera": "Picado extremo desde arriba; en 'move' zoom de golpe a la mano.",
+      "transition": "La sombra congelada se despega de la vasija y se vuelve el perfil de Alejandro.",
+      "sfx": [
+        {
+          "at": "cuadro 0",
+          "sound": "Cuerno de guerra grave + cascos"
+        },
+        {
+          "at": "'move'",
+          "sound": "Golpe seco + disco que frena"
+        }
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "number",
+      "say": "Alexander the Great. King at twenty. Leader of all Greece.",
+      "onScreen": "King at *20.*",
+      "visual": "Perfil de Alejandro estilo moneda/vasija; un '20' enorme se graba en la cerámica y detrás se despliega un mapa de Grecia que se tiñe del color de su ejército.",
+      "camera": "Giro alrededor del perfil como una moneda que rota.",
+      "transition": "El mapa se pliega y queda una tinaja de barro.",
+      "sfx": [
+        {
+          "at": "'twenty'",
+          "sound": "Golpe de cincel + tambor"
+        },
+        {
+          "at": "mapa",
+          "sound": "Marcha de miles de pasos"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "reveal",
+      "say": "Diogenes? He lived in a clay jar, owning almost nothing.",
+      "onScreen": "A clay *jar.*",
+      "visual": "Una tinaja de barro gira; adentro, Diógenes acostado con su capa. Un inventario aparece al lado como lista de vasija: capa, bastón, bolsa… y se terminan los ítems.",
+      "camera": "Zoom hacia adentro de la tinaja.",
+      "transition": "Desde adentro de la tinaja se ve la sombra del rey asomando por la boca.",
+      "sfx": [
+        {
+          "at": "tinaja",
+          "sound": "Cerámica que suena hueca (golpe con eco)"
+        },
+        {
+          "at": "lista que se termina",
+          "sound": "Tres 'tics' y un silencio cómico"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "The king offered him anything. Diogenes: stand from between me and the sun.",
+      "quote": "Stand from between me and the sun.",
+      "author": "Diogenes",
+      "source": "Plutarch, Life of Alexander 14",
+      "visual": "El rey parado delante, tapando el sol. En 'sun' el sol estalla en rayos detrás de Alejandro y lo vuelve una silueta negra recortada: el sol le gana al rey.",
+      "camera": "Contrapicado desde Diógenes: el rey enorme; en 'sun', destello que encandila.",
+      "transition": "Destello blanco y aparecen los guardias riéndose.",
+      "sfx": [
+        {
+          "at": "'sun'",
+          "sound": "Golpe de luz (riser + impacto brillante) y corte de la música"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "humor",
+      "say": "His guards burst out laughing. Alexander didn't.",
+      "onScreen": "They *laughed.*",
+      "visual": "Fila de guardias de figuras negras doblados de risa, con los cascos temblando. En 'didn't' corte a la cara de Alejandro, seria, pensando.",
+      "camera": "Paneo rápido por los guardias; corte seco a primer plano.",
+      "transition": "La cara de Alejandro se parte al medio como una máscara.",
+      "sfx": [
+        {
+          "at": "risas",
+          "sound": "Risas graves sintetizadas que rebotan con eco"
+        },
+        {
+          "at": "'didn't'",
+          "sound": "Corte a silencio"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "beat": "reward",
+      "reward": "quote",
+      "say": "He said: if I were not Alexander, I would be Diogenes.",
+      "quote": "If I were not Alexander, I'd be Diogenes.",
+      "author": "Alexander the Great",
+      "source": "Plutarch, Life of Alexander 14",
+      "visual": "La máscara partida: una mitad es Alejandro con corona, la otra Diógenes al sol. Las dos mitades se juntan y se miran.",
+      "camera": "Pantalla partida que se cierra al centro.",
+      "transition": "La vasija se quiebra y por las grietas se ve el mundo de hoy.",
+      "sfx": [
+        {
+          "at": "unión de mitades",
+          "sound": "Dos golpes de cerámica que encajan"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "data",
+      "say": "In any deal, whoever can walk away holds the power.",
+      "onScreen": "Who can *walk away?*",
+      "visual": "Ahora en el mundo moderno, pero en estilo vasija: una mesa de negociación, un jefe y un empleado. Una flecha de 'poder' pasa al que se levanta y se va. Etiqueta en pantalla: BATNA.",
+      "camera": "Plano lateral de la mesa; la silla que se aleja en primer plano.",
+      "transition": "La silla vacía se vuelve una cadena tirante.",
+      "sfx": [
+        {
+          "at": "'walk away'",
+          "sound": "Silla que se arrastra + puerta que se cierra"
+        }
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "type": "custom",
+      "beat": "twist",
+      "reward": "twist",
+      "say": "Money doesn't make you free. Needing less does.",
+      "onScreen": "Need *less.*",
+      "visual": "Un hombre de hoy atado con cadenas hechas de logos, cuotas, sueldo y suscripciones, que tiran de él. En 'needing less' cada eslabón se corta solo, uno por golpe, y queda acostado al sol como Diógenes.",
+      "camera": "Zoom lento hacia el hombre; en cada eslabón cortado, temblor.",
+      "transition": "Los eslabones caídos se ordenan en dos columnas.",
+      "sfx": [
+        {
+          "at": "antes de la escena",
+          "sound": "Silencio total 0,4 s (pause_after de la escena anterior) y arranca el giro con un golpe"
+        },
+        {
+          "at": "cada eslabón",
+          "sound": "Metal que se corta + golpe de sub-bajo"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "reward",
+      "reward": "contrast",
+      "say": "The king needed an army to feel powerful. Diogenes needed sunlight.",
+      "onScreen": "Army vs *sunlight.*",
+      "visual": "Pantalla partida: a la izquierda miles de soldados, caballos y oro (todo lo que hace falta mantener); a la derecha, un rayo de sol y un hombre acostado. La izquierda se pone pesada y se hunde; la derecha brilla.",
+      "camera": "Balanza: la imagen se inclina hacia la izquierda.",
+      "transition": "El rayo de sol cruza toda la pantalla.",
+      "sfx": [
+        {
+          "at": "ejército",
+          "sound": "Metal pesado que cruje"
+        },
+        {
+          "at": "'sunlight'",
+          "sound": "Campana cálida"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "payoff",
+      "reward": "payoff",
+      "say": "You can't buy a man who wants nothing. Or rule him.",
+      "onScreen": "Can't be *bought.*",
+      "visual": "Manos de todos lados le ofrecen a Diógenes bolsas de oro, coronas y contratos; todo rebota contra él como contra un escudo de luz y se hace polvo.",
+      "camera": "Bullet time alrededor de Diógenes mientras rebota todo.",
+      "transition": "El polvo de oro sube y tapa el sol: vuelve la sombra.",
+      "sfx": [
+        {
+          "at": "cada rebote",
+          "sound": "Golpe metálico que se apaga"
+        },
+        {
+          "at": "'rule him'",
+          "sound": "Coro que sube"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "beat": "loop",
+      "reward": "challenge",
+      "say": "Want less. Then you can tell anyone to move. Even a king...",
+      "onScreen": "Want *less.*",
+      "visual": "La sombra gigante del rey vuelve a caer sobre Diógenes al sol: el último cuadro es idéntico al cuadro 0.",
+      "camera": "Vuelve al picado extremo del cuadro 0.",
+      "transition": "Corte en seco al inicio.",
+      "sfx": [
+        {
+          "at": "final",
+          "sound": "Riser que lo resuelve el cuerno del cuadro 0"
+        }
+      ]
+    }
+  ]
+}

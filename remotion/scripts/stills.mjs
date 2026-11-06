@@ -23,9 +23,12 @@ const {serveUrl, composition} = await prepare(inputProps);
 // Sin --short se usa la línea de tiempo de muestra (defaultProps de la composición).
 inputProps = inputProps ?? composition.props;
 const files = [];
-for (const [i, scene] of inputProps.scenes.entries()) {
-  const frame = Math.round((scene.start + scene.duration * 0.8) * composition.fps);
-  const file = join(outDir, `${String(i + 1).padStart(2, '0')}-${scene.type}.png`);
+// --at 0.3,0.8 = qué momentos de cada escena (fracción de su duración). Por defecto 0.8.
+const at = (arg('at') ?? '0.8').split(',').map(Number);
+const shots = inputProps.scenes.flatMap((scene, i) => at.map((a, k) => ({scene, i, a, k})));
+for (const {scene, i, a, k} of shots) {
+  const frame = Math.round((scene.start + scene.duration * a) * composition.fps);
+  const file = join(outDir, `${String(i + 1).padStart(2, '0')}${at.length > 1 ? String.fromCharCode(97 + k) : ''}-${scene.type}.png`);
   await renderStill({
     composition,
     serveUrl,
@@ -41,7 +44,7 @@ for (const [i, scene] of inputProps.scenes.entries()) {
 
 // Hoja de contactos con todas las escenas (si hay ffmpeg).
 try {
-  const cols = Math.min(4, files.length);
+  const cols = Math.min(at.length > 1 ? at.length * 2 : 4, files.length);
   const rows = Math.ceil(files.length / cols);
   const sheet = join(outDir, 'contact-sheet.png');
   execFileSync('ffmpeg', [

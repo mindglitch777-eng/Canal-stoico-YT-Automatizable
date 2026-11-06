@@ -13,3 +13,7 @@ Tocá el nombre del video: se descarga el MP4 directo, sin abrir el visor de Git
 - ⬇️ [marco-aurelio-chatarra.mp4](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/raw/salidas/shorts/run-7/marco-aurelio-chatarra.mp4): 29 MB
 
 Títulos, descripciones y hashtags: [TANDA-2.md](TANDA-2.md) y [MAÑANA.md](MA%C3%91ANA.md).
+
+## Reglas para otro proyecto
+- ⬇️ [REGLAS-COMPLETAS.md](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/raw/salidas/reglas/REGLAS-COMPLETAS.md): todas las reglas en un documento
+- ⬇️ [reglas-shorts.zip](https://github.com/mindglitch777-eng/Canal-stoico-YT-Automatizable/raw/salidas/reglas/reglas-shorts.zip): el documento + los originales, guiones de ejemplo, controles y skills
